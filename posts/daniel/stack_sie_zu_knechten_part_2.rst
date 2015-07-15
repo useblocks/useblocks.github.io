@@ -4,7 +4,7 @@
    :author: Daniel
    :excerpt: 1
 
-TEIL 2: STAND DER DINGE
+Teil 2: Stand der Dinge
 =======================
 
 Dieser Teil der Serie befasst sich mit den aktuell verwendeten Technologien und Libraries sowie mit der SW-Architektur selbst. Am Ende werden die Probleme genauer erörtert, die wir mit dem aktuellen Stand haben.
@@ -26,15 +26,16 @@ Um das Rad nicht neu zu erfinden und die notwendigen Wartungsarbeiten gering zu 
 
 Für das Backend setzen wir unter anderem auf folgende Libraries:
 
-Yapsy: Plugin-Framework
-Flask: Micro-Webframework
-Flask-Security: User und Role-Management
-SQLAlchemey:  SQL-Wrapper für verschiedene, relationale Datenbanken (MySQL, sqlite, Oracle SQL, MS SQL, PostgreSQL)
-Flask-Bable: Multi-language Support
-Sphinx: Automatische User-Dokumentation
-unittest: Unit-Tests inkl. Code-Coverage und Test-Reports
-Swagger-UI: Automatische, interaktive REST-API Dokumentation
-Jinja: HTML-Template Engine
+* Yapsy: Plugin-Framework
+* Flask: Micro-Webframework
+* Flask-Security: User und Role-Management
+* SQLAlchemey:  SQL-Wrapper für verschiedene, relationale Datenbanken (MySQL, sqlite, Oracle SQL, MS SQL, PostgreSQL)
+* Flask-Bable: Multi-language Support
+* Sphinx: Automatische User-Dokumentation
+* unittest: Unit-Tests inkl. Code-Coverage und Test-Reports
+* Swagger-UI: Automatische, interaktive REST-API Dokumentation
+* Jinja: HTML-Template Engine
+
 Unser Hauptaufgabe ist es, all die unterschiedlichen Bibliotheken über eine gemeinsame und einfache Programmierschnittstellen dem Ingenieur zur Verfügung zu stellen. Wir haben dies dann erreicht, wenn er gar nicht merkt, mit welchen Bibliotheken er gerade arbeitet.
 
 Der letzte Punkt in der Lib-Liste hat es verraten, wir erzeugen momentan unseren HTML-Code komplett serverseitig. Dynamische Frontend-Anteile sind eher selten und werden dann über jQuery realisiert. Somit enthalten Plugins in groundwork neben Datenbank-Modellen, Business-Logik und APIs auch die Views fürs Frontend.

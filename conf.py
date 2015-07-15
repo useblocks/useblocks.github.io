@@ -168,7 +168,12 @@ extensions = [
     'sphinx.ext.todo',
     'alabaster',
     'ablog',
+    'sphinxcontrib.plantuml',
 ]
+
+# PlantUML jar location
+plantuml = 'java -jar plantuml.jar'
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates', ablog.get_html_templates_path()]

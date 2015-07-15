@@ -5,7 +5,7 @@
    :excerpt: 2
 
 
-TEIL 1: ALLES DOOF! ALLES NEU!
+Teil 1: Alles doof! Alles neu!
 ==============================
 
 Dieses ist der erste Teil einer Serien über den beim Projekt groundwork eingesetzten SW-Stack.

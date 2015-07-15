@@ -5,19 +5,24 @@
    :excerpt: 1
 
 
-TEIL 4: ENTWICKLUNGSSCHRITTE
+Teil 4: Entwicklungsschritte
 ============================
 
 Im letzten Teil der Serie ging es um unsere Wünsche in Richtung Entwicklungsprozess und SW Stack. Dieser Teil befasst sich nun mit den notwendigen Entwicklungsschritten einer einzelnen Änderung.
 
 Die anderen Teile im Überblick:
+
 Teil 1: Alles doof! Alles neu!
+
 Teil 2: Stand der Dinge
+
 Teil 3: Wunschkonzert
+
 Teil 4: Entwicklungsschritte
+
 Teil 5: SW-Stack
 
-SOFTWARE-STRUKTUR
+Software-Struktur
 -----------------
 
 Unsere SW besteht in der Regel aus einer App, die ihre Funktionen über Plugins bezieht, die in unterschiedlichen Repositories gepflegt werden.
@@ -26,7 +31,7 @@ Diese Struktur ermöglicht es uns mehrere, unterschiedliche Apps zu haben, die s
 
 Dank diesem Vorgehen startet eine neue App-Entwicklung niemals bei 0, sondern kann meistens 80% der notwendigen Funktionen schon von vorhandenen Plugins übernehmen.
 
-KONZEPT UND SPEC
+Konzept und Spec
 ****************
 
 * Konzept im Wiki darlegen und diskutieren
@@ -40,7 +45,7 @@ KONZEPT UND SPEC
 
 Der Feature-Branch wird hier noch nicht wieder in der Master gemerged, da er noch für die Integration der Plugins benötigt wird. Erst wenn die Integrationstests fehlerfrei durchgelaufen sind, kann die Änderung endgültig auf den Master eingespielt werden.
 
-BACKEND
+Backend
 *******
 
 * Feature-Branch im jeweiligen Plugin-Repository erzeugen
@@ -63,7 +68,7 @@ BACKEND
 * User und REST-API Dokumentation werden generiert
 * Deployment auf Test-Servern wird automatisiert vorgenommen
 
-FRONTEND
+Frontend
 ********
 
 Da die REST-API Spezifikation schon feststeht, kann die Frontend-Entwicklung gleichzeitig mit der Backend-Entwicklung starten.
