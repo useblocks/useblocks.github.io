@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>TEIL 2: STAND DER DINGE &mdash; useblocks blog  Dokumentation</title>
+    <title>Teil 2: Stand der Dinge &mdash; useblocks blog  Dokumentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -52,7 +52,7 @@
           <div class="body" role="main">
             
   <div class="section" id="teil-2-stand-der-dinge">
-<h1>TEIL 2: STAND DER DINGE<a class="headerlink" href="#teil-2-stand-der-dinge" title="Link zu dieser Überschrift">¶</a></h1>
+<h1>Teil 2: Stand der Dinge<a class="headerlink" href="#teil-2-stand-der-dinge" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Dieser Teil der Serie befasst sich mit den aktuell verwendeten Technologien und Libraries sowie mit der SW-Architektur selbst. Am Ende werden die Probleme genauer erörtert, die wir mit dem aktuellen Stand haben.</p>
 <p>Die anderen Teile im Überblick:
 Teil 1: Alles doof! Alles neu!</p>
@@ -63,16 +63,18 @@ Teil 1: Alles doof! Alles neu!</p>
 <p>groundwork wurde mit Python, Javascript, CSS und HTML entwickelt. Wobei Python im Backend und der Rest rein im Frontend verwendet wird.</p>
 <p>Um das Rad nicht neu zu erfinden und die notwendigen Wartungsarbeiten gering zu halten, setzen wir auf eine Reihe von Open-Source-Projekten, die während der Installation automatisch angezogen werden. Wir arbeiten eher in diesen Projekten mit, als dass wir sie forken. Dadurch ist gewährleistet, dass unser Framework von zukünftigen Entwicklungen profitiert und wir diese nicht selbst nachpflegen müssen.</p>
 <p>Für das Backend setzen wir unter anderem auf folgende Libraries:</p>
-<p>Yapsy: Plugin-Framework
-Flask: Micro-Webframework
-Flask-Security: User und Role-Management
-SQLAlchemey:  SQL-Wrapper für verschiedene, relationale Datenbanken (MySQL, sqlite, Oracle SQL, MS SQL, PostgreSQL)
-Flask-Bable: Multi-language Support
-Sphinx: Automatische User-Dokumentation
-unittest: Unit-Tests inkl. Code-Coverage und Test-Reports
-Swagger-UI: Automatische, interaktive REST-API Dokumentation
-Jinja: HTML-Template Engine
-Unser Hauptaufgabe ist es, all die unterschiedlichen Bibliotheken über eine gemeinsame und einfache Programmierschnittstellen dem Ingenieur zur Verfügung zu stellen. Wir haben dies dann erreicht, wenn er gar nicht merkt, mit welchen Bibliotheken er gerade arbeitet.</p>
+<ul class="simple">
+<li>Yapsy: Plugin-Framework</li>
+<li>Flask: Micro-Webframework</li>
+<li>Flask-Security: User und Role-Management</li>
+<li>SQLAlchemey:  SQL-Wrapper für verschiedene, relationale Datenbanken (MySQL, sqlite, Oracle SQL, MS SQL, PostgreSQL)</li>
+<li>Flask-Bable: Multi-language Support</li>
+<li>Sphinx: Automatische User-Dokumentation</li>
+<li>unittest: Unit-Tests inkl. Code-Coverage und Test-Reports</li>
+<li>Swagger-UI: Automatische, interaktive REST-API Dokumentation</li>
+<li>Jinja: HTML-Template Engine</li>
+</ul>
+<p>Unser Hauptaufgabe ist es, all die unterschiedlichen Bibliotheken über eine gemeinsame und einfache Programmierschnittstellen dem Ingenieur zur Verfügung zu stellen. Wir haben dies dann erreicht, wenn er gar nicht merkt, mit welchen Bibliotheken er gerade arbeitet.</p>
 <p>Der letzte Punkt in der Lib-Liste hat es verraten, wir erzeugen momentan unseren HTML-Code komplett serverseitig. Dynamische Frontend-Anteile sind eher selten und werden dann über jQuery realisiert. Somit enthalten Plugins in groundwork neben Datenbank-Modellen, Business-Logik und APIs auch die Views fürs Frontend.</p>
 <p>Diese Backend-Frontend-Kopplung im Plugin führt über längere Zeit zu ein paar Problemen:</p>
 <p>Die Views verwenden selten die Plugin-REST-API und beziehen ihre Daten direkt über Datenbank-Abfragen. Dadurch wurde die REST-API meistens nur notdürftig entwickelt.
@@ -92,7 +94,7 @@ Da der HTML-Code serverseitig generiert wird, steht es jedem Plugin frei eigene 
   
   <a href="../stack_sie-zu_knechten_part_1/">
     <i class="fa fa-arrow-circle-left"></i>
-    TEIL 1: ALLES DOOF! ALLES NEU!
+    Teil 1: Alles doof! Alles neu!
   </a>
   
   </span>
@@ -206,7 +208,7 @@ Da der HTML-Code serverseitig generiert wird, steht es jedem Plugin frei eigene 
     
       <li><a href="../stack_sie_zu_knechten_part_3/">Jun 19 - TEIL 3: WUNSCHKONZERT</a></li>
     
-      <li><a href="../stack_sie-zu_knechten_part_1/">Jun 17 - TEIL 1: ALLES DOOF! ALLES NEU!</a></li>
+      <li><a href="../stack_sie-zu_knechten_part_1/">Jun 17 - Teil 1: Alles doof! Alles neu!</a></li>
     
   </ul>
 

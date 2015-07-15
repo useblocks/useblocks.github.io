@@ -4,17 +4,22 @@
    :author: Daniel
    :excerpt: 2
 
-TEIL 3: WUNSCHKONZERT
+Teil 3: Wunschkonzert
 =====================
 Quo vadis? Wie soll's weitergehen?
 
 Dieser Teil aus der Serie über unseren SW-Stack bei useblocks befass sich mit den Wünschen, die wir für den SW-Stack aber auch für unseren Entwicklungsprozess haben.
 
 Die anderen Teile im Überblick:
+
 Teil 1: Alles doof! Alles neu!
+
 Teil 2: Stand der Dinge
+
 Teil 3: Wunschkonzert
+
 Teil 4: Entwicklungsschritte
+
 Teil 5: SW-Stack
 
 Aufgrund der Probleme ahnt man schon, was wir uns am meisten wünschen:

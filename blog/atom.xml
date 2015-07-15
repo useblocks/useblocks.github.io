@@ -7,7 +7,7 @@
   <link href="True/blog/atom.xml" rel="self" />
   <generator uri="http://ablog.readthedocs.org" version="0.7.6">ABlog</generator>
   <entry xml:base="True/blog/atom.xml">
-    <title type="text">TEIL 4: ENTWICKLUNGSSCHRITTE</title>
+    <title type="text">Teil 4: Entwicklungsschritte</title>
     <id>True/posts/daniel/stack_sie_zu_knechten_part_4/</id>
     <updated>2015-06-20T00:00:00Z</updated>
     <published>2015-06-20T00:00:00Z</published>
@@ -19,7 +19,7 @@
 </content>
   </entry>
   <entry xml:base="True/blog/atom.xml">
-    <title type="text">TEIL 3: WUNSCHKONZERT</title>
+    <title type="text">Teil 3: Wunschkonzert</title>
     <id>True/posts/daniel/stack_sie_zu_knechten_part_3/</id>
     <updated>2015-06-19T00:00:00Z</updated>
     <published>2015-06-19T00:00:00Z</published>
@@ -32,7 +32,7 @@
 </content>
   </entry>
   <entry xml:base="True/blog/atom.xml">
-    <title type="text">TEIL 2: STAND DER DINGE</title>
+    <title type="text">Teil 2: Stand der Dinge</title>
     <id>True/posts/daniel/stack_sie_zu_knechten_part_2/</id>
     <updated>2015-06-18T00:00:00Z</updated>
     <published>2015-06-18T00:00:00Z</published>
@@ -44,7 +44,7 @@
 </content>
   </entry>
   <entry xml:base="True/blog/atom.xml">
-    <title type="text">TEIL 1: ALLES DOOF! ALLES NEU!</title>
+    <title type="text">Teil 1: Alles doof! Alles neu!</title>
     <id>True/posts/daniel/stack_sie-zu_knechten_part_1/</id>
     <updated>2015-06-17T00:00:00Z</updated>
     <published>2015-06-17T00:00:00Z</published>

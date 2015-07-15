@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Teil 3: Wunschkonzert &mdash; useblocks blog  Dokumentation</title>
+    <title>Diagrammerstellung auf effektive Art und Weise &mdash; useblocks blog  Dokumentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -51,51 +51,113 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="teil-3-wunschkonzert">
-<h1>Teil 3: Wunschkonzert<a class="headerlink" href="#teil-3-wunschkonzert" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Quo vadis? Wie soll&#8217;s weitergehen?</p>
-<p>Dieser Teil aus der Serie über unseren SW-Stack bei useblocks befass sich mit den Wünschen, die wir für den SW-Stack aber auch für unseren Entwicklungsprozess haben.</p>
-<p>Die anderen Teile im Überblick:</p>
-<p>Teil 1: Alles doof! Alles neu!</p>
-<p>Teil 2: Stand der Dinge</p>
-<p>Teil 3: Wunschkonzert</p>
-<p>Teil 4: Entwicklungsschritte</p>
-<p>Teil 5: SW-Stack</p>
-<p>Aufgrund der Probleme ahnt man schon, was wir uns am meisten wünschen:
-Eine saubere Trennung von Backend und Frontend.</p>
-<p>Den Plugin-basierten Ansatz von groundwork würden wir gerne auch für die Frontend-Entwicklung übernehmen. Des Weiteren wollen wir in der Lage sein, die Plugin-Tests fürs Frontend automatisch und gemeinschaftlich ausführen zu können sowie eine gemeinsame Dokumentation zu generieren.</p>
-<p>Und um die REST-APIs mehr zu fokussieren, würden wir gerne einen API-first Ansatz in unseren Entwicklungsprozess einbauen.</p>
-<p>Auf der Backenend-Seite würde wir gerne in der Lage sein, aus einer API-Spezifikation automatisch Plugins und Tests für groundwork generieren zu können sowie die von einer Webapp bereitgestellte REST-API gegen eine Spezifizierung zu testen.</p>
-<p>Was noch fehlt ist natürlich eine funktionierende Umsetzung von Continuous Integration und Delivery, so dass jede Code-Änderung automatisch getestet und bei Bestehen auf Test-Servern ausgerollt wird. Ach ja, Qualitäts-Metriken sollen natürlich auch direkt erhoben werden (Performance, Antwortzeiten, Speicherverbrauch, ...)</p>
-<p>Da wir bis jetzt meistens eher in einem ristriktiven B2B-Umfeld unterwegs waren, hatten wir nicht die Möglichkeit auf die zahlreichen Cloud-Angebot rund um die SW-Entwicklung zurückzugreifen. Dies soll sich mit der Veröffentlichung von groundwork ändern, so dass wir versuchen möglichst viele Platzhirsche auf ihren jeweiligen Fachgebieten in unseren SW-Stack zu integrieren.</p>
+  <div class="section" id="diagrammerstellung-auf-effektive-art-und-weise">
+<h1>Diagrammerstellung auf effektive Art und Weise<a class="headerlink" href="#diagrammerstellung-auf-effektive-art-und-weise" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="mein-problem">
+<h2>Mein Problem<a class="headerlink" href="#mein-problem" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die letzten Wochen  habe ich unter anderem damit verbracht ein Datenmodell von Objekten innerhalb eines kundenspezifischen SW-Entwicklungsprozesses zu erstellen.</p>
+<p>Wie so oft fängt man erstmal In Powerpoint an, um dann möglichst schnell zu Visio zu wechseln oder gleich ein spezielles Datenmodellierungstool zu verwenden.
+Allerdings gibt es bei all diesen Tools eine Reihe von Problemen bzw. Unannehmlichkeiten:</p>
+<p>Powerpoint, Visio und Co.
+Super Sache, wenn man einmalig 10-20 Objekte darstellen und verlinken möchte. Werden es mehr Objekte oder wird die Darstellung immer wieder mal ergänzt verwendet man mehr Zeit mit dem Layout als mit dem eigentlichen Inhalt selbst (Platz schaffen, Objekte verschieben, Verbindungen nachziehen, ...)
+Datenmodellierungstools wie Enterprise Architect, MySQL Workbench und Co.
+Eierlegendewollmilchsäue, die in der Regel jeden Entwickler glücklich machen.
+Doof nur, wenn das Team nicht nur aus Entwicklern besteht und die Ergebnisse verschiedenen Personenkreisen präsentiert werden müssen: Manager, Projektleiter, befreundeter Arbeitskollege, ...
+Bevor der Kollege verstehen kann, was er dort überhaupt sieht, vergehen dann in Summe schnell einmal 15-20 Minuten. Und das ohne jemals über den Inhalt diskutiert zu haben.
+Ich suchte also etwas, bei dem wir mit der graphischen Darstellung wenn möglich gar nicht in Kontakt kommen, was man aber trotzdem einem Kollegen schnell erklären kann, ohne dass er selbst das Präsentationstool oder eine spezielle Syntax verstehen muss.</p>
+<p>Idealerweise sollte man die einmal erstellte Dokumentation auch einfach wiederverwenden können, z.B in Word oder Powerpoint, als Bilder in Wikis oder zur Anzeige direkt in der Lieblings-IDE.</p>
+<p>Ach ja, eine Versionierung z.B in git mit der Möglichkeit sinnvolle Diffs zu machen, wäre natürlich auch super</p>
+<p>Nach etwas Suchen und Testen von 4-5 Möglichkeiten bin in bei PlantUML hängen geblieben.</p>
+</div>
+<div class="section" id="meine-losung-plantuml">
+<h2>Meine Lösung: PlantUML<a class="headerlink" href="#meine-losung-plantuml" title="Link zu dieser Überschrift">¶</a></h2>
+<p>PlantUML ist eine Beschreibungsart zur Definition von Diagramme und Sequenzen. Man beschreibt also textuell das gewünschte Diagramm und PlantUML erzeugt daraus dann schöne Diagramm-Bilder.</p>
+<p>Der Schwerpunkt liegt dabei auf dem eigentlichen Inhalt und weniger auf der graphischen Representation, so dass man super schnell Inhalte erzeugt.
+Will man aber das Layout anpassen, z.B Farben ändern oder Blöcke verschieben, ist man schnell aufgeschmissen. Ok, Farben gehen zum Glück in vielen Fällen :)</p>
+<div class="section" id="die-sprache">
+<h3>Die Sprache<a class="headerlink" href="#die-sprache" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="highlight-text"><div class="highlight"><pre>@startuml
+object Hans
+object Emma
+object Peter
+
+Hans --&gt; Peter
+Emma --&gt; Peter
+@enduml
+</pre></div>
+</div>
+<p>Daraus generiert PlantUML dann folgendes:</p>
+<p class="plantuml">
+<img src="../../../_images/plantuml-e14a6d3a004eccb371b16e3860231ec91518f7cc.png" alt="object Hans
+object Emma
+object Peter
+Hans --&gt; Peter
+Emma --&gt; Peter" />
+</p>
+<p>Natürlich gehen auch komplexere Sachen:</p>
+<div class="highlight-text"><div class="highlight"><pre>@startuml
+object Hans {
+name:Hans
+Status: Opa
+}
+
+object Emma {
+name:Emma
+Status: Oma
+}
+
+Hans --&gt; Peter
+Emma --&gt; Peter
+Peter --&gt; Max
+Anne --&gt; Max
+Hans ..&gt; Max
+Emma ..&gt; Max
+@enduml
+</pre></div>
+</div>
+<p class="plantuml">
+<img src="../../../_images/plantuml-66339075ef48c6a91187cbe59d26e2519d485f4d.png" alt="object Hans {
+name:Hans
+Status: Opa
+}
+
+object Emma {
+name:Emma
+Status: Oma
+}
+
+Hans --&gt; Peter
+Emma --&gt; Peter
+Peter --&gt; Max
+Anne --&gt; Max
+Hans ..&gt; Max
+Emma ..&gt; Max" />
+</p>
+<p>Es gehen aber Sequenz-Diagramme:</p>
+<div class="highlight-text"><div class="highlight"><pre>@startuml
+Hans -&gt; Peter: Hi!
+Peter -&gt; Hans: Hallo!
+Peter -&gt; Emma: Moin!
+@enduml
+</pre></div>
+</div>
+<p class="plantuml">
+<img src="../../../_images/plantuml-7f3d7211161d33632fa55824e768bb62c74393a1.png" alt="Hans -&gt; Peter: Hi!
+Peter -&gt; Hans: Hallo!
+Peter -&gt; Emma: Moin!" />
+</p>
+<p>Was alles geht und wie man es verwendet erfährt man am besten auf der PlantUML Webseite.</p>
+</div>
+</div>
+<div class="section" id="tool-integration">
+<h2>Tool Integration<a class="headerlink" href="#tool-integration" title="Link zu dieser Überschrift">¶</a></h2>
+</div>
 </div>
 
   <div class="section">
   
     
 
-
-<div class="section">
-  <span style="float: left;">
-  
-  
-  <a href="../stack_sie_zu_knechten_part_2/">
-    <i class="fa fa-arrow-circle-left"></i>
-    Teil 2: Stand der Dinge
-  </a>
-  
-  </span>
-  <span>&nbsp;</span>
-  <span style="float: right;">
-  
-  
-  <a href="../stack_sie_zu_knechten_part_4/">
-    TEIL 4: ENTWICKLUNGSSCHRITTE
-    <i class="fa fa-arrow-circle-right"></i>
-  </a>
-  </span>
-  
-</div>
 
   
   
@@ -123,8 +185,8 @@ Eine saubere Trennung von Backend und Frontend.</p>
   
   <h2>
   
-  <i class="fa fa-calendar"></i>
-    19.06.2015
+    <i class="fa fa-pencil"></i>
+     Draft 
   
   </h2>
 
@@ -142,13 +204,6 @@ Eine saubere Trennung von Backend und Frontend.</p>
 
   
 
-  
-  <li><i class="fa-fw fa fa-language"></i>
-    
-      
-      <a href="../../../blog/language/deutsch/">Deutsch</a>
-      
-    </li>
   
 
   
@@ -193,9 +248,11 @@ Eine saubere Trennung von Backend und Frontend.</p>
     
       <li><a href="../stack_sie_zu_knechten_part_4/">Jun 20 - TEIL 4: ENTWICKLUNGSSCHRITTE</a></li>
     
-      <li><a href="../stack_sie_zu_knechten_part_2/">Jun 18 - Teil 2: Stand der Dinge</a></li>
+      <li><a href="../stack_sie_zu_knechten_part_3/">Jun 19 - TEIL 3: WUNSCHKONZERT</a></li>
     
-      <li><a href="../stack_sie-zu_knechten_part_1/">Jun 17 - Teil 1: Alles doof! Alles neu!</a></li>
+      <li><a href="../stack_sie_zu_knechten_part_2/">Jun 18 - TEIL 2: STAND DER DINGE</a></li>
+    
+      <li><a href="../stack_sie-zu_knechten_part_1/">Jun 17 - TEIL 1: ALLES DOOF! ALLES NEU!</a></li>
     
   </ul>
 
@@ -272,7 +329,7 @@ Eine saubere Trennung von Backend und Frontend.</p>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
       
       |
-      <a href="../../../_sources/posts/daniel/stack_sie_zu_knechten_part_3.txt"
+      <a href="../../../_sources/posts/daniel/plantuml_init.txt"
           rel="nofollow">Page source</a>
     </div>
 
