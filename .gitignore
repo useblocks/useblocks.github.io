@@ -1,6 +1,9 @@
 # ABLOG stuff
 _website/
 
+# IntelliJ / Pycharm
+.idea/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

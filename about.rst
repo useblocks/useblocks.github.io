@@ -1,8 +1,10 @@
 
 .. _about:
 
-About useblocks team
-============================
+Blog Team
+=========
 
-The world wants to know more about you.
+Daniel Woste
+
+Marco Banse
 

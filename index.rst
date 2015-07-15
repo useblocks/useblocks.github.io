@@ -3,15 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to useblocks team's Blog!
-==========================================
+useblocks Blog!
+===============
 
-Hello World! Find more about me here: :ref:`about`
-
-
-Here is a list of most recent posts:
+Die letzten Einträge
+--------------------
 
 .. postlist:: 5
+   :excerpts:
 
 
 .. `toctree` directive, below, contains list of non-post `.rst` files.

@@ -37,6 +37,7 @@ blog_baseurl = u'True'
 # to refer to the author.  Default is ``{}``.
 blog_authors = {
     'useblocks team': ('useblocks team', None),
+    'Daniel': ('Daniel Woste', 'https://twitter.com/danwos')
 }
 
 
@@ -44,11 +45,12 @@ blog_authors = {
 # links of these languages. Similar to :confval:`blog_authors`, dictionary
 # keys should be used in ``post`` directive to refer to the locations.
 # Default is ``{}``.
-#blog_languages = {
+blog_languages = {
 #    'en': ('English', None),
-#}
+    'de': ('Deutsch', None),
+}
 
-
+blog_default_language = "de"
 # A dictionary of location names mapping to full display names and
 # links of these locations. Similar to :confval:`blog_authors`, dictionary
 # keys should be used in ``post`` directive to refer to the locations.
@@ -60,7 +62,7 @@ blog_authors = {
 
 # -- Blog Post Related --------------------------------------------------------
 
-# post_date_format = '%b %d, %Y'
+post_date_format = '%d.%m.%Y'
 
 
 # Number of paragraphs (default is ``1``) that will be displayed as an excerpt
@@ -199,13 +201,14 @@ release = ''
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = "de"
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
 #today = ''
 # Else, today_fmt is used as the format for a strftime call.
 #today_fmt = '%B %d, %Y'
+today_fmt = ' %d.%m.%Y'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -249,7 +252,10 @@ html_theme = 'alabaster'
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    'github_button': False,
+    'github_user': 'useblocks',
+    'github_repo': 'useblocks.github.io',
+    'github_button': True,
+
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -326,7 +332,7 @@ html_static_path = ['_static']
 # Sphinx supports the following languages:
 #   'da', 'de', 'en', 'es', 'fi', 'fr', 'hu', 'it', 'ja'
 #   'nl', 'no', 'pt', 'ro', 'ru', 'sv', 'tr'
-#html_search_language = 'en'
+html_search_language = 'de'
 
 # A dictionary with options for the search language support, empty by default.
 # Now only 'ja' uses this config value
