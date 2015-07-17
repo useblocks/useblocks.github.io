@@ -4,8 +4,8 @@
    :author: Daniel
    :excerpt: 1
 
-Diagrammerstellung auf effektive Art und Weise
-==============================================
+Effektive Diagrammerstellung mit PlantUML
+=========================================
 
 Mein Problem
 ------------
