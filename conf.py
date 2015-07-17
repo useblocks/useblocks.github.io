@@ -265,6 +265,7 @@ html_theme_options = {
     'logo': 'logo_kreise.png',
     'font_family': 'verdana, arial, non-serif',
     'head_font_family': 'verdana, arial, non-serif',
+    'analytics_id': 'UA-24943544-3',
 
 }
 
