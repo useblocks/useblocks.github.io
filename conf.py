@@ -37,7 +37,9 @@ blog_baseurl = u'True'
 # to refer to the author.  Default is ``{}``.
 blog_authors = {
     'useblocks team': ('useblocks team', None),
-    'Daniel': ('Daniel Woste', 'https://twitter.com/danwos')
+    'Daniel': ('Daniel', 'https://twitter.com/danwos'),
+    'Marco': ('Marco', 'https://www.xing.com/profile/Marco_Banse'),
+    'Carlos': ('Carlos', 'https://www.xing.com/profile/Carlos_Garcia129')
 }
 
 
@@ -259,7 +261,10 @@ html_theme = 'alabaster'
 html_theme_options = {
     'github_user': 'useblocks',
     'github_repo': 'useblocks.github.io',
-    'github_button': True,
+    'github_button': False,
+    'logo': 'logo_kreise.png',
+    'font_family': 'verdana, arial, non-serif',
+    'head_font_family': 'verdana, arial, non-serif',
 
 }
 
