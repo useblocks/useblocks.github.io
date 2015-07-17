@@ -34,7 +34,7 @@ Unsere letzten Beiträge
    :maxdepth: 1
    :hidden:
 
-   useblocks Blog <index.rst>
+   useblocks Blog <http://useblocks.github.io>
    useblocks Website <http://www.useblocks.com>
    datablocks Website <http://www.datablocks.de>
 
