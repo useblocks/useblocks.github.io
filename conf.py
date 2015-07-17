@@ -24,7 +24,7 @@ blog_title = u'useblocks blog Blog'
 
 # Base URL for the website, required for generating feeds.
 # e.g. blog_baseurl = "http://example.com/"
-blog_baseurl = u'True'
+blog_baseurl = "http://useblocks.github.io"
 
 # Choose to archive only post titles. Archiving only titles can speed
 # up project building.
@@ -147,7 +147,7 @@ fontawesome_link_cdn = True
 
 # You can enable Disqus_ by setting ``disqus_shortname`` variable.
 # Disqus_ short name for the blog.
-#disqus_shortname = None
+disqus_shortname = "useblocksblog"
 
 # Choose to disqus pages that are not posts, default is ``False``.
 #disqus_pages = False
