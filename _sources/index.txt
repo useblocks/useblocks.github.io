@@ -6,10 +6,20 @@
 useblocks Blog!
 ===============
 
-Die letzten Einträge
---------------------
+Willkommen auf unserem Team Blog.
+
+Hier dreht sich alles um Themen rund um SW-Entwicklung, Service-Architekturen und Unternehmensprozessen.
+
+Wir als Team sind:
+
+.. image:: /_static/autoren.png
+
+Unsere letzten Beiträge
+-----------------------
 
 .. postlist:: 5
+   :format: {title} von {author} am {date}
+   :date: %d.%m.%Y
    :excerpts:
 
 
@@ -21,7 +31,10 @@ Die letzten Einträge
    in the sidebar both under Navigation and Recent Posts.
 
 .. toctree::
+   :maxdepth: 1
    :hidden:
 
-   about.rst
+   useblocks Blog <index.rst>
+   useblocks Website <http://www.useblocks.com>
+   datablocks Website <http://www.datablocks.de>
 

@@ -13,7 +13,7 @@
     <published>2015-06-20T00:00:00Z</published>
     <link href="True/posts/daniel/stack_sie_zu_knechten_part_4/" />
     <author>
-      <name>Daniel Woste</name>
+      <name>Daniel</name>
     </author>
     <content type="html">&lt;p&gt;Im letzten Teil der Serie ging es um unsere Wünsche in Richtung Entwicklungsprozess und SW Stack. Dieser Teil befasst sich nun mit den notwendigen Entwicklungsschritten einer einzelnen Änderung.&lt;/p&gt;
 </content>
@@ -25,7 +25,7 @@
     <published>2015-06-19T00:00:00Z</published>
     <link href="True/posts/daniel/stack_sie_zu_knechten_part_3/" />
     <author>
-      <name>Daniel Woste</name>
+      <name>Daniel</name>
     </author>
     <content type="html">&lt;p&gt;Quo vadis? Wie soll&amp;#8217;s weitergehen?&lt;/p&gt;
 &lt;p&gt;Dieser Teil aus der Serie über unseren SW-Stack bei useblocks befass sich mit den Wünschen, die wir für den SW-Stack aber auch für unseren Entwicklungsprozess haben.&lt;/p&gt;
@@ -38,7 +38,7 @@
     <published>2015-06-18T00:00:00Z</published>
     <link href="True/posts/daniel/stack_sie_zu_knechten_part_2/" />
     <author>
-      <name>Daniel Woste</name>
+      <name>Daniel</name>
     </author>
     <content type="html">&lt;p&gt;Dieser Teil der Serie befasst sich mit den aktuell verwendeten Technologien und Libraries sowie mit der SW-Architektur selbst. Am Ende werden die Probleme genauer erörtert, die wir mit dem aktuellen Stand haben.&lt;/p&gt;
 </content>
@@ -50,7 +50,7 @@
     <published>2015-06-17T00:00:00Z</published>
     <link href="True/posts/daniel/stack_sie-zu_knechten_part_1/" />
     <author>
-      <name>Daniel Woste</name>
+      <name>Daniel</name>
     </author>
     <content type="html">&lt;p&gt;Dieses ist der erste Teil einer Serien über den beim Projekt groundwork eingesetzten SW-Stack.&lt;/p&gt;
 &lt;p&gt;Der erste Teile ist eine Art Einleitung zum Thema, während der Teil 2 den aktuellen, technischen Stand und seine Probleme wieder gibt. Teil 3 beschäftigt sich dann mit den konkreten Wünschen, die wir für unser zukünftige SW-Entwicklungsumgebung haben. Danach geht es mit den Teilen 4 + 5 in die Umsetzung, getrennt nach Prozess und SW-Stack.&lt;/p&gt;
