@@ -1,4 +1,4 @@
-.. post::
+.. post:: 18 Jul, 2015
    :tags: alt, neu, turn_over
    :category: Life
    :author: Daniel
@@ -200,23 +200,25 @@ Was genau passiert, kann man hier nachlesen: http://ablog.readthedocs.org/manual
 
 Diagramme mit PlantUML
 ----------------------
+.. _PlantUML: http://plantuml.sourceforge.net/
 
-Falls man im Blog öfters Klassen-Diagramme oder Ablaufpläne veröffentlichen möchte, dann bitte diese Eitnrag lesen...
+Falls man im Blog öfters Klassen-Diagramme oder Ablaufpläne veröffentlichen möchte, dann kann man auch noch `PlantUML`_ in
+die Blog-SW einbinden. Dazu haben ich folgenden Artikel verfasst:
+:ref:`diagramme_mit_plantuml`
 
-Mit PlantUML wird aus folgendem im Blog-Text::
+Um Lust auf mehr zu machen: Mit `PlantUML`_ wird aus folgendem im Post::
 
-    @startuml
-    object hans
-    object peter
-    object emma
+    .. uml::
+        object hans
+        object peter
+        object emma
 
-    hans --> peter
-    peter --> emma
-    emma ..> peter
-    emma ..> hans
-    @enduml
+        hans --> peter
+        peter --> emma
+        emma ..> peter
+        emma ..> hans
 
-schnell und einfach ein Bild:
+schnell und einfach dieses Bild:
 
 .. uml::
     object hans
@@ -227,10 +229,97 @@ schnell und einfach ein Bild:
     emma ..> peter
     emma ..> hans
 
-TravisCi
+
+
+TravisCI
 --------
+.. _TravisCI: http://travisci.org
 
+`TravisCI`_ kann dazu benutzt werden den Blog immer dann automatisch zu bauen und zu veröffentlichen, wenn im Branch
+**sources** Änderungen gepusht wurden.
 
+Da github es erlaubt Dateien direkt auf ihrer Webseite zu editieren, kann man also auch auf diese Weise den Blog updaten,
+ohne das man Zugriff auf sein eigenes System haben muss. Eine Rechner mit einer Internentverbindung reicht aus.
 
+Das notwendige Vorgehen ist folgendes:
 
+1. Auf http://travisci.org mit dem github Account anmelden
+2. Repositiory aussuchen und aktivieren
+3. Im Branch **sources** eine **.travis.yml* als Konfigurationsdatei für `TravisCI`_ erstellen.
 
+Anmeldung ind Config bei TravisCI
+*********************************
+
+Nach der Anmeldung muss das richtige Repository unter *Accounts* aktiviert werden.
+
+.. image:: images/travisci_account.png
+
+Danach auf das *Zahnrad* klicken und im Tab *Settings folgendes einstellen:
+
+.. image:: images/travisci_settings.png
+
+**Build only if .travis.yml is present**: Da wird diese Datei nur im Branch **master** anlegen werden und
+auch nur bei Ändeurngen in diesem Branch der Blog neu
+gebaut werden muss, verhindern wir so, dass auch bei Änderungen in andern Branches wie z.B. **sources** `TravisCI`_
+aktiv wird.
+
+**Build pushes**: Bauen, wenn Änderungen gepusht wurden.
+
+**Build pull request**: Deaktivieren, da es für uns keinen Sinn macht zu bauen, wenn wir eine lokale Kopie ziehen.
+
+Damit `TravisCI`_ den gebauten Blog auch auf `github`_ veröffentliche darf, braucht es einen Access Token.
+Den bekommt man auf `github`_ unter Settings --> Personal access tokens.
+
+.. image:: images/github_access_token.png
+
+Diesen teilt man `TravisCI` über die *Environment Variable* **DEPLOY_KEY* mit.
+
+.. image:: images/travisci_env.png
+
+Wichtig: **Display value in build logs** sollte auf **Off** stehen, wenn man nicht will, dass andere mit dem Key ebenfalls
+Änderungen am Blog einspeisen dürfen.
+
+Als letzter Schritt bleibt jetzt nur noch das Anlegen der **.travis.yml** Datei im Branch **sources**::
+
+    cd WORKSPACE/ACCOUNTNAME.github.io
+    nano .travis.yml
+
+Dort folgendes eintragen::
+
+    language: python
+
+    python:
+      - "3.4"
+
+    sudo: required
+
+    before_install:
+    - "sudo apt-get install graphviz"
+
+    install:
+      - "pip install ablog"
+      - "pip install sphinxcontrib-plantuml"
+
+    script:
+      - ablog build
+
+    after_success:
+      - git config --global user.name "Daniel Woste"
+      - git config --global user.email "daniel.woste@useblocks.com"
+      - git config --global push.default simple
+      - ablog deploy --push-quietly --github-token=DEPLOY_KEY -m="`git log -1 --pretty=%B`"
+
+Es muss für den eigentlichen Build ein Software installiert werden, damit auch alles klappt.
+Das sind vor allem `ABlog`_ und PlantUML.
+
+Für PlantUML muss auch *graphviz* installiert werden. Dies geht allerdings nicht über pip, so dass wir es über
+den Linux-Packet-Manager installieren müssen. Da dieser Roo-Rechte braucht, müssen wir die Zeile *sudo: required* setzen.
+
+.. note:: sudo: required führt dazu, dass unser Build nicht in einer Docker-Umgebung sondern auf einer
+   virtuellen Maschine läuft, auf der man per *sudo* Root-Rechte bekommen kann.
+
+Das eigentliche *Deployen* übernimmt `ABlog`_ für uns. Daher ist es wichtig, dass die Parameter **github_pages** in der
+**conf.py** richtig gesetzt ist.
+
+.. note:: Es gibt vom `ABLog`_-Autor selbt einen guten Post über die Verwendung von `TravisCI`_:
+   http://ablog.readthedocs.org/manual/auto-github-pages-deploys/
