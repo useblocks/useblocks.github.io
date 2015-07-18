@@ -1,5 +1,8 @@
 # ABLOG stuff
 _website/
+useblocks.github.io/
+.doctrees
+.doctrees/
 
 # IntelliJ / Pycharm
 .idea/

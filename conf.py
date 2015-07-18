@@ -30,6 +30,9 @@ blog_baseurl = "http://useblocks.github.io"
 # up project building.
 #blog_archive_titles = False
 
+# Name of the github page. without github.io, will be added automatically by ablog
+github_pages = "useblocks"
+
 # -- Blog Authors, Languages, and Locations -----------------------------------
 
 # A dictionary of author names mapping to author full display names and
