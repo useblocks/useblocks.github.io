@@ -3,6 +3,11 @@ language: python
 python:
   - "3.4"
 
+sudo: required
+
+before_install:
+- "sudo apt-get install graphviz"
+
 install:
   - "pip install ablog"
   - "pip install sphinxcontrib-plantuml"
