@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Der perfekte Blog für Entwickler &mdash; useblocks blog  Dokumentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <link rel="top" title="useblocks blog  Dokumentation" href="../../../" />
+  
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+    ul.post-list-style-disc {list-style-type: disc;}
+    ul.post-list-style-none {list-style-type: none;}
+    ul.post-list-style-circle {list-style-type: circle;}
+  </style>
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="der-perfekte-blog-fur-entwickler">
+<h1>Der perfekte Blog für Entwickler<a class="headerlink" href="#der-perfekte-blog-fur-entwickler" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Ich habe in den letzten Jahren ein paar Blog-Systeme getestet und da mir die Systeme keine Spaß gemacht haben bzw.
+zahlreiche Funktionen zu kompliziert implementiert waren oder einfachste Sachen gar fehlten, habe ich das Bloggen oft
+schnell eingestellt.</p>
+<p>Damit soll jetzt Schluss sein und ich habe versucht ein Blog-System aufzusetzen, das viel Arbeit abnimmt und das
+sich von der eigentlichen Tätigkeit eines SW-Entwicklers, dem Code schreiben, nicht zu sehr unterscheidet.</p>
+<p>Wilkommen bei meinem Tutorial über die geilste Blog-Environment für die faulsten und damit besten Entwickler der Welt.</p>
+<p>Wir werden folgendes zusammenenbauen (Details in den jeweiligen Kapiteln):</p>
+<ul class="simple">
+<li>github pages / github.io: Als Speicherplatz und Server für unseren Blog</li>
+<li>Sphinx mit Restructured Text: Als einfaches System zum Schreiben von Texten/Dokumenten</li>
+<li>ABlog: Eine Sphinx-Erweiterung, um aus Sphinx einen Blog zu machen</li>
+<li>Disqus: Als Kommentar-Möglichkeit für den Blog</li>
+<li>PlantUML: Für die Erstellung von Diagrammen</li>
+<li>TravisCI: Zum automatisieren Bauen des Blog, sobald Änderungen vorgenommen wurden</li>
+</ul>
+<div class="section" id="github-speicherplatz-und-blog-auslieferung">
+<h2>github: Speicherplatz und Blog-Auslieferung<a class="headerlink" href="#github-speicherplatz-und-blog-auslieferung" title="Link zu dieser Überschrift">¶</a></h2>
+<p><a class="reference external" href="https://github.com/">github</a> ist perfekt zum Speichern von Code und dank <a class="reference external" href="https://pages.github.com/">github pages</a> ist auch perfekt zum Ausliefern von statischen
+HTML Inhalten, was unser Blog zum Glück ist.</p>
+<p>Von <a class="reference external" href="https://pages.github.com/">github pages</a> kann man seine projekt/repositiory-spezifischen Seiten hosten lassen oder aber auch genau eine Seite
+für seinen Account oder dem seiner Firma. Ich gehe hier davon aus, dass wir eine accountspezifische Seite erstellen
+wollen. Daher muss man im github folgendes Repository anlegen: <strong>ACCOUNTNAME.github.io</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Bei eine Seite für ein Projekt darf es kein extra Repository sein. Sondern im Projekt-Repo muss ein Branch
+<strong>gh_pages</strong> angelegt werden, in dem die folgende Schritte dann angewendet werden müssen.</p>
+</div>
+<p><a class="reference external" href="https://github.com/">github</a> erwartet, dass im Branch master auf der obersten Ebene eine <strong>index.html</strong> Datei vorhanden ist, diese wird
+dann bei Aufruf von <a class="reference external" href="http://ACCOUNTNAME.github.io">http://ACCOUNTNAME.github.io</a> ausgeliefert.</p>
+<p>Auf der github-Seite lassen wir für unser Repository auch gleich ein neuen Branch anlegen: <strong>sources</strong>
+Dieser Branch enthält später die orginalen Blog-Dateien (Posts, Config, Themes, ...), während der Branch <strong>master</strong>
+nur die generierten HTML-Seiten (der fertige Blog) enthalten soll.</p>
+<p>Wir öffnen nun eine Konsole/Bash/Windows-Terminal und führen folgendes aus:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd WORKSPACE
+git clone http://github.com/ACCOUNTNAME/ACCOUNTNAME.github.io -b sources
+cd ACCOUNTNAME.github.io
+mkdir _website
+cd _website
+git clone http://gothub.com/ACCOUNTNAME/ACCOUNTNAME.github.io -b sources master
+</pre></div>
+</div>
+<p>Die Erklärung im Detail</p>
+<ul class="simple">
+<li>Zeile 1: Hier in ein Verzeichnis wechseln, dass man eventuell für all seine Projekte verwendet</li>
+<li>Zeile 2: Wir klonen das Projekt, aber direkt den Branch <strong>sources</strong></li>
+<li>Zeile 3: In das (noch leere) Projekte-Verzeichnis wechseln. Dies wird spätere unsere Blog-Daten enthalten</li>
+<li>Zeile 4: Das Verzeichnis <strong>_website</strong> wird später von <strong>ablog</strong> angelegt, um dort den generierten Blog zu speichern.
+Wir kommen dem zuvor.</li>
+<li>Zeile 5: Wir clonen den <strong>master</strong> Branch, damit wir nach der Blog-Generierung hier später unseren Blog einfach commiten können.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Ich weiß, wir haben jetzt ein git-Repository innerhalb eines git-Repositories geklont. Ganz böser Stil. Eleganter
+wäre die Verwendung von git submodules.</p>
+</div>
+<p>Wir wechseln wieder zu zum Verzeichnis für den <strong>sources</strong> Branch <em>WORKSPACE/ACCOUNTNAME.github.io</em> und legen dort die Datei
+<em>.gitignore</em> mit folgendem Inhalt an:</p>
+<div class="highlight-python"><div class="highlight"><pre># ABLOG stuff
+_website/
+useblocks.github.io/
+.doctrees
+.doctrees/
+</pre></div>
+</div>
+<p>Dies sorgt dafür, dass in dem <strong>sources</strong> Branch die generierte Webseite nicht mitgespeichert wird.</p>
+</div>
+<div class="section" id="sphinx-and-ablog">
+<h2>Sphinx and ABlog<a class="headerlink" href="#sphinx-and-ablog" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Erstmal <a class="reference external" href="http://sphinx-doc.org">Sphinx</a> und <a class="reference external" href="http://ablog.readthedocs.org/">ABlog</a> installieren.</p>
+<p>Für Linux auf Systemebenen:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install python-sphinx
+# Danach
+pip install -U ablog
+# Falls Python3 geünwscht ist, python3-sphinx und pip3 verwenden
+</pre></div>
+</div>
+<p>Falls Phthon schon installiert ist oder eine Virtual Environment verwendet werden soll:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install sphinx
+pip install -U ablog
+</pre></div>
+</div>
+<p>Danach können wir unseren Blog anlegen lassen:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd WORKSPACE/ACCOUNTNAME.github.io
+ablog start
+</pre></div>
+</div>
+<p>Nun werden ein paar Daten abgefragt, ein ENTER übernimmt die empfohlenen Vorauswahl in den []-Klammern.
+All diese Optionen können auch noch nachträglich ohne Probleme geändert werden.</p>
+<p>Wenn das abgeschlossen ist, kann man seinen Blog bauen und lokal ausliefern lassen:</p>
+<div class="highlight-python"><div class="highlight"><pre>ablog build # Baut den Blog im Verzeichnis _webseite
+ablog serve # Startet einen kleinen Server und öffnet den Browser mit dem Blog
+</pre></div>
+</div>
+<p>Man kann den eingebauten ABlog-Server so konfigurieren, dass er bei Änderungen an den Blog-Quell-Dateien den Blog
+direkt neu baut und wieder ausliefert. Dafür muss noch <strong>watchdog</strong> installiert werden:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install watchdog
+</pre></div>
+</div>
+<p>Jetzt reicht ein <strong>ablog -r</strong>, um immer den aktuellen Stand im Browser zu sehen.</p>
+<div class="section" id="conf-py">
+<h3>Conf.py<a class="headerlink" href="#conf-py" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Wir müssen nun ein paar Änderungen an der sphinx-Konfigurationsdatei vornehmen, die mit in eurem Blog-Verzeichniss
+angelegt wurde. Öffnet die <strong>conf.py</strong> und ändert folgende Parameter (Evtl. müssen 1-2 Sachen auch ganz neu gesetzt werden.):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">blog_baseurl</span> <span class="o">=</span> <span class="s">&quot;http://ACCOUNTNAME.github.io&quot;</span>
+<span class="n">github_pages</span> <span class="o">=</span> <span class="s">&quot;ACCOUNTNAME&quot;</span> <span class="c"># ohne github.io</span>
+<span class="n">post_date_format</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%d</span><span class="s">.%m.%Y&#39;</span> <span class="c"># Falls das deutsche Datumsformat verwendet werden soll</span>
+<span class="n">today_fmt</span> <span class="o">=</span> <span class="s">&#39; </span><span class="si">%d</span><span class="s">.%m.%Y&#39;</span> <span class="c"># Siehe oben :)</span>
+</pre></div>
+</div>
+<p><strong>Weitere Einstellungen</strong></p>
+<p><a class="reference external" href="http://sphinx-doc.org">Sphinx</a>, <a class="reference external" href="http://ablog.readthedocs.org/">ABlog</a> und auch das standardmäßig verwendete Theme <a class="reference external" href="https://github.com/bitprophet/alabaster">Alabaster</a> besitzen eine Menge Konfigurationsparameter,
+die interessant und nützlich sein können. Schaut dazu am besten in deren Doku rein.</p>
+<p>Falls ihr die <strong>conf.py</strong> dieses Blogs anschauen wollt, diese findet ihr hier: <a class="reference external" href="https://github.com/useblocks/useblocks.github.io/blob/sources/conf.py">https://github.com/useblocks/useblocks.github.io/blob/sources/conf.py</a></p>
+</div>
+</div>
+<div class="section" id="ablog-verwenden">
+<h2>ABlog verwenden<a class="headerlink" href="#ablog-verwenden" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ok, das Thema würde diesen Post bei weitem sprengen. Schaut dazu bitte bei <a class="reference external" href="http://ablog.readthedocs.org/">ABlog</a> vorbei.</p>
+</div>
+<div class="section" id="disqus">
+<h2>Disqus<a class="headerlink" href="#disqus" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Disqus ist eine Kommentar-Plattform, die sich in Webseiten einbinden lässt.</p>
+<p>Die Kommentare erscheinen unterhalb des jeweiligen Blog-Eintrages und Besucher eures Blogs können dort Kommentar direkt
+hinterlassen.</p>
+<p>Disqus selbst bietet eine Reihe von Funktionen, damit ihr die Kommentar sinnvollen moderieren könnt: Bestätigung für Veröffentlichung,
+Wort-Filter, Spam-Checks, ....</p>
+<img alt="../../../_images/disqus.png" src="../../../_images/disqus.png" />
+<p>Damit ihr <a class="reference external" href="https://disqus.com/">Disqus</a> intergrieren könnt, müsst ihr einen Account haben und eure Website registrieren.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p class="last">Damit ist <strong>nicht</strong> die Registrierung eines Channels gemeint! Das ist was anderes, kann z.Z. nicht gelöscht werden
+und führt nur zu Verwirrungen. Also folgenden Screenshot ansehen :)</p>
+</div>
+<img alt="../../../_images/disqus_register.png" src="../../../_images/disqus_register.png" />
+<p>Disqus vergibt einen <em>shortname</em> für eure Webseite. Den braucht ihr, um ihn in die <strong>conf.py</strong> einzutragen:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">disqus_shortname</span> <span class="o">=</span> <span class="s">&quot;useblocksblog&quot;</span>
+</pre></div>
+</div>
+<p>Das war&#8217;s auch schon mit <a class="reference external" href="https://disqus.com/">Disqus</a> und euer Blog sollte nun Kommentare unterstützen.</p>
+</div>
+<div class="section" id="first-deploy">
+<h2>First Deploy<a class="headerlink" href="#first-deploy" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um überprüfen zu können, ob wirklich alles richtig funktioniert (gerade <a class="reference external" href="https://disqus.com/">Disqus</a> mag lokal nicht gehen), laden wir nun
+den Blog auf github hoch:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd WORKSPACE/ACCOUNTNAME.github.io
+ablog build # Blog bauen
+
+# Sources sichern
+git add -A
+git commit -m &quot;Changed config to use disqus and other features&quot;
+git push origin sources
+
+# Webseite/Blog veröffentlichen
+cd _website
+git add -A
+git commit -m &quot;Changed config to use disqus and other features&quot;
+git push origin master
+</pre></div>
+</div>
+<p>Das war&#8217;s. Unter <a class="reference external" href="http://ACCOUNTNAME.github.io">http://ACCOUNTNAME.github.io</a> soltle der Blog nun online sein.</p>
+<p>Der letzte Schritt kann auch <a class="reference external" href="http://ablog.readthedocs.org/">ABlog</a> übernehmen, wenn in der <strong>conf.py</strong> <em>github_pages</em> richtig gesetzt ist.
+Dann reicht auch folgendes aus:</p>
+<div class="highlight-python"><div class="highlight"><pre>ablog deploy
+</pre></div>
+</div>
+<p>Was genau passiert, kann man hier nachlesen: <a class="reference external" href="http://ablog.readthedocs.org/manual/deploy-to-github-pages/#deploy-to-github-pages">http://ablog.readthedocs.org/manual/deploy-to-github-pages/#deploy-to-github-pages</a></p>
+</div>
+<div class="section" id="diagramme-mit-plantuml">
+<h2>Diagramme mit PlantUML<a class="headerlink" href="#diagramme-mit-plantuml" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Falls man im Blog öfters Klassen-Diagramme oder Ablaufpläne veröffentlichen möchte, dann bitte diese Eitnrag lesen...</p>
+<p>Mit PlantUML wird aus folgendem im Blog-Text:</p>
+<div class="highlight-python"><div class="highlight"><pre>@startuml
+object hans
+object peter
+object emma
+
+hans --&gt; peter
+peter --&gt; emma
+emma ..&gt; peter
+emma ..&gt; hans
+@enduml
+</pre></div>
+</div>
+<p>schnell und einfach ein Bild:</p>
+<p class="plantuml">
+<img src="../../../_images/plantuml-3440606d91f5fe2fdccccf3b1c70145d4f4fcf30.png" alt="object hans
+object peter
+object emma
+hans --&gt; peter
+peter --&gt; emma
+emma ..&gt; peter
+emma ..&gt; hans" />
+</p>
+</div>
+<div class="section" id="travisci">
+<h2>TravisCi<a class="headerlink" href="#travisci" title="Link zu dieser Überschrift">¶</a></h2>
+</div>
+</div>
+
+  <div class="section">
+  
+    
+
+
+  
+  
+  </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../../../">
+    <img class="logo" src="../../../_static/logo_kreise.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+  
+  
+  <h2>
+  
+    <i class="fa fa-pencil"></i>
+     Draft 
+  
+  </h2>
+
+  <ul>
+    
+
+  
+  <li><i class="fa-fw fa fa-user"></i>
+    
+      
+      <a href="../../../blog/author/daniel/">Daniel</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li><i class="fa-fw fa fa-folder-open"></i>
+    
+      
+      <a href="../../../blog/category/life/">Life</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tags"></i>
+      
+    
+      
+      <a href="../../../blog/tag/alt/">alt</a>,
+      
+    
+      
+      <a href="../../../blog/tag/neu/">neu</a>,
+      
+    
+      
+      <a href="../../../blog/tag/turn_over/">turn_over</a>
+      
+    </li>
+  
+  
+  </ul>
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="http://useblocks.github.io">useblocks Blog</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.useblocks.com">useblocks Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://www.datablocks.de">datablocks Website</a></li>
+</ul>
+
+
+  <h3><a href="../../../blog/">Neue Einträge</a></h3>
+  <ul>
+    
+    
+      <li><a href="../diagramme_mit_plantuml/">Jul 17 - Effektive Diagrammerstellung mit PlantUML</a></li>
+    
+      <li><a href="../stack_sie_zu_knechten_part_4/">Jun 20 - Teil 4: Entwicklungsschritte</a></li>
+    
+      <li><a href="../stack_sie_zu_knechten_part_3/">Jun 19 - Teil 3: Wunschkonzert</a></li>
+    
+      <li><a href="../stack_sie_zu_knechten_part_2/">Jun 18 - Teil 2: Stand der Dinge</a></li>
+    
+      <li><a href="../stack_sie-zu_knechten_part_1/">Jun 17 - Teil 1: Alles doof! Alles neu!</a></li>
+    
+  </ul>
+
+  <h3><a href="../../../blog/tag/">Schlagworte</a></h3>
+  <style type="text/css">
+    ul.ablog-cloud {list-style: none; overflow: auto;}
+    ul.ablog-cloud li {float: left; height: 20pt; line-height: 18pt; margin-right: 5px;}
+    ul.ablog-cloud a {text-decoration: none; vertical-align: middle;}
+    li.ablog-cloud-1{font-size: 80%;}
+    li.ablog-cloud-2{font-size: 95%;}
+    li.ablog-cloud-3{font-size: 110%;}
+    li.ablog-cloud-4{font-size: 125%;}
+    li.ablog-cloud-5{font-size: 140%;}
+  </style>
+  <ul class="ablog-cloud">
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/alt/">alt</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/neu/">neu</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/turn_over/">turn_over</a></li>
+      
+    
+  </ul>
+
+  <h3><a href="../../../blog/category/">Kategorien</a></h3>
+  <ul>
+  
+    
+    <li><a href="../../../blog/category/life/">Life (5)</a></li>
+    
+  
+  </ul>
+
+  <h3><a href="../../../blog/archive/">Archive</a></h3>
+  <ul>
+  
+    
+    <li><a href="../../../blog/2015/">2015 (5)</a></li>
+    
+  
+  </ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <form class="search" action="../../../search/" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, useblocks team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="../../../_sources/posts/daniel/sphinx_blog.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-24943544-3']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>
