@@ -258,9 +258,9 @@ Danach auf das *Zahnrad* klicken und im Tab *Settings folgendes einstellen:
 
 .. image:: images/travisci_settings.png
 
-**Build only if .travis.yml is present**: Da wird diese Datei nur im Branch **master** anlegen werden und
-auch nur bei Ändeurngen in diesem Branch der Blog neu
-gebaut werden muss, verhindern wir so, dass auch bei Änderungen in andern Branches wie z.B. **sources** `TravisCI`_
+**Build only if .travis.yml is present**: Da wird diese Datei nur im Branch **sources** anlegen werden und
+auch nur bei Änderungen in diesem Branch der Blog neu
+gebaut werden muss, verhindern wir so, dass auch bei Änderungen in andern Branches wie z.B. **master** `TravisCI`_
 aktiv wird.
 
 **Build pushes**: Bauen, wenn Änderungen gepusht wurden.
