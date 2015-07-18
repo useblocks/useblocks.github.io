@@ -8,10 +8,10 @@
   <generator uri="http://ablog.readthedocs.org" version="0.7.6">ABlog</generator>
   <entry xml:base="http://useblocks.github.io/blog/atom.xml">
     <title type="text">Effektive Diagrammerstellung mit PlantUML</title>
-    <id>http://useblocks.github.io/posts/daniel/plantuml_init/</id>
+    <id>http://useblocks.github.io/posts/daniel/diagramme_mit_plantuml/</id>
     <updated>2015-07-17T00:00:00Z</updated>
     <published>2015-07-17T00:00:00Z</published>
-    <link href="http://useblocks.github.io/posts/daniel/plantuml_init/" />
+    <link href="http://useblocks.github.io/posts/daniel/diagramme_mit_plantuml/" />
     <author>
       <name>Daniel</name>
     </author>
