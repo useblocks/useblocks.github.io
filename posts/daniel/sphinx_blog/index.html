@@ -52,39 +52,39 @@
             
   <div class="section" id="der-perfekte-blog-fur-entwickler">
 <h1>Der perfekte Blog für Entwickler<a class="headerlink" href="#der-perfekte-blog-fur-entwickler" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Ich habe in den letzten Jahren ein paar Blog-Systeme getestet und da mir die Systeme keine Spaß gemacht haben bzw.
+<p>Ich habe in den letzten Jahren ein paar Blog-Systeme getestet und da mir die Systeme keinen Spaß gemacht haben bzw.
 zahlreiche Funktionen zu kompliziert implementiert waren oder einfachste Sachen gar fehlten, habe ich das Bloggen oft
 schnell eingestellt.</p>
 <p>Damit soll jetzt Schluss sein und ich habe versucht ein Blog-System aufzusetzen, das viel Arbeit abnimmt und das
 sich von der eigentlichen Tätigkeit eines SW-Entwicklers, dem Code schreiben, nicht zu sehr unterscheidet.</p>
-<p>Wilkommen bei meinem Tutorial über die geilste Blog-Environment für die faulsten und damit besten Entwickler der Welt.</p>
-<p>Wir werden folgendes zusammenenbauen (Details in den jeweiligen Kapiteln):</p>
+<p>Willkommen bei meinem Tutorial über die geilste Blog-SW-Umgebung für die faulsten und damit besten Entwickler der Welt.</p>
+<p>Wir werden Folgendes zusammenenbauen (Details in den jeweiligen Kapiteln):</p>
 <ul class="simple">
 <li>github pages / github.io: Als Speicherplatz und Server für unseren Blog</li>
 <li>Sphinx mit Restructured Text: Als einfaches System zum Schreiben von Texten/Dokumenten</li>
 <li>ABlog: Eine Sphinx-Erweiterung, um aus Sphinx einen Blog zu machen</li>
 <li>Disqus: Als Kommentar-Möglichkeit für den Blog</li>
 <li>PlantUML: Für die Erstellung von Diagrammen</li>
-<li>TravisCI: Zum automatisieren Bauen des Blog, sobald Änderungen vorgenommen wurden</li>
+<li>TravisCI: Zum automatisierten Bauen des Blogs, sobald Änderungen vorgenommen wurden</li>
 </ul>
 <div class="section" id="github-speicherplatz-und-blog-auslieferung">
 <h2>github: Speicherplatz und Blog-Auslieferung<a class="headerlink" href="#github-speicherplatz-und-blog-auslieferung" title="Link zu dieser Überschrift">¶</a></h2>
-<p><a class="reference external" href="https://github.com/">github</a> ist perfekt zum Speichern von Code und dank <a class="reference external" href="https://pages.github.com/">github pages</a> ist auch perfekt zum Ausliefern von statischen
-HTML Inhalten, was unser Blog zum Glück ist.</p>
-<p>Von <a class="reference external" href="https://pages.github.com/">github pages</a> kann man seine projekt/repositiory-spezifischen Seiten hosten lassen oder aber auch genau eine Seite
+<p><a class="reference external" href="https://github.com/">github</a> ist perfekt zum Speichern von Code und Dank <a class="reference external" href="https://pages.github.com/">github pages</a> auch perfekt zum Ausliefern von statischen
+HTML-Inhalten, was unser Blog zum Glück ist.</p>
+<p>Von <a class="reference external" href="https://pages.github.com/">github pages</a> kann man seine projekt/repository-spezifischen Seiten hosten lassen oder aber auch genau eine Seite
 für seinen Account oder dem seiner Firma. Ich gehe hier davon aus, dass wir eine accountspezifische Seite erstellen
-wollen. Daher muss man im github folgendes Repository anlegen: <strong>ACCOUNTNAME.github.io</strong></p>
+wollen. Daher muss man in github folgendes Repository anlegen: <strong>ACCOUNTNAME.github.io</strong></p>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
-<p class="last">Bei eine Seite für ein Projekt darf es kein extra Repository sein. Sondern im Projekt-Repo muss ein Branch
-<strong>gh_pages</strong> angelegt werden, in dem die folgende Schritte dann angewendet werden müssen.</p>
+<p class="last">Bei einer Seite für ein Projekt darf es kein extra Repository sein. Sondern im Projekt-Repo muss ein Branch
+<strong>gh_pages</strong> angelegt werden, in dem die folgenden Schritte dann angewendet werden müssen.</p>
 </div>
-<p><a class="reference external" href="https://github.com/">github</a> erwartet, dass im Branch master auf der obersten Ebene eine <strong>index.html</strong> Datei vorhanden ist, diese wird
-dann bei Aufruf von <a class="reference external" href="http://ACCOUNTNAME.github.io">http://ACCOUNTNAME.github.io</a> ausgeliefert.</p>
-<p>Auf der github-Seite lassen wir für unser Repository auch gleich ein neuen Branch anlegen: <strong>sources</strong>
-Dieser Branch enthält später die orginalen Blog-Dateien (Posts, Config, Themes, ...), während der Branch <strong>master</strong>
-nur die generierten HTML-Seiten (der fertige Blog) enthalten soll.</p>
-<p>Wir öffnen nun eine Konsole/Bash/Windows-Terminal und führen folgendes aus:</p>
+<p><a class="reference external" href="https://github.com/">github</a> erwartet, dass im Branch <strong>master</strong> auf der obersten Ebene eine <strong>index.html</strong> Datei vorhanden ist.
+Diese wird dann bei Aufruf von <a class="reference external" href="http://ACCOUNTNAME.github.io">http://ACCOUNTNAME.github.io</a> ausgeliefert.</p>
+<p>Auf der github-Seite lassen wir für unser Repository auch gleich einen neuen Branch anlegen: <strong>sources</strong>.
+Dieser Branch enthält später die orginallen Blog-Dateien (Posts, Config, Themes, ...), während der Branch <strong>master</strong>
+nur die generierten HTML-Seiten (den fertige Blog) enthalten soll.</p>
+<p>Wir öffnen nun eine Konsole und führen Folgendes aus:</p>
 <div class="highlight-python"><div class="highlight"><pre>cd WORKSPACE
 git clone http://github.com/ACCOUNTNAME/ACCOUNTNAME.github.io -b sources
 cd ACCOUNTNAME.github.io
@@ -95,19 +95,19 @@ git clone http://gothub.com/ACCOUNTNAME/ACCOUNTNAME.github.io -b sources master
 </div>
 <p>Die Erklärung im Detail</p>
 <ul class="simple">
-<li>Zeile 1: Hier in ein Verzeichnis wechseln, dass man eventuell für all seine Projekte verwendet</li>
-<li>Zeile 2: Wir klonen das Projekt, aber direkt den Branch <strong>sources</strong></li>
-<li>Zeile 3: In das (noch leere) Projekte-Verzeichnis wechseln. Dies wird spätere unsere Blog-Daten enthalten</li>
-<li>Zeile 4: Das Verzeichnis <strong>_website</strong> wird später von <strong>ablog</strong> angelegt, um dort den generierten Blog zu speichern.
+<li>Zeile 1: Hier in ein Verzeichnis wechseln, dass man eventuell für all seine Projekte verwendet.</li>
+<li>Zeile 2: Wir klonen das Projekt, aber direkt den Branch <strong>sources</strong>.</li>
+<li>Zeile 3: In das (noch leere) Projekte-Verzeichnis wechseln. Dies wird später unsere Blog-Daten enthalten.</li>
+<li>Zeile 4: Das Verzeichnis <strong>_website</strong> wird später von <strong>ABlog</strong> angelegt, um dort den generierten Blog zu speichern.
 Wir kommen dem zuvor.</li>
-<li>Zeile 5: Wir clonen den <strong>master</strong> Branch, damit wir nach der Blog-Generierung hier später unseren Blog einfach commiten können.</li>
+<li>Zeile 5: Wir klonen den Branch <strong>master</strong>, damit wir nach der Blog-Generierung hier später unseren Blog einfach commiten können.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
 <p class="last">Ich weiß, wir haben jetzt ein git-Repository innerhalb eines git-Repositories geklont. Ganz böser Stil. Eleganter
 wäre die Verwendung von git submodules.</p>
 </div>
-<p>Wir wechseln wieder zu zum Verzeichnis für den <strong>sources</strong> Branch <em>WORKSPACE/ACCOUNTNAME.github.io</em> und legen dort die Datei
+<p>Wir wechseln wieder für den Branch <strong>sources</strong> ins Verzeichnis <em>WORKSPACE/ACCOUNTNAME.github.io</em> und legen dort die Datei
 <em>.gitignore</em> mit folgendem Inhalt an:</p>
 <div class="highlight-python"><div class="highlight"><pre># ABLOG stuff
 _website/
@@ -116,19 +116,19 @@ useblocks.github.io/
 .doctrees/
 </pre></div>
 </div>
-<p>Dies sorgt dafür, dass in dem <strong>sources</strong> Branch die generierte Webseite nicht mitgespeichert wird.</p>
+<p>Dies sorgt dafür, dass in dem Branch <strong>sources</strong> die generierte Webseite nicht mitgespeichert wird.</p>
 </div>
 <div class="section" id="sphinx-and-ablog">
 <h2>Sphinx and ABlog<a class="headerlink" href="#sphinx-and-ablog" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Erstmal <a class="reference external" href="http://sphinx-doc.org">Sphinx</a> und <a class="reference external" href="http://ablog.readthedocs.org/">ABlog</a> installieren.</p>
-<p>Für Linux auf Systemebenen:</p>
+<p>Für Linux auf Systemebene:</p>
 <div class="highlight-python"><div class="highlight"><pre>sudo apt-get install python-sphinx
 # Danach
 pip install -U ablog
 # Falls Python3 geünwscht ist, python3-sphinx und pip3 verwenden
 </pre></div>
 </div>
-<p>Falls Phthon schon installiert ist oder eine Virtual Environment verwendet werden soll:</p>
+<p>Falls Python schon installiert ist oder eine Virtual Environment verwendet werden soll:</p>
 <div class="highlight-python"><div class="highlight"><pre>pip install sphinx
 pip install -U ablog
 </pre></div>
@@ -138,14 +138,14 @@ pip install -U ablog
 ablog start
 </pre></div>
 </div>
-<p>Nun werden ein paar Daten abgefragt, ein ENTER übernimmt die empfohlenen Vorauswahl in den []-Klammern.
+<p>Nun werden ein paar Daten abgefragt, ein ENTER übernimmt die empfohlene Vorauswahl in den [ ]-Klammern.
 All diese Optionen können auch noch nachträglich ohne Probleme geändert werden.</p>
 <p>Wenn das abgeschlossen ist, kann man seinen Blog bauen und lokal ausliefern lassen:</p>
 <div class="highlight-python"><div class="highlight"><pre>ablog build # Baut den Blog im Verzeichnis _webseite
 ablog serve # Startet einen kleinen Server und öffnet den Browser mit dem Blog
 </pre></div>
 </div>
-<p>Man kann den eingebauten ABlog-Server so konfigurieren, dass er bei Änderungen an den Blog-Quell-Dateien den Blog
+<p>Man kann den eingebauten ABlog-Server so konfigurieren, dass er bei Änderungen an den Blog-Quelldateien den Blog
 direkt neu baut und wieder ausliefert. Dafür muss noch <strong>watchdog</strong> installiert werden:</p>
 <div class="highlight-python"><div class="highlight"><pre>pip install watchdog
 </pre></div>
@@ -153,8 +153,8 @@ direkt neu baut und wieder ausliefert. Dafür muss noch <strong>watchdog</strong
 <p>Jetzt reicht ein <strong>ablog -r</strong>, um immer den aktuellen Stand im Browser zu sehen.</p>
 <div class="section" id="conf-py">
 <h3>Conf.py<a class="headerlink" href="#conf-py" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Wir müssen nun ein paar Änderungen an der sphinx-Konfigurationsdatei vornehmen, die mit in eurem Blog-Verzeichniss
-angelegt wurde. Öffnet die <strong>conf.py</strong> und ändert folgende Parameter (Evtl. müssen 1-2 Sachen auch ganz neu gesetzt werden.):</p>
+<p>Wir müssen nun ein paar Änderungen an der Sphinx-Konfigurationsdatei vornehmen, die mit in eurem Blog-Verzeichnis
+angelegt wurde. Öffnet die <strong>conf.py</strong> und ändert folgende Parameter (Evtl. müssen 1-2 Sachen auch ganz neu gesetzt werden):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">blog_baseurl</span> <span class="o">=</span> <span class="s">&quot;http://ACCOUNTNAME.github.io&quot;</span>
 <span class="n">github_pages</span> <span class="o">=</span> <span class="s">&quot;ACCOUNTNAME&quot;</span> <span class="c"># ohne github.io</span>
 <span class="n">post_date_format</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%d</span><span class="s">.%m.%Y&#39;</span> <span class="c"># Falls das deutsche Datumsformat verwendet werden soll</span>
@@ -174,9 +174,9 @@ die interessant und nützlich sein können. Schaut dazu am besten in deren Doku 
 <div class="section" id="disqus">
 <h2>Disqus<a class="headerlink" href="#disqus" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Disqus ist eine Kommentar-Plattform, die sich in Webseiten einbinden lässt.</p>
-<p>Die Kommentare erscheinen unterhalb des jeweiligen Blog-Eintrages und Besucher eures Blogs können dort Kommentar direkt
+<p>Die Kommentare erscheinen unterhalb des jeweiligen Blog-Eintrages und Besucher eures Blogs können dort Kommentare direkt
 hinterlassen.</p>
-<p>Disqus selbst bietet eine Reihe von Funktionen, damit ihr die Kommentar sinnvollen moderieren könnt: Bestätigung für Veröffentlichung,
+<p>Disqus selbst bietet eine Reihe von Funktionen, damit ihr die Kommentare sinnvoll moderieren könnt: Bestätigung für Veröffentlichung,
 Wort-Filter, Spam-Checks, ....</p>
 <img alt="../../../_images/disqus.png" src="../../../_images/disqus.png" />
 <p>Damit ihr <a class="reference external" href="https://disqus.com/">Disqus</a> intergrieren könnt, müsst ihr einen Account haben und eure Website registrieren.</p>
@@ -186,8 +186,8 @@ Wort-Filter, Spam-Checks, ....</p>
 und führt nur zu Verwirrungen. Also folgenden Screenshot ansehen :)</p>
 </div>
 <img alt="../../../_images/disqus_register.png" src="../../../_images/disqus_register.png" />
-<p>Disqus vergibt einen <em>shortname</em> für eure Webseite. Den braucht ihr, um ihn in die <strong>conf.py</strong> einzutragen:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">disqus_shortname</span> <span class="o">=</span> <span class="s">&quot;useblocksblog&quot;</span>
+<p>Disqus vergibt einen <em>shortname</em> für eure Website. Den braucht ihr, um ihn in die <strong>conf.py</strong> einzutragen:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">disqus_shortname</span> <span class="o">=</span> <span class="s">&quot;YOUR_SHORTNAME&quot;</span>
 </pre></div>
 </div>
 <p>Das war&#8217;s auch schon mit <a class="reference external" href="https://disqus.com/">Disqus</a> und euer Blog sollte nun Kommentare unterstützen.</p>
@@ -211,9 +211,9 @@ git commit -m &quot;Changed config to use disqus and other features&quot;
 git push origin master
 </pre></div>
 </div>
-<p>Das war&#8217;s. Unter <a class="reference external" href="http://ACCOUNTNAME.github.io">http://ACCOUNTNAME.github.io</a> soltle der Blog nun online sein.</p>
-<p>Der letzte Schritt kann auch <a class="reference external" href="http://ablog.readthedocs.org/">ABlog</a> übernehmen, wenn in der <strong>conf.py</strong> <em>github_pages</em> richtig gesetzt ist.
-Dann reicht auch folgendes aus:</p>
+<p>Das war&#8217;s. Unter <a class="reference external" href="http://ACCOUNTNAME.github.io">http://ACCOUNTNAME.github.io</a> sollte der Blog nun online sein.</p>
+<p>Den letzten Schritt kann auch <a class="reference external" href="http://ablog.readthedocs.org/">ABlog</a> übernehmen wenn in der <strong>conf.py</strong> <em>github_pages</em> richtig gesetzt ist.
+Dann reicht auch Folgendes aus:</p>
 <div class="highlight-python"><div class="highlight"><pre>ablog deploy
 </pre></div>
 </div>
@@ -222,9 +222,9 @@ Dann reicht auch folgendes aus:</p>
 <div class="section" id="diagramme-mit-plantuml">
 <h2>Diagramme mit PlantUML<a class="headerlink" href="#diagramme-mit-plantuml" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Falls man im Blog öfters Klassen-Diagramme oder Ablaufpläne veröffentlichen möchte, dann kann man auch noch <a class="reference external" href="http://plantuml.sourceforge.net/">PlantUML</a> in
-die Blog-SW einbinden. Dazu haben ich folgenden Artikel verfasst:
+die Blog-SW einbinden. Dazu habe ich folgenden Artikel verfasst:
 <a class="reference internal" href="../diagramme_mit_plantuml/#diagramme_mit_plantuml"><span>Effektive Diagrammerstellung mit PlantUML</span></a></p>
-<p>Um Lust auf mehr zu machen: Mit <a class="reference external" href="http://plantuml.sourceforge.net/">PlantUML</a> wird aus folgendem im Post:</p>
+<p>Um Lust auf mehr zu machen: Mit <a class="reference external" href="http://plantuml.sourceforge.net/">PlantUML</a> wird aus Folgendem:</p>
 <div class="highlight-python"><div class="highlight"><pre>.. uml::
     object hans
     object peter
@@ -236,7 +236,7 @@ die Blog-SW einbinden. Dazu haben ich folgenden Artikel verfasst:
     emma ..&gt; hans
 </pre></div>
 </div>
-<p>schnell und einfach dieses Bild:</p>
+<p>...im Post schnell und einfach dieses Bild:</p>
 <p class="plantuml">
 <img src="../../../_images/plantuml-3440606d91f5fe2fdccccf3b1c70145d4f4fcf30.png" alt="object hans
 object peter
@@ -251,28 +251,28 @@ emma ..&gt; hans" />
 <h2>TravisCI<a class="headerlink" href="#travisci" title="Link zu dieser Überschrift">¶</a></h2>
 <p><a class="reference external" href="http://travisci.org">TravisCI</a> kann dazu benutzt werden den Blog immer dann automatisch zu bauen und zu veröffentlichen, wenn im Branch
 <strong>sources</strong> Änderungen gepusht wurden.</p>
-<p>Da github es erlaubt Dateien direkt auf ihrer Webseite zu editieren, kann man also auch auf diese Weise den Blog updaten,
+<p>Da github es erlaubt, Dateien direkt auf ihrer Webseite zu editieren kann man also auch auf diese Weise den Blog updaten,
 ohne das man Zugriff auf sein eigenes System haben muss. Eine Rechner mit einer Internentverbindung reicht aus.</p>
-<p>Das notwendige Vorgehen ist folgendes:</p>
+<p>Das notwendige Vorgehen:</p>
 <ol class="arabic simple">
-<li>Auf <a class="reference external" href="http://travisci.org">http://travisci.org</a> mit dem github Account anmelden</li>
-<li>Repositiory aussuchen und aktivieren</li>
-<li>Im Branch <strong>sources</strong> eine <a href="#id3"><span class="problematic" id="id4">**</span></a>.travis.yml* als Konfigurationsdatei für <a class="reference external" href="http://travisci.org">TravisCI</a> erstellen.</li>
+<li>Auf <a class="reference external" href="http://travisci.org">http://travisci.org</a> mit dem github-Account anmelden.</li>
+<li>Repositiory aussuchen und aktivieren.</li>
+<li>Im Branch <strong>sources</strong> eine <strong>.travis.yml</strong> als Konfigurationsdatei für <a class="reference external" href="http://travisci.org">TravisCI</a> erstellen.</li>
 </ol>
 <p>Nach der Anmeldung muss das richtige Repository unter <em>Accounts</em> aktiviert werden.</p>
 <img alt="../../../_images/travisci_account.png" src="../../../_images/travisci_account.png" />
-<p>Danach auf das <em>Zahnrad</em> klicken und im Tab <a href="#id5"><span class="problematic" id="id6">*</span></a>Settings folgendes einstellen:</p>
+<p>Danach auf das <em>Zahnrad</em> klicken und im Tab <em>Settings</em> Folgendes einstellen:</p>
 <img alt="../../../_images/travisci_settings.png" src="../../../_images/travisci_settings.png" />
-<p><strong>Build only if .travis.yml is present</strong>: Da wird diese Datei nur im Branch <strong>sources</strong> anlegen werden und
+<p><strong>Build only if .travis.yml is present</strong>: Da wir diese Datei nur im Branch <strong>sources</strong> anlegen werden und
 auch nur bei Änderungen in diesem Branch der Blog neu
-gebaut werden muss, verhindern wir so, dass auch bei Änderungen in andern Branches wie z.B. <strong>master</strong> <a class="reference external" href="http://travisci.org">TravisCI</a>
+gebaut werden muss, verhindern wir so, dass auch bei Änderungen in anderen Branches wie z.B. <strong>master</strong> <a class="reference external" href="http://travisci.org">TravisCI</a>
 aktiv wird.</p>
 <p><strong>Build pushes</strong>: Bauen, wenn Änderungen gepusht wurden.</p>
 <p><strong>Build pull request</strong>: Deaktivieren, da es für uns keinen Sinn macht zu bauen, wenn wir eine lokale Kopie ziehen.</p>
-<p>Damit <a class="reference external" href="http://travisci.org">TravisCI</a> den gebauten Blog auch auf <a class="reference external" href="https://github.com/">github</a> veröffentliche darf, braucht es einen Access Token.
-Den bekommt man auf <a class="reference external" href="https://github.com/">github</a> unter Settings &#8211;&gt; Personal access tokens.</p>
+<p>Damit <a class="reference external" href="http://travisci.org">TravisCI</a> den gebauten Blog auch auf <a class="reference external" href="https://github.com/">github</a> veröffentlichen darf, braucht es einen Access Token.
+Den bekommt man auf <a class="reference external" href="https://github.com/">github</a> unter <em>Settings &#8211;&gt; Personal access tokens</em>.</p>
 <img alt="../../../_images/github_access_token.png" src="../../../_images/github_access_token.png" />
-<p>Diesen teilt man <cite>TravisCI</cite> über die <em>Environment Variable</em> <a href="#id7"><span class="problematic" id="id8">**</span></a>DEPLOY_KEY* mit.</p>
+<p>Diesen teilt man <cite>TravisCI</cite> über die <em>Environment Variable</em> <strong>DEPLOY_KEY</strong> mit.</p>
 <img alt="../../../_images/travisci_env.png" src="../../../_images/travisci_env.png" />
 <p>Wichtig: <strong>Display value in build logs</strong> sollte auf <strong>Off</strong> stehen, wenn man nicht will, dass andere mit dem Key ebenfalls
 Änderungen am Blog einspeisen dürfen.</p>
@@ -281,7 +281,7 @@ Den bekommt man auf <a class="reference external" href="https://github.com/">git
 nano .travis.yml
 </pre></div>
 </div>
-<p>Dort folgendes eintragen:</p>
+<p>Dort Folgendes eintragen:</p>
 <div class="highlight-python"><div class="highlight"><pre>language: python
 
 python:
@@ -306,7 +306,7 @@ after_success:
   - ablog deploy --push-quietly --github-token=DEPLOY_KEY -m=&quot;`git log -1 --pretty=%B`&quot;
 </pre></div>
 </div>
-<p>Es muss für den eigentlichen Build ein Software installiert werden, damit auch alles klappt.
+<p>Es muss für den eigentlichen Build Software installiert werden, damit auch alles klappt.
 Das sind vor allem <a class="reference external" href="http://ablog.readthedocs.org/">ABlog</a> und PlantUML.</p>
 <p>Für PlantUML muss auch <em>graphviz</em> installiert werden. Dies geht allerdings nicht über pip, so dass wir es über
 den Linux-Packet-Manager installieren müssen. Da dieser Roo-Rechte braucht, müssen wir die Zeile <em>sudo: required</em> setzen.</p>
@@ -315,11 +315,11 @@ den Linux-Packet-Manager installieren müssen. Da dieser Roo-Rechte braucht, mü
 <p class="last">sudo: required führt dazu, dass unser Build nicht in einer Docker-Umgebung sondern auf einer
 virtuellen Maschine läuft, auf der man per <em>sudo</em> Root-Rechte bekommen kann.</p>
 </div>
-<p>Das eigentliche <em>Deployen</em> übernimmt <a class="reference external" href="http://ablog.readthedocs.org/">ABlog</a> für uns. Daher ist es wichtig, dass die Parameter <strong>github_pages</strong> in der
+<p>Das eigentliche Deployen übernimmt <a class="reference external" href="http://ablog.readthedocs.org/">ABlog</a> für uns. Daher ist es wichtig, dass die Parameter <strong>github_pages</strong> in der
 <strong>conf.py</strong> richtig gesetzt ist.</p>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
-<p class="last">Es gibt vom <a class="reference external" href="http://ablog.readthedocs.org/">ABLog</a>-Autor selbt einen guten Post über die Verwendung von <a class="reference external" href="http://travisci.org">TravisCI</a>:
+<p class="last">Es gibt vom <a class="reference external" href="http://ablog.readthedocs.org/">ABlog</a>-Autor selbt einen guten Post über die Verwendung von <a class="reference external" href="http://travisci.org">TravisCI</a>:
 <a class="reference external" href="http://ablog.readthedocs.org/manual/auto-github-pages-deploys/">http://ablog.readthedocs.org/manual/auto-github-pages-deploys/</a></p>
 </div>
 </div>
