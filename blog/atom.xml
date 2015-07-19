@@ -2,10 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">useblocks blog Blog</title>
   <id>http://useblocks.github.io/blog/atom.xml</id>
-  <updated>2015-07-18T00:00:00Z</updated>
+  <updated>2015-07-19T00:00:00Z</updated>
   <link href="http://useblocks.github.io" />
   <link href="http://useblocks.github.io/blog/atom.xml" rel="self" />
   <generator uri="http://ablog.readthedocs.org" version="0.7.6">ABlog</generator>
+  <entry xml:base="http://useblocks.github.io/blog/atom.xml">
+    <title type="text">Graphviz in Sphinx</title>
+    <id>http://useblocks.github.io/posts/daniel/sphinx_graphviz/</id>
+    <updated>2015-07-19T00:00:00Z</updated>
+    <published>2015-07-19T00:00:00Z</published>
+    <link href="http://useblocks.github.io/posts/daniel/sphinx_graphviz/" />
+    <author>
+      <name>Daniel</name>
+    </author>
+    <content type="html">&lt;p&gt;Vor einiger Zeit habe ich &lt;a class=&quot;reference external&quot; href=&quot;http://plantuml.sourceforge.net&quot;&gt;PlantUML&lt;/a&gt; in &lt;a class=&quot;reference external&quot; href=&quot;http://www.sphinx-doc.org&quot;&gt;Sphinx&lt;/a&gt; integriert, um schnell und einfach Diagramme zeichnen zu können.
+Bei einer kleinen Recherche habe ich nun herausgefunden, dass auch &lt;a class=&quot;reference external&quot; href=&quot;http://www.graphviz.org&quot;&gt;Graphviz&lt;/a&gt; in &lt;a class=&quot;reference external&quot; href=&quot;http://www.sphinx-doc.org&quot;&gt;Sphinx&lt;/a&gt; ohne größere Probleme
+unterstützt wird.&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="http://useblocks.github.io/blog/atom.xml">
     <title type="text">Der perfekte Blog für Entwickler</title>
     <id>http://useblocks.github.io/posts/daniel/sphinx_blog/</id>

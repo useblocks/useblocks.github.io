@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Teil 1: Alles doof! Alles neu! &mdash; useblocks blog  Dokumentation</title>
+    <title>Graphviz in Sphinx &mdash; useblocks blog  Dokumentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -50,28 +50,54 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="teil-1-alles-doof-alles-neu">
-<h1>Teil 1: Alles doof! Alles neu!<a class="headerlink" href="#teil-1-alles-doof-alles-neu" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Dieses ist der erste Teil einer Serien über den beim Projekt groundwork eingesetzten SW-Stack.</p>
-<p>Der erste Teile ist eine Art Einleitung zum Thema, während der Teil 2 den aktuellen, technischen Stand und seine Probleme wieder gibt. Teil 3 beschäftigt sich dann mit den konkreten Wünschen, die wir für unser zukünftige SW-Entwicklungsumgebung haben. Danach geht es mit den Teilen 4 + 5 in die Umsetzung, getrennt nach Prozess und SW-Stack.</p>
-<p>Die anderen Teile im Überblick:
-Teil 1: Alles doof! Alles neu!</p>
-<p>Teil 2: Stand der Dinge</p>
-<p>Teil 3: Wunschkonzert</p>
-<p>Teil 4: Entwicklungsschritte</p>
-<p>Teil 5: SW-Stack</p>
-<p>Während der Entwicklung von Software kommt es immer wieder mal vor, dass man inne hält und versucht das geleistete mit etwas Abstand neu zu betrachten und zu bewerten.</p>
-<p>Dabei stellen sich einem meistens zwei Fragen:</p>
-<p>Ist unser SW-Architektur und die Umsetzung richtig?
-Haben wir die richtigen Tools und Libraries eingesetzt?
-Wenn man häufig IT-News liest und sich für die Arbeiten von anderen Kollegen in der SW-Branche interessiert, dann neigt man sehr schnell dazu vor allem Punkt 2 zu beneinen.
-Bleeding Edge Technologien und von großen Firmen gepuschte Frameworks nehmen in aktuellen Nachrichten eben einen hohen Stellenwert ein, so dass man schnell unbewusst die hochgelobten Lösungen selbst als Verbesserung ansieht.</p>
-<p>Natürlich geben auch immer wiederkehrende Themen in teaminternen Diskussionen ihr Übriges dazu, so dass man nach der x. Diskussion über das optimale Datenbank-Schema endlich nachgibt und die Änderungs-/Erneuerungslawine ihren Lauf nimmt.</p>
-<p>Ich liebe diese Momente!
-Endlich kann man seine alten Fehler ausbügeln. Endlich kann man sich mit neuen Technologien beschäftigen. Und endlich wird das Projekt aus Entwicklersicht wieder cool.</p>
-<p>Wir haben in den letzten Monaten bei useblocks eine Menge Software entwickelt, für uns selbst und unsere Kunden. Dabei haben wir ein Rapid-Prototype Framework für Web-Apps im Ingenieursumfeld geschrieben, das eine Menge &#8220;Batteries included&#8221; hat und auf ein verteiltes Entwickeln über Firmengrenzen hinaus ausgelegt ist.</p>
-<p>Wir werden dieses Framework alsbald als Open-Source Projekt veröffentlichen, so dass ich mir hier jetzt die Jubel-Worte für einen zukünftigen Beitrag aufspare.</p>
-<p>Auf jeden Fall haben wir gerade diesen herrlichen Moment des Neubewerten und des Umbruchs, so dass die nachfolgenden Beiträge nun dazu dienen unsere Entscheidungen zu erklären und unseren zukünftigen Entwicklungsprozess sowie unseren SW-Stack vorzustellen.</p>
+  <div class="section" id="graphviz-in-sphinx">
+<h1>Graphviz in Sphinx<a class="headerlink" href="#graphviz-in-sphinx" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Vor einiger Zeit habe ich <a class="reference external" href="http://plantuml.sourceforge.net">PlantUML</a> in <a class="reference external" href="http://www.sphinx-doc.org">Sphinx</a> integriert, um schnell und einfach Diagramme zeichnen zu können.
+Bei einer kleinen Recherche habe ich nun herausgefunden, dass auch <a class="reference external" href="http://www.graphviz.org">Graphviz</a> in <a class="reference external" href="http://www.sphinx-doc.org">Sphinx</a> ohne größere Probleme
+unterstützt wird.</p>
+<p>Der Artikel über <a class="reference external" href="http://plantuml.sourceforge.net">PlantUML</a> findet man hier: <a class="reference internal" href="../diagramme_mit_plantuml/#diagramme_mit_plantuml"><span>Effektive Diagrammerstellung mit PlantUML</span></a></p>
+<div class="section" id="vorgehen">
+<h2>Vorgehen<a class="headerlink" href="#vorgehen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Zuerst muss <a class="reference external" href="http://www.graphviz.org">Graphviz</a> installiert werden. Unter Linux geschieht dies unter anderem über:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install graphviz
+</pre></div>
+</div>
+<p>Danach muss in der <a class="reference external" href="http://www.sphinx-doc.org">Sphinx</a> <strong>conf.py</strong> nur noch die Unterstützung von <a class="reference external" href="http://www.graphviz.org">Graphviz</a> aktiviert werden:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s">&#39;sphinx.ext.extlinks&#39;</span><span class="p">,</span>
+<span class="s">&#39;sphinx.ext.intersphinx&#39;</span><span class="p">,</span>
+<span class="s">&#39;sphinx.ext.todo&#39;</span><span class="p">,</span>
+<span class="s">&#39;alabaster&#39;</span><span class="p">,</span>
+<span class="s">&#39;ablog&#39;</span><span class="p">,</span>
+<span class="s">&#39;sphinxcontrib.plantuml&#39;</span><span class="p">,</span>
+<span class="s">&#39;sphinx.ext.graphviz&#39;</span><span class="p">,</span>  <span class="c"># Dies ist die wichtige Zeile</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Ich habe die anderen Extensions aus unserer Sphinx-Config mal drin gelassen, damit für Leute, die <a class="reference internal" href="../sphinx_blog/#sphinx_blog"><span>Der perfekte Blog für Entwickler</span></a>
+gelesen haben, die Config identisch ist.</p>
+<p>Das war&#8217;s. Danach kann man auch schon mit der Benutzung starten.</p>
+</div>
+<div class="section" id="benutzung">
+<h2>Benutzung<a class="headerlink" href="#benutzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die <a class="reference external" href="http://www.graphviz.org">Graphviz</a>-Diagramme lassen sich ähnlich wie die <a class="reference external" href="http://plantuml.sourceforge.net">PlantUML</a>-Diagramme integrieren.:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. graph:: foo
+&quot;Peter&quot; -- &quot;Hans&quot;;
+</pre></div>
+</div>
+<p>die führt zu</p>
+<p class="graphviz">
+<img src="../../../_images/graphviz-b8e7ab1770d2e45fa5636c6582d2b623f7340c7e.png" alt="graph foo {
+&quot;Peter&quot; -- &quot;Hans&quot;;
+}" />
+</p>
+<p>Die Dokumentation über die Sphinx-Erweiterung <strong>sphinx.ext.graphviz</strong> ist hier zu finden:
+<a class="reference external" href="http://sphinx-doc.org/ext/graphviz.html">http://sphinx-doc.org/ext/graphviz.html</a></p>
+<p><a class="reference external" href="http://www.graphviz.org">Graphviz</a> ist um einiges mächtiger als <a class="reference external" href="http://plantuml.sourceforge.net">PlantUML</a>. Dadurch allerdings auch nicht so einfach zu benutzen bzw. die
+Benutzung für UML-Diagrammen kommt dort an ihre Grenzen.</p>
+<p>Einen umfangreichen Artikel über die Möglichkeiten mit <a class="reference external" href="http://www.graphviz.org">Graphviz</a> ist z.B. <a class="reference external" href="http://4webmaster.de/wiki/Graphviz-Tutorial">http://4webmaster.de/wiki/Graphviz-Tutorial</a></p>
+<p>Die offiziellen Referenzen zur Sprache sind hier abgelegt: <a class="reference external" href="http://www.graphviz.org/Documentation.php">http://www.graphviz.org/Documentation.php</a></p>
+</div>
 </div>
 
   <div class="section">
@@ -82,16 +108,15 @@ Endlich kann man seine alten Fehler ausbügeln. Endlich kann man sich mit neuen 
 <div class="section">
   <span style="float: left;">
   
+  
+  <a href="../sphinx_blog/">
+    <i class="fa fa-arrow-circle-left"></i>
+    Der perfekte Blog für Entwickler
+  </a>
+  
   </span>
   <span>&nbsp;</span>
   <span style="float: right;">
-  
-  
-  <a href="../stack_sie_zu_knechten_part_2/">
-    Teil 2: Stand der Dinge
-    <i class="fa fa-arrow-circle-right"></i>
-  </a>
-  </span>
   
 </div>
 
@@ -103,9 +128,9 @@ Endlich kann man seine alten Fehler ausbügeln. Endlich kann man sich mit neuen 
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'useblocksblog'; // required: replace example with your forum shortname
-        var disqus_identifier = '/posts/daniel/stack_sie-zu_knechten_part_1/';
-        var disqus_title = 'Teil 1: Alles doof! Alles neu!';
-        var disqus_url = 'http://useblocks.github.io/posts/daniel/stack_sie-zu_knechten_part_1';
+        var disqus_identifier = '/posts/daniel/sphinx_graphviz/';
+        var disqus_title = 'Graphviz in Sphinx';
+        var disqus_url = 'http://useblocks.github.io/posts/daniel/sphinx_graphviz';
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -142,7 +167,7 @@ Endlich kann man seine alten Fehler ausbügeln. Endlich kann man sich mit neuen 
   <h2>
   
   <i class="fa fa-calendar"></i>
-    17.06.2015
+    19.07.2015
   
   </h2>
 
@@ -173,7 +198,7 @@ Endlich kann man seine alten Fehler ausbügeln. Endlich kann man sich mit neuen 
   <li><i class="fa-fw fa fa-folder-open"></i>
     
       
-      <a href="../../../blog/category/life/">Life</a>
+      <a href="../../../blog/category/tools/">Tools</a>
       
     </li>
   
@@ -183,15 +208,19 @@ Endlich kann man seine alten Fehler ausbügeln. Endlich kann man sich mit neuen 
       
     
       
-      <a href="../../../blog/tag/alt/">alt</a>,
+      <a href="../../../blog/tag/diagramme/">diagramme</a>,
       
     
       
-      <a href="../../../blog/tag/neu/">neu</a>,
+      <a href="../../../blog/tag/sphinx/">sphinx</a>,
       
     
       
-      <a href="../../../blog/tag/turn_over/">turn_over</a>
+      <a href="../../../blog/tag/dot/">dot</a>,
+      
+    
+      
+      <a href="../../../blog/tag/graphviz/">graphviz</a>
       
     </li>
   
@@ -210,7 +239,7 @@ Endlich kann man seine alten Fehler ausbügeln. Endlich kann man sich mit neuen 
     }());
     </script>
     <i class="fa-fw fa fa-comments"></i>
-    <a href="#disqus_thread" data-disqus-identifier="/posts/daniel/stack_sie-zu_knechten_part_1/"> </a>
+    <a href="#disqus_thread" data-disqus-identifier="/posts/daniel/sphinx_graphviz/"> </a>
   </li>
   
   </ul>
@@ -228,8 +257,6 @@ Endlich kann man seine alten Fehler ausbügeln. Endlich kann man sich mit neuen 
   <ul>
     
     
-      <li><a href="../sphinx_graphviz/">Jul 19 - Graphviz in Sphinx</a></li>
-    
       <li><a href="../sphinx_blog/">Jul 18 - Der perfekte Blog für Entwickler</a></li>
     
       <li><a href="../diagramme_mit_plantuml/">Jul 17 - Effektive Diagrammerstellung mit PlantUML</a></li>
@@ -237,6 +264,8 @@ Endlich kann man seine alten Fehler ausbügeln. Endlich kann man sich mit neuen 
       <li><a href="../stack_sie_zu_knechten_part_4/">Jun 20 - Teil 4: Entwicklungsschritte</a></li>
     
       <li><a href="../stack_sie_zu_knechten_part_3/">Jun 19 - Teil 3: Wunschkonzert</a></li>
+    
+      <li><a href="../stack_sie_zu_knechten_part_2/">Jun 18 - Teil 2: Stand der Dinge</a></li>
     
   </ul>
 
@@ -367,7 +396,7 @@ Endlich kann man seine alten Fehler ausbügeln. Endlich kann man sich mit neuen 
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
       
       |
-      <a href="../../../_sources/posts/daniel/stack_sie-zu_knechten_part_1.txt"
+      <a href="../../../_sources/posts/daniel/sphinx_graphviz.txt"
           rel="nofollow">Page source</a>
     </div>
 

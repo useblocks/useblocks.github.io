@@ -1,6 +1,6 @@
 .. post:: 18 Jul, 2015
-   :tags: alt, neu, turn_over
-   :category: Life
+   :tags: sphinx, plantuml, travisci, disqus, github
+   :category: Tools
    :author: Daniel
    :excerpt: 3
 
@@ -18,32 +18,32 @@ Willkommen bei meinem Tutorial über die geilste Blog-SW-Umgebung für die fauls
 
 Wir werden Folgendes zusammenenbauen (Details in den jeweiligen Kapiteln):
 
-* github pages / github.io: Als Speicherplatz und Server für unseren Blog
+* GitHub pages / github.io: Als Speicherplatz und Server für unseren Blog
 * Sphinx mit Restructured Text: Als einfaches System zum Schreiben von Texten/Dokumenten
 * ABlog: Eine Sphinx-Erweiterung, um aus Sphinx einen Blog zu machen
 * Disqus: Als Kommentar-Möglichkeit für den Blog
 * PlantUML: Für die Erstellung von Diagrammen
 * TravisCI: Zum automatisierten Bauen des Blogs, sobald Änderungen vorgenommen wurden
 
-github: Speicherplatz und Blog-Auslieferung
+GitHub: Speicherplatz und Blog-Auslieferung
 -------------------------------------------
-.. _github: https://github.com/
-.. _github pages: https://pages.github.com/
+.. _GitHub: https://github.com/
+.. _GitHub pages: https://pages.github.com/
 
-`github`_ ist perfekt zum Speichern von Code und Dank `github pages`_ auch perfekt zum Ausliefern von statischen
+`GitHub`_ ist perfekt zum Speichern von Code und Dank `GitHub pages`_ auch perfekt zum Ausliefern von statischen
 HTML-Inhalten, was unser Blog zum Glück ist.
 
-Von `github pages`_ kann man seine projekt/repository-spezifischen Seiten hosten lassen oder aber auch genau eine Seite
+Von `GitHub pages`_ kann man seine projekt/repository-spezifischen Seiten hosten lassen oder aber auch genau eine Seite
 für seinen Account oder dem seiner Firma. Ich gehe hier davon aus, dass wir eine accountspezifische Seite erstellen
-wollen. Daher muss man in github folgendes Repository anlegen: **ACCOUNTNAME.github.io**
+wollen. Daher muss man in GitHub folgendes Repository anlegen: **ACCOUNTNAME.github.io**
 
 .. note:: Bei einer Seite für ein Projekt darf es kein extra Repository sein. Sondern im Projekt-Repo muss ein Branch
    **gh_pages** angelegt werden, in dem die folgenden Schritte dann angewendet werden müssen.
 
-`github`_ erwartet, dass im Branch **master** auf der obersten Ebene eine **index.html** Datei vorhanden ist.
+`GitHub`_ erwartet, dass im Branch **master** auf der obersten Ebene eine **index.html** Datei vorhanden ist.
 Diese wird dann bei Aufruf von http://ACCOUNTNAME.github.io ausgeliefert.
 
-Auf der github-Seite lassen wir für unser Repository auch gleich einen neuen Branch anlegen: **sources**.
+Auf der GitHub-Seite lassen wir für unser Repository auch gleich einen neuen Branch anlegen: **sources**.
 Dieser Branch enthält später die orginallen Blog-Dateien (Posts, Config, Themes, ...), während der Branch **master**
 nur die generierten HTML-Seiten (den fertige Blog) enthalten soll.
 
@@ -173,7 +173,7 @@ First Deploy
 ------------
 
 Um überprüfen zu können, ob wirklich alles richtig funktioniert (gerade `Disqus`_ mag lokal nicht gehen), laden wir nun
-den Blog auf github hoch::
+den Blog auf GitHub hoch::
 
     cd WORKSPACE/ACCOUNTNAME.github.io
     ablog build # Blog bauen
@@ -236,17 +236,17 @@ TravisCI
 `TravisCI`_ kann dazu benutzt werden den Blog immer dann automatisch zu bauen und zu veröffentlichen, wenn im Branch
 **sources** Änderungen gepusht wurden.
 
-Da github es erlaubt, Dateien direkt auf ihrer Webseite zu editieren kann man also auch auf diese Weise den Blog updaten,
+Da GitHub es erlaubt, Dateien direkt auf ihrer Webseite zu editieren kann man also auch auf diese Weise den Blog updaten,
 ohne das man Zugriff auf sein eigenes System haben muss. Eine Rechner mit einer Internentverbindung reicht aus.
 
 Das notwendige Vorgehen:
 
-1. Auf http://travisci.org mit dem github-Account anmelden.
+1. Auf http://travisci.org mit dem GitHub-Account anmelden.
 2. Repositiory aussuchen und aktivieren.
 3. Im Branch **sources** eine **.travis.yml** als Konfigurationsdatei für `TravisCI`_ erstellen.
 
 Anmeldung und Config bei TravisCI
-*********************************
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Nach der Anmeldung muss das richtige Repository unter *Accounts* aktiviert werden.
 
@@ -265,8 +265,8 @@ aktiv wird.
 
 **Build pull request**: Deaktivieren, da es für uns keinen Sinn macht zu bauen, wenn wir eine lokale Kopie ziehen.
 
-Damit `TravisCI`_ den gebauten Blog auch auf `github`_ veröffentlichen darf, braucht es einen Access Token.
-Den bekommt man auf `github`_ unter *Settings --> Personal access tokens*.
+Damit `TravisCI`_ den gebauten Blog auch auf `GitHub`_ veröffentlichen darf, braucht es einen Access Token.
+Den bekommt man auf `GitHub`_ unter *Settings --> Personal access tokens*.
 
 .. image:: images/github_access_token.png
 

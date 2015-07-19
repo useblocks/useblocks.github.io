@@ -60,7 +60,7 @@ sich von der eigentlichen Tätigkeit eines SW-Entwicklers, dem Code schreiben, n
 <p>Willkommen bei meinem Tutorial über die geilste Blog-SW-Umgebung für die faulsten und damit besten Entwickler der Welt.</p>
 <p>Wir werden Folgendes zusammenenbauen (Details in den jeweiligen Kapiteln):</p>
 <ul class="simple">
-<li>github pages / github.io: Als Speicherplatz und Server für unseren Blog</li>
+<li>GitHub pages / github.io: Als Speicherplatz und Server für unseren Blog</li>
 <li>Sphinx mit Restructured Text: Als einfaches System zum Schreiben von Texten/Dokumenten</li>
 <li>ABlog: Eine Sphinx-Erweiterung, um aus Sphinx einen Blog zu machen</li>
 <li>Disqus: Als Kommentar-Möglichkeit für den Blog</li>
@@ -68,20 +68,20 @@ sich von der eigentlichen Tätigkeit eines SW-Entwicklers, dem Code schreiben, n
 <li>TravisCI: Zum automatisierten Bauen des Blogs, sobald Änderungen vorgenommen wurden</li>
 </ul>
 <div class="section" id="github-speicherplatz-und-blog-auslieferung">
-<h2>github: Speicherplatz und Blog-Auslieferung<a class="headerlink" href="#github-speicherplatz-und-blog-auslieferung" title="Link zu dieser Überschrift">¶</a></h2>
-<p><a class="reference external" href="https://github.com/">github</a> ist perfekt zum Speichern von Code und Dank <a class="reference external" href="https://pages.github.com/">github pages</a> auch perfekt zum Ausliefern von statischen
+<h2>GitHub: Speicherplatz und Blog-Auslieferung<a class="headerlink" href="#github-speicherplatz-und-blog-auslieferung" title="Link zu dieser Überschrift">¶</a></h2>
+<p><a class="reference external" href="https://github.com/">GitHub</a> ist perfekt zum Speichern von Code und Dank <a class="reference external" href="https://pages.github.com/">GitHub pages</a> auch perfekt zum Ausliefern von statischen
 HTML-Inhalten, was unser Blog zum Glück ist.</p>
-<p>Von <a class="reference external" href="https://pages.github.com/">github pages</a> kann man seine projekt/repository-spezifischen Seiten hosten lassen oder aber auch genau eine Seite
+<p>Von <a class="reference external" href="https://pages.github.com/">GitHub pages</a> kann man seine projekt/repository-spezifischen Seiten hosten lassen oder aber auch genau eine Seite
 für seinen Account oder dem seiner Firma. Ich gehe hier davon aus, dass wir eine accountspezifische Seite erstellen
-wollen. Daher muss man in github folgendes Repository anlegen: <strong>ACCOUNTNAME.github.io</strong></p>
+wollen. Daher muss man in GitHub folgendes Repository anlegen: <strong>ACCOUNTNAME.github.io</strong></p>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
 <p class="last">Bei einer Seite für ein Projekt darf es kein extra Repository sein. Sondern im Projekt-Repo muss ein Branch
 <strong>gh_pages</strong> angelegt werden, in dem die folgenden Schritte dann angewendet werden müssen.</p>
 </div>
-<p><a class="reference external" href="https://github.com/">github</a> erwartet, dass im Branch <strong>master</strong> auf der obersten Ebene eine <strong>index.html</strong> Datei vorhanden ist.
+<p><a class="reference external" href="https://github.com/">GitHub</a> erwartet, dass im Branch <strong>master</strong> auf der obersten Ebene eine <strong>index.html</strong> Datei vorhanden ist.
 Diese wird dann bei Aufruf von <a class="reference external" href="http://ACCOUNTNAME.github.io">http://ACCOUNTNAME.github.io</a> ausgeliefert.</p>
-<p>Auf der github-Seite lassen wir für unser Repository auch gleich einen neuen Branch anlegen: <strong>sources</strong>.
+<p>Auf der GitHub-Seite lassen wir für unser Repository auch gleich einen neuen Branch anlegen: <strong>sources</strong>.
 Dieser Branch enthält später die orginallen Blog-Dateien (Posts, Config, Themes, ...), während der Branch <strong>master</strong>
 nur die generierten HTML-Seiten (den fertige Blog) enthalten soll.</p>
 <p>Wir öffnen nun eine Konsole und führen Folgendes aus:</p>
@@ -195,7 +195,7 @@ und führt nur zu Verwirrungen. Also folgenden Screenshot ansehen :)</p>
 <div class="section" id="first-deploy">
 <h2>First Deploy<a class="headerlink" href="#first-deploy" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Um überprüfen zu können, ob wirklich alles richtig funktioniert (gerade <a class="reference external" href="https://disqus.com/">Disqus</a> mag lokal nicht gehen), laden wir nun
-den Blog auf github hoch:</p>
+den Blog auf GitHub hoch:</p>
 <div class="highlight-python"><div class="highlight"><pre>cd WORKSPACE/ACCOUNTNAME.github.io
 ablog build # Blog bauen
 
@@ -251,14 +251,16 @@ emma ..&gt; hans" />
 <h2>TravisCI<a class="headerlink" href="#travisci" title="Link zu dieser Überschrift">¶</a></h2>
 <p><a class="reference external" href="http://travisci.org">TravisCI</a> kann dazu benutzt werden den Blog immer dann automatisch zu bauen und zu veröffentlichen, wenn im Branch
 <strong>sources</strong> Änderungen gepusht wurden.</p>
-<p>Da github es erlaubt, Dateien direkt auf ihrer Webseite zu editieren kann man also auch auf diese Weise den Blog updaten,
+<p>Da GitHub es erlaubt, Dateien direkt auf ihrer Webseite zu editieren kann man also auch auf diese Weise den Blog updaten,
 ohne das man Zugriff auf sein eigenes System haben muss. Eine Rechner mit einer Internentverbindung reicht aus.</p>
 <p>Das notwendige Vorgehen:</p>
 <ol class="arabic simple">
-<li>Auf <a class="reference external" href="http://travisci.org">http://travisci.org</a> mit dem github-Account anmelden.</li>
+<li>Auf <a class="reference external" href="http://travisci.org">http://travisci.org</a> mit dem GitHub-Account anmelden.</li>
 <li>Repositiory aussuchen und aktivieren.</li>
 <li>Im Branch <strong>sources</strong> eine <strong>.travis.yml</strong> als Konfigurationsdatei für <a class="reference external" href="http://travisci.org">TravisCI</a> erstellen.</li>
 </ol>
+<div class="section" id="anmeldung-und-config-bei-travisci">
+<h3>Anmeldung und Config bei TravisCI<a class="headerlink" href="#anmeldung-und-config-bei-travisci" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Nach der Anmeldung muss das richtige Repository unter <em>Accounts</em> aktiviert werden.</p>
 <img alt="../../../_images/travisci_account.png" src="../../../_images/travisci_account.png" />
 <p>Danach auf das <em>Zahnrad</em> klicken und im Tab <em>Settings</em> Folgendes einstellen:</p>
@@ -269,8 +271,8 @@ gebaut werden muss, verhindern wir so, dass auch bei Änderungen in anderen Bran
 aktiv wird.</p>
 <p><strong>Build pushes</strong>: Bauen, wenn Änderungen gepusht wurden.</p>
 <p><strong>Build pull request</strong>: Deaktivieren, da es für uns keinen Sinn macht zu bauen, wenn wir eine lokale Kopie ziehen.</p>
-<p>Damit <a class="reference external" href="http://travisci.org">TravisCI</a> den gebauten Blog auch auf <a class="reference external" href="https://github.com/">github</a> veröffentlichen darf, braucht es einen Access Token.
-Den bekommt man auf <a class="reference external" href="https://github.com/">github</a> unter <em>Settings &#8211;&gt; Personal access tokens</em>.</p>
+<p>Damit <a class="reference external" href="http://travisci.org">TravisCI</a> den gebauten Blog auch auf <a class="reference external" href="https://github.com/">GitHub</a> veröffentlichen darf, braucht es einen Access Token.
+Den bekommt man auf <a class="reference external" href="https://github.com/">GitHub</a> unter <em>Settings &#8211;&gt; Personal access tokens</em>.</p>
 <img alt="../../../_images/github_access_token.png" src="../../../_images/github_access_token.png" />
 <p>Diesen teilt man <cite>TravisCI</cite> über die <em>Environment Variable</em> <strong>DEPLOY_KEY</strong> mit.</p>
 <img alt="../../../_images/travisci_env.png" src="../../../_images/travisci_env.png" />
@@ -324,6 +326,7 @@ virtuellen Maschine läuft, auf der man per <em>sudo</em> Root-Rechte bekommen k
 </div>
 </div>
 </div>
+</div>
 
   <div class="section">
   
@@ -342,6 +345,13 @@ virtuellen Maschine läuft, auf der man per <em>sudo</em> Root-Rechte bekommen k
   </span>
   <span>&nbsp;</span>
   <span style="float: right;">
+  
+  
+  <a href="../sphinx_graphviz/">
+    Graphviz in Sphinx
+    <i class="fa fa-arrow-circle-right"></i>
+  </a>
+  </span>
   
 </div>
 
@@ -423,7 +433,7 @@ virtuellen Maschine läuft, auf der man per <em>sudo</em> Root-Rechte bekommen k
   <li><i class="fa-fw fa fa-folder-open"></i>
     
       
-      <a href="../../../blog/category/life/">Life</a>
+      <a href="../../../blog/category/tools/">Tools</a>
       
     </li>
   
@@ -433,15 +443,23 @@ virtuellen Maschine läuft, auf der man per <em>sudo</em> Root-Rechte bekommen k
       
     
       
-      <a href="../../../blog/tag/alt/">alt</a>,
+      <a href="../../../blog/tag/sphinx/">sphinx</a>,
       
     
       
-      <a href="../../../blog/tag/neu/">neu</a>,
+      <a href="../../../blog/tag/plantuml/">plantuml</a>,
       
     
       
-      <a href="../../../blog/tag/turn_over/">turn_over</a>
+      <a href="../../../blog/tag/travisci/">travisci</a>,
+      
+    
+      
+      <a href="../../../blog/tag/disqus/">disqus</a>,
+      
+    
+      
+      <a href="../../../blog/tag/github/">github</a>
       
     </li>
   
@@ -478,6 +496,8 @@ virtuellen Maschine läuft, auf der man per <em>sudo</em> Root-Rechte bekommen k
   <ul>
     
     
+      <li><a href="../sphinx_graphviz/">Jul 19 - Graphviz in Sphinx</a></li>
+    
       <li><a href="../diagramme_mit_plantuml/">Jul 17 - Effektive Diagrammerstellung mit PlantUML</a></li>
     
       <li><a href="../stack_sie_zu_knechten_part_4/">Jun 20 - Teil 4: Entwicklungsschritte</a></li>
@@ -485,8 +505,6 @@ virtuellen Maschine läuft, auf der man per <em>sudo</em> Root-Rechte bekommen k
       <li><a href="../stack_sie_zu_knechten_part_3/">Jun 19 - Teil 3: Wunschkonzert</a></li>
     
       <li><a href="../stack_sie_zu_knechten_part_2/">Jun 18 - Teil 2: Stand der Dinge</a></li>
-    
-      <li><a href="../stack_sie-zu_knechten_part_1/">Jun 17 - Teil 1: Alles doof! Alles neu!</a></li>
     
   </ul>
 
@@ -504,17 +522,67 @@ virtuellen Maschine läuft, auf der man per <em>sudo</em> Root-Rechte bekommen k
   <ul class="ablog-cloud">
     
       
-      <li class="ablog-cloud ablog-cloud-3">
+      <li class="ablog-cloud ablog-cloud-5">
         <a href="../../../blog/tag/alt/">alt</a></li>
       
     
       
-      <li class="ablog-cloud ablog-cloud-3">
+      <li class="ablog-cloud ablog-cloud-2">
+        <a href="../../../blog/tag/diagramme/">diagramme</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../../../blog/tag/disqus/">disqus</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../../../blog/tag/dot/">dot</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../../../blog/tag/github/">github</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../../../blog/tag/graphviz/">graphviz</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../../../blog/tag/intellij/">intellij</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-5">
         <a href="../../../blog/tag/neu/">neu</a></li>
       
     
       
+      <li class="ablog-cloud ablog-cloud-2">
+        <a href="../../../blog/tag/plantuml/">plantuml</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../../../blog/tag/pycharm/">pycharm</a></li>
+      
+    
+      
       <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/sphinx/">sphinx</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-1">
+        <a href="../../../blog/tag/travisci/">travisci</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-5">
         <a href="../../../blog/tag/turn_over/">turn_over</a></li>
       
     
@@ -524,7 +592,11 @@ virtuellen Maschine läuft, auf der man per <em>sudo</em> Root-Rechte bekommen k
   <ul>
   
     
-    <li><a href="../../../blog/category/life/">Life (6)</a></li>
+    <li><a href="../../../blog/category/life/">Life (4)</a></li>
+    
+  
+    
+    <li><a href="../../../blog/category/tools/">Tools (3)</a></li>
     
   
   </ul>
@@ -533,7 +605,7 @@ virtuellen Maschine läuft, auf der man per <em>sudo</em> Root-Rechte bekommen k
   <ul>
   
     
-    <li><a href="../../../blog/2015/">2015 (6)</a></li>
+    <li><a href="../../../blog/2015/">2015 (7)</a></li>
     
   
   </ul>
