@@ -1,4 +1,4 @@
-.. post:: 17 Jun, 2015
+.. post::
    :tags: alt, neu, turn_over
    :category: Life
    :author: Daniel

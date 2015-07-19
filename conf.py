@@ -101,9 +101,12 @@ post_date_format = '%d.%m.%Y'
 # sidebars that link to author and location archive pages.
 html_sidebars = {
     '**': [ 'about.html',
-            'postcard.html', 'navigation.html',
-            'recentposts.html', 'tagcloud.html',
-            'categories.html',  'archives.html',
+            'postcard.html',
+            'navigation.html',
+            'tagcloud.html',
+            'categories.html',
+            'recentposts.html',
+            'archives.html',
             'searchbox.html',
             ],
     }
@@ -265,7 +268,8 @@ html_theme = 'alabaster'
 html_theme_options = {
     'github_user': 'useblocks',
     'github_repo': 'useblocks.github.io',
-    'github_button': False,
+    'github_button': True,
+    'travis_button': False,
     'logo': 'logo_kreise.png',
     'font_family': 'verdana, arial, non-serif',
     'head_font_family': 'verdana, arial, non-serif',
