@@ -174,6 +174,7 @@ extensions = [
     'alabaster',
     'ablog',
     'sphinxcontrib.plantuml',
+    'sphinx.ext.graphviz',
 ]
 
 # PlantUML jar location

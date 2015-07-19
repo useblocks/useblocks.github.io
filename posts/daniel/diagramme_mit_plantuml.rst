@@ -1,6 +1,6 @@
 .. post:: 17 Jul, 2015
-   :tags: alt, neu, turn_over
-   :category: Life
+   :tags: plantuml, diagramme, sphinx, pycharm, intellij
+   :category: Tools
    :author: Daniel
    :excerpt: 1
 
