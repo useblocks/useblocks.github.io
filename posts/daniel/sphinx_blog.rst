@@ -200,7 +200,7 @@ Was genau passiert, kann man hier nachlesen: http://ablog.readthedocs.org/manual
 
 Diagramme mit PlantUML
 ----------------------
-.. _PlantUML: http://plantuml.sourceforge.net/
+.. _PlantUML: http://plantuml.com
 
 Falls man im Blog öfters Klassen-Diagramme oder Ablaufpläne veröffentlichen möchte, dann kann man auch noch `PlantUML`_ in
 die Blog-SW einbinden. Dazu habe ich folgenden Artikel verfasst:

@@ -8,7 +8,7 @@ Graphviz in Sphinx
 ==================
 .. _Graphviz: http://www.graphviz.org
 .. _Sphinx: http://www.sphinx-doc.org
-.. _PlantUML: http://plantuml.sourceforge.net
+.. _PlantUML: http://plantuml.com
 
 Vor einiger Zeit habe ich `PlantUML`_ in `Sphinx`_ integriert, um schnell und einfach Diagramme zeichnen zu können.
 Bei einer kleinen Recherche habe ich nun herausgefunden, dass auch `Graphviz`_ in `Sphinx`_ ohne größere Probleme
