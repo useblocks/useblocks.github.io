@@ -15,7 +15,7 @@
     <author>
       <name>Daniel</name>
     </author>
-    <content type="html">&lt;p&gt;Vor einiger Zeit habe ich &lt;a class=&quot;reference external&quot; href=&quot;http://plantuml.sourceforge.net&quot;&gt;PlantUML&lt;/a&gt; in &lt;a class=&quot;reference external&quot; href=&quot;http://www.sphinx-doc.org&quot;&gt;Sphinx&lt;/a&gt; integriert, um schnell und einfach Diagramme zeichnen zu können.
+    <content type="html">&lt;p&gt;Vor einiger Zeit habe ich &lt;a class=&quot;reference external&quot; href=&quot;http://plantuml.com&quot;&gt;PlantUML&lt;/a&gt; in &lt;a class=&quot;reference external&quot; href=&quot;http://www.sphinx-doc.org&quot;&gt;Sphinx&lt;/a&gt; integriert, um schnell und einfach Diagramme zeichnen zu können.
 Bei einer kleinen Recherche habe ich nun herausgefunden, dass auch &lt;a class=&quot;reference external&quot; href=&quot;http://www.graphviz.org&quot;&gt;Graphviz&lt;/a&gt; in &lt;a class=&quot;reference external&quot; href=&quot;http://www.sphinx-doc.org&quot;&gt;Sphinx&lt;/a&gt; ohne größere Probleme
 unterstützt wird.&lt;/p&gt;
 </content>

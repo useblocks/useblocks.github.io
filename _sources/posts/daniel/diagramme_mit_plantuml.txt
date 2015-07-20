@@ -47,7 +47,7 @@ Und es wäre gut, wenn es verschiedene Diagramm-Typen zulässt. Z.B: Klassen-Dia
 Meine Lösung: PlantUML
 ----------------------
 
-.. _PlantUML: http://plantuml.sourceforge.net/
+.. _PlantUML: http://plantuml.com
 
 Nach etwas Suchen und Testen von 4-5 Möglichkeiten bin in bei `PlantUML`_
 hängen geblieben.
