@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-useblocks Blog!
-===============
+ub Blog!
+========
 
 Willkommen auf unserem Team Blog.
 
@@ -34,7 +34,8 @@ Unsere letzten Beiträge
    :maxdepth: 1
    :hidden:
 
-   useblocks Blog <http://useblocks.github.io>
-   useblocks Website <http://www.useblocks.com>
+   ub Blog <http://useblocks.github.io>
+   ub Präsentationen <http://useblocks.github.io/presentations>
+   ub Website <http://www.useblocks.com>
    datablocks Website <http://www.datablocks.de>
 
