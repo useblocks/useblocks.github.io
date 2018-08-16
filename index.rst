@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-ub Blog
-=======
+useblocks Blog
+==============
 
 Willkommen auf unserem Team Blog.
 
@@ -21,7 +21,6 @@ Unsere letzten Beiträge
    :format: {title} von {author} am {date}
    :date: %d.%m.%Y
    :excerpts:
-
 
 .. `toctree` directive, below, contains list of non-post `.rst` files.
    This is how they appear in Navigation sidebar. Note that directive
