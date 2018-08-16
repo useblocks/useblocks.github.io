@@ -41,7 +41,7 @@ github_pages = "useblocks"
 blog_authors = {
     'useblocks team': ('useblocks team', None),
     'Daniel': ('Daniel', 'https://twitter.com/danwos'),
-    'Marco': ('Marco', 'https://www.xing.com/profile/Marco_Banse'),
+    'Marco': ('Marco', 'https://www.xing.com/profile/Marco_Heinemann16'),
 }
 
 
@@ -197,7 +197,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'useblocks blog'
-copyright = u'2015, useblocks team'
+copyright = u'2018, useblocks team'
 author = u'useblocks team'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -290,15 +290,16 @@ html_theme_path = [alabaster.get_path()]
 # of the sidebar.
 #html_logo = None
 
-# The name of an image file (within the static path) to use as favicon of the
-# docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
-# pixels large.
-#html_favicon = None
-
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+
+# The name of an image file (within the static path) to use as favicon of the
+# docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
+# pixels large.
+html_favicon = os.path.join(html_static_path[0], 'favicon.ico')
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
