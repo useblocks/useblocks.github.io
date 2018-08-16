@@ -1,0 +1,341 @@
+tuxe
+    description: Notebook
+    product: N14xWU (Not Applicable)
+    vendor: TUXEDO
+    version: Not Applicable
+    serial: Not Applicable
+    width: 4294967295 bits
+    capabilities: smbios-3.0 dmi-3.0 smp vsyscall32
+    configuration: boot=normal chassis=notebook family=Not Applicable sku=Not Applicable uuid=80FA5B5C-3810-0000-0000-000000000000
+  *-core
+       description: Motherboard
+       product: N14xWU
+       vendor: TUXEDO
+       physical id: 0
+       version: Not Applicable
+       serial: Not Applicable
+       slot: Not Applicable
+     *-firmware
+          description: BIOS
+          vendor: American Megatrends Inc.
+          physical id: 0
+          version: 1.05.02
+          date: 03/26/2018
+          size: 64KiB
+          capacity: 6080KiB
+          capabilities: pci upgrade shadowing cdboot bootselect edd int5printscreen int9keyboard int17printer acpi usb biosbootspecification uefi
+     *-memory
+          description: System Memory
+          physical id: 14
+          slot: System board or motherboard
+          size: 16GiB
+        *-bank:0
+             description: SODIMM DDR4 Synchronous Unbuffered (Unregistered) 2400 MHz (0.4 ns)
+             product: BLS8G4S240FSD.16FBD
+             vendor: 859B
+             physical id: 0
+             serial: A817A478
+             slot: ChannelA-DIMM0
+             size: 8GiB
+             width: 64 bits
+             clock: 2400MHz (0.4ns)
+        *-bank:1
+             description: SODIMM DDR4 Synchronous Unbuffered (Unregistered) 2400 MHz (0.4 ns)
+             product: BLS8G4S240FSD.16FBD
+             vendor: 859B
+             physical id: 1
+             serial: A817A419
+             slot: ChannelB-DIMM0
+             size: 8GiB
+             width: 64 bits
+             clock: 2400MHz (0.4ns)
+     *-cache:0
+          description: L1 cache
+          physical id: 19
+          slot: L1 Cache
+          size: 256KiB
+          capacity: 256KiB
+          capabilities: synchronous internal write-back unified
+          configuration: level=1
+     *-cache:1
+          description: L2 cache
+          physical id: 1a
+          slot: L2 Cache
+          size: 1MiB
+          capacity: 1MiB
+          capabilities: synchronous internal write-back unified
+          configuration: level=2
+     *-cache:2
+          description: L3 cache
+          physical id: 1b
+          slot: L3 Cache
+          size: 8MiB
+          capacity: 8MiB
+          capabilities: synchronous internal write-back unified
+          configuration: level=3
+     *-cpu
+          description: CPU
+          product: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+          vendor: Intel Corp.
+          physical id: 1c
+          bus info: cpu@0
+          version: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+          serial: To Be Filled By O.E.M.
+          slot: U3E1
+          size: 3388MHz
+          capacity: 4005MHz
+          width: 64 bits
+          clock: 100MHz
+          capabilities: x86-64 fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp cpufreq
+          configuration: cores=4 enabledcores=4 threads=8
+     *-pci
+          description: Host bridge
+          product: Xeon E3-1200 v6/7th Gen Core Processor Host Bridge/DRAM Registers
+          vendor: Intel Corporation
+          physical id: 100
+          bus info: pci@0000:00:00.0
+          version: 08
+          width: 32 bits
+          clock: 33MHz
+        *-display
+             description: VGA compatible controller
+             product: UHD Graphics 620
+             vendor: Intel Corporation
+             physical id: 2
+             bus info: pci@0000:00:02.0
+             version: 07
+             width: 64 bits
+             clock: 33MHz
+             capabilities: pciexpress msi pm vga_controller bus_master cap_list rom
+             configuration: driver=i915 latency=0
+             resources: irq:16 memory:db000000-dbffffff memory:90000000-9fffffff ioport:f000(size=64) memory:c0000-dffff
+        *-usb
+             description: USB controller
+             product: Sunrise Point-LP USB 3.0 xHCI Controller
+             vendor: Intel Corporation
+             physical id: 14
+             bus info: pci@0000:00:14.0
+             version: 21
+             width: 64 bits
+             clock: 33MHz
+             capabilities: pm msi xhci bus_master cap_list
+             configuration: driver=xhci_hcd latency=0
+             resources: irq:16 memory:dc310000-dc31ffff
+           *-usbhost:0
+                product: xHCI Host Controller
+                vendor: Linux 4.17.14-arch1-1-ARCH xhci-hcd
+                physical id: 0
+                bus info: usb@1
+                logical name: usb1
+                version: 4.17
+                capabilities: usb-2.00
+                configuration: driver=hub slots=12 speed=480Mbit/s
+              *-usb:0
+                   description: Video
+                   product: Chicony USB2.0 Camera
+                   vendor: Sonix Technology Co., Ltd.
+                   physical id: 4
+                   bus info: usb@1:4
+                   version: 54.03
+                   capabilities: usb-2.00
+                   configuration: driver=uvcvideo maxpower=500mA speed=480Mbit/s
+              *-usb:1
+                   description: Bluetooth wireless interface
+                   vendor: Intel Corp.
+                   physical id: 5
+                   bus info: usb@1:5
+                   version: 0.10
+                   capabilities: bluetooth usb-2.00
+                   configuration: driver=btusb maxpower=100mA speed=12Mbit/s
+           *-usbhost:1
+                product: xHCI Host Controller
+                vendor: Linux 4.17.14-arch1-1-ARCH xhci-hcd
+                physical id: 1
+                bus info: usb@2
+                logical name: usb2
+                version: 4.17
+                capabilities: usb-3.00
+                configuration: driver=hub slots=6 speed=5000Mbit/s
+        *-generic
+             description: Signal processing controller
+             product: Sunrise Point-LP Thermal subsystem
+             vendor: Intel Corporation
+             physical id: 14.2
+             bus info: pci@0000:00:14.2
+             version: 21
+             width: 64 bits
+             clock: 33MHz
+             capabilities: pm msi cap_list
+             configuration: driver=intel_pch_thermal latency=0
+             resources: irq:18 memory:dc32e000-dc32efff
+        *-communication
+             description: Communication controller
+             product: Sunrise Point-LP CSME HECI #1
+             vendor: Intel Corporation
+             physical id: 16
+             bus info: pci@0000:00:16.0
+             version: 21
+             width: 64 bits
+             clock: 33MHz
+             capabilities: pm msi bus_master cap_list
+             configuration: driver=mei_me latency=0
+             resources: irq:16 memory:dc32d000-dc32dfff
+        *-storage
+             description: SATA controller
+             product: Sunrise Point-LP SATA Controller [AHCI mode]
+             vendor: Intel Corporation
+             physical id: 17
+             bus info: pci@0000:00:17.0
+             version: 21
+             width: 32 bits
+             clock: 66MHz
+             capabilities: storage msi pm ahci_1.0 bus_master cap_list
+             configuration: driver=ahci latency=0
+             resources: irq:16 memory:dc328000-dc329fff memory:dc32c000-dc32c0ff ioport:f090(size=8) ioport:f080(size=4) ioport:f060(size=32) memory:dc32b000-dc32b7ff
+        *-pci:0
+             description: PCI bridge
+             product: Sunrise Point-LP PCI Express Root Port #1
+             vendor: Intel Corporation
+             physical id: 1c
+             bus info: pci@0000:00:1c.0
+             version: f1
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci pciexpress msi pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:16 ioport:2000(size=4096) memory:c4000000-da0fffff ioport:a0000000(size=570425344)
+        *-pci:1
+             description: PCI bridge
+             product: Sunrise Point-LP PCI Express Root Port #5
+             vendor: Intel Corporation
+             physical id: 1c.4
+             bus info: pci@0000:00:1c.4
+             version: f1
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci pciexpress msi pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:16 ioport:e000(size=4096) memory:dc200000-dc2fffff
+           *-generic
+                description: Unassigned class
+                product: RTL8411B PCI Express Card Reader
+                vendor: Realtek Semiconductor Co., Ltd.
+                physical id: 0
+                bus info: pci@0000:3a:00.0
+                version: 01
+                width: 32 bits
+                clock: 33MHz
+                capabilities: pm msi pciexpress msix vpd bus_master cap_list rom
+                configuration: driver=rtsx_pci latency=0
+                resources: irq:17 memory:dc215000-dc215fff memory:dc200000-dc20ffff
+           *-network
+                description: Ethernet interface
+                product: RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
+                vendor: Realtek Semiconductor Co., Ltd.
+                physical id: 0.1
+                bus info: pci@0000:3a:00.1
+                logical name: enp58s0f1
+                version: 12
+                serial: 80:fa:5b:5c:38:10
+                size: 10Mbit/s
+                capacity: 1Gbit/s
+                width: 64 bits
+                clock: 33MHz
+                capabilities: pm msi pciexpress msix vpd bus_master cap_list ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd 1000bt 1000bt-fd autonegotiation
+                configuration: autonegotiation=on broadcast=yes driver=r8169 driverversion=2.3LK-NAPI duplex=half firmware=rtl8411-2_0.0.1 07/08/13 latency=0 link=no multicast=yes port=MII speed=10Mbit/s
+                resources: irq:16 ioport:e000(size=256) memory:dc214000-dc214fff memory:dc210000-dc213fff
+        *-pci:2
+             description: PCI bridge
+             product: Sunrise Point-LP PCI Express Root Port #6
+             vendor: Intel Corporation
+             physical id: 1c.5
+             bus info: pci@0000:00:1c.5
+             version: f1
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci pciexpress msi pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:17 memory:dc100000-dc1fffff
+           *-network
+                description: Wireless interface
+                product: Wireless 8265 / 8275
+                vendor: Intel Corporation
+                physical id: 0
+                bus info: pci@0000:3b:00.0
+                logical name: wlp59s0
+                version: 78
+                serial: 30:24:32:f5:9e:2f
+                width: 64 bits
+                clock: 33MHz
+                capabilities: pm msi pciexpress bus_master cap_list ethernet physical wireless
+                configuration: broadcast=yes driver=iwlwifi driverversion=4.17.14-arch1-1-ARCH firmware=36.e91976c0.0 ip=192.168.0.10 latency=0 link=yes multicast=yes wireless=IEEE 802.11
+                resources: irq:17 memory:dc100000-dc101fff
+        *-pci:3
+             description: PCI bridge
+             product: Sunrise Point-LP PCI Express Root Port #9
+             vendor: Intel Corporation
+             physical id: 1d
+             bus info: pci@0000:00:1d.0
+             version: f1
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pci pciexpress msi pm normal_decode bus_master cap_list
+             configuration: driver=pcieport
+             resources: irq:16 memory:dc000000-dc0fffff
+           *-storage
+                description: Non-Volatile memory controller
+                product: NVMe SSD Controller SM981/PM981
+                vendor: Samsung Electronics Co Ltd
+                physical id: 0
+                bus info: pci@0000:3c:00.0
+                version: 00
+                width: 64 bits
+                clock: 33MHz
+                capabilities: storage pm msi pciexpress msix nvm_express bus_master cap_list
+                configuration: driver=nvme latency=0
+                resources: irq:16 memory:dc000000-dc003fff
+        *-isa
+             description: ISA bridge
+             product: Intel(R) 100 Series Chipset Family LPC Controller/eSPI Controller - 9D4E
+             vendor: Intel Corporation
+             physical id: 1f
+             bus info: pci@0000:00:1f.0
+             version: 21
+             width: 32 bits
+             clock: 33MHz
+             capabilities: isa bus_master
+             configuration: latency=0
+        *-memory UNCLAIMED
+             description: Memory controller
+             product: Sunrise Point-LP PMC
+             vendor: Intel Corporation
+             physical id: 1f.2
+             bus info: pci@0000:00:1f.2
+             version: 21
+             width: 32 bits
+             clock: 33MHz (30.3ns)
+             configuration: latency=0
+             resources: memory:dc324000-dc327fff
+        *-multimedia
+             description: Audio device
+             product: Sunrise Point-LP HD Audio
+             vendor: Intel Corporation
+             physical id: 1f.3
+             bus info: pci@0000:00:1f.3
+             version: 21
+             width: 64 bits
+             clock: 33MHz
+             capabilities: pm msi bus_master cap_list
+             configuration: driver=snd_hda_intel latency=32
+             resources: irq:16 memory:dc320000-dc323fff memory:dc300000-dc30ffff
+        *-serial
+             description: SMBus
+             product: Sunrise Point-LP SMBus
+             vendor: Intel Corporation
+             physical id: 1f.4
+             bus info: pci@0000:00:1f.4
+             version: 21
+             width: 64 bits
+             clock: 33MHz
+             configuration: driver=i801_smbus latency=0
+             resources: irq:16 memory:dc32a000-dc32a0ff ioport:f040(size=32)

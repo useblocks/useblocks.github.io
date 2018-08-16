@@ -1,0 +1,34 @@
+H/W path         Device     Class          Description
+======================================================
+                            system         N14xWU (Not Applicable)
+/0                          bus            N14xWU
+/0/0                        memory         64KiB BIOS
+/0/14                       memory         16GiB System Memory
+/0/14/0                     memory         8GiB SODIMM DDR4 Synchronous Unbuffered (Unregistered) 2400 MHz (0.4 ns)
+/0/14/1                     memory         8GiB SODIMM DDR4 Synchronous Unbuffered (Unregistered) 2400 MHz (0.4 ns)
+/0/19                       memory         256KiB L1 cache
+/0/1a                       memory         1MiB L2 cache
+/0/1b                       memory         8MiB L3 cache
+/0/1c                       processor      Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+/0/100                      bridge         Xeon E3-1200 v6/7th Gen Core Processor Host Bridge/DRAM Registers
+/0/100/2                    display        UHD Graphics 620
+/0/100/14                   bus            Sunrise Point-LP USB 3.0 xHCI Controller
+/0/100/14/0      usb1       bus            xHCI Host Controller
+/0/100/14/0/4               multimedia     Chicony USB2.0 Camera
+/0/100/14/0/5               communication  Bluetooth wireless interface
+/0/100/14/1      usb2       bus            xHCI Host Controller
+/0/100/14.2                 generic        Sunrise Point-LP Thermal subsystem
+/0/100/16                   communication  Sunrise Point-LP CSME HECI #1
+/0/100/17                   storage        Sunrise Point-LP SATA Controller [AHCI mode]
+/0/100/1c                   bridge         Sunrise Point-LP PCI Express Root Port #1
+/0/100/1c.4                 bridge         Sunrise Point-LP PCI Express Root Port #5
+/0/100/1c.4/0               generic        RTL8411B PCI Express Card Reader
+/0/100/1c.4/0.1  enp58s0f1  network        RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
+/0/100/1c.5                 bridge         Sunrise Point-LP PCI Express Root Port #6
+/0/100/1c.5/0    wlp59s0    network        Wireless 8265 / 8275
+/0/100/1d                   bridge         Sunrise Point-LP PCI Express Root Port #9
+/0/100/1d/0                 storage        NVMe SSD Controller SM981/PM981
+/0/100/1f                   bridge         Intel(R) 100 Series Chipset Family LPC Controller/eSPI Controller - 9D4E
+/0/100/1f.2                 memory         Memory controller
+/0/100/1f.3                 multimedia     Sunrise Point-LP HD Audio
+/0/100/1f.4                 bus            Sunrise Point-LP SMBus

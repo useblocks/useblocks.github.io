@@ -49,7 +49,7 @@ blog_authors = {
 # keys should be used in ``post`` directive to refer to the locations.
 # Default is ``{}``.
 blog_languages = {
-#    'en': ('English', None),
+    'en': ('English', None),
     'de': ('Deutsch', None),
 }
 
@@ -100,6 +100,7 @@ post_date_format = '%d.%m.%Y'
 html_sidebars = {
     '**': [ 'about.html',
             'postcard.html',
+            'localtoc.html',
             'navigation.html',
             'tagcloud.html',
             'categories.html',
@@ -136,7 +137,7 @@ html_sidebars = {
 
 # Link to `Font Awesome`_ at `Bootstrap CDN`_ and use icons in sidebars
 # and post footers.  Default: ``False``
-fontawesome_link_cdn = True
+fontawesome_link_cdn = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
 
 # Sphinx_ theme already links to `Font Awesome`_.  Default: ``False``
 #fontawesome_included = False
@@ -224,7 +225,7 @@ today_fmt = ' %d.%m.%Y'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['.venv']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -266,13 +267,13 @@ html_theme = 'alabaster'
 html_theme_options = {
     'github_user': 'useblocks',
     'github_repo': 'useblocks.github.io',
-    'github_button': True,
+    'github_button': False,
+    'github_banner': True,
     'travis_button': False,
     'logo': 'ub_logo.png',
     'font_family': 'verdana, arial, non-serif',
     'head_font_family': 'verdana, arial, non-serif',
-    'analytics_id': 'UA-24943544-3',
-
+    'page_width': '1400px',
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -314,7 +315,6 @@ html_favicon = os.path.join(html_static_path[0], 'favicon.ico')
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
@@ -362,5 +362,3 @@ html_search_language = 'de'
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'useblocksblogdoc'
-
-
