@@ -10,7 +10,6 @@
 # serve to show the default.
 
 import os
-import sys
 import ablog
 import alabaster
 
@@ -180,7 +179,7 @@ extensions = [
 ]
 
 # PlantUML jar location
-plantuml = 'java -jar plantuml.jar'
+plantuml = 'java -jar {}'.format(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'plantuml.jar'))
 
 
 # Add any paths that contain templates here, relative to this directory.

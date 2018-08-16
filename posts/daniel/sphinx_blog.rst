@@ -209,6 +209,7 @@ die Blog-SW einbinden. Dazu habe ich folgenden Artikel verfasst:
 Um Lust auf mehr zu machen: Mit `PlantUML`_ wird aus Folgendem::
 
     .. uml::
+
         object hans
         object peter
         object emma
@@ -221,6 +222,7 @@ Um Lust auf mehr zu machen: Mit `PlantUML`_ wird aus Folgendem::
 ...im Post schnell und einfach dieses Bild:
 
 .. uml::
+
     object hans
     object peter
     object emma
