@@ -14,7 +14,7 @@ This blog post is in English despite all previous posts being in German. I just 
 be interested in this review too. I myself am located in Munich, Germany.
 
 As the title states, I'm going to review the
-`Tuxedo InfinityBook Pro 14 v3 <https://www.tuxedocomputers.com/de/Linux-Hardware/Linux-Notebooks/10-14-Zoll/TUXEDO-InfinityBook-Pro-14-14-matt-Full-HD-IPS-Aluminiumgehaeuse-bis-Intel-Core-i7-Quad-Core-bis-32GB-RAM-bis-zwei-HDD/SSD-bis-12h-Akku-USB-C-Thunderbolt-3.tuxedo>`_.
+`Tuxedo InfinityBook Pro 14 v3 <https://www.tuxedocomputers.com/de/Linux-Hardware/Linux-Notebooks/10-14-Zoll/TUXEDO-InfinityBook-Pro-14-14-matt-Full-HD-IPS-Aluminiumgehaeuse-bis-Intel-Core-i7-Quad-Core-bis-32GB-RAM-bis-zwei-HDD/SSD-bis-12h-Akku-USB-C-Thunderbolt-3.tuxedo>`_
 which from my perspective plays in the league of a Dell XPS 13/15 or Lenovo T480 when it comes to Linux laptops in the
 year 2018.
 
@@ -25,7 +25,7 @@ Background
 ----------
 
 I'm a SW developer on Linux platforms since years. My former Laptop was a Lenovo E420s which came into the years
-in terms of battery life, CPU performance, RAM performance and portability (weight, size).
+in terms of battery life, CPU performance, RAM size and performance and portability (weight, size).
 
 So I was looking for a new Linux compatible laptop with state-of-the-art hardware.
 The wish list items in order of priority were:
@@ -41,6 +41,7 @@ The wish list items in order of priority were:
 #.  **Keyboard** German layout
 #.  **Keyboard** backlight available
 #.  **Keyboard** typing must be fun (I like hard and short key strokes)
+#.  **Quiet** CPU fan / silent without load
 #.  **Intel ME** option to disable the Intel ME and generally speaking, I like open hardware
 
 Some notes on above items with the numbers referring to above list:
@@ -88,6 +89,8 @@ Some notes on above items with the numbers referring to above list:
     also on low-light environments during the day.
 #.  This is low on my priority list because most of the time I have an external keyboard attached. But SW development
     is a keyboard centric task so a good keyboard is a plus.
+#.  When not running CPU intensive tasks, I don't want the CPU fan to run. If the fan runs, I want the noise to be
+    'acceptable'.
 #.  I use a lot of open source software, I participate in open source development, I like the Free Software Foundation
     and the the Linux project in general. And open source has a high relevance for companies too (think of Linux or
     OpenStack). Unfortunately, there are no vendors on the market that feature open hardware. The whole industry of
