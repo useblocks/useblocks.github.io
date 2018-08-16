@@ -108,6 +108,13 @@ Emma --&gt; Peter
 </pre></div>
 </div>
 <p>Daraus generiert PlantUML dann folgendes:</p>
+<p class="plantuml">
+<img src="../../../_images/plantuml-39c35595931cee9790042c73a2b8a8ad7af22b46.png" alt="object Hans
+object Emma
+object Peter
+Hans --&gt; Peter
+Emma --&gt; Peter"/>
+</p>
 <p>Natürlich gehen auch komplexere Sachen:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>@startuml
 object Hans {
@@ -129,6 +136,24 @@ Emma ..&gt; Max
 @enduml
 </pre></div>
 </div>
+<p class="plantuml">
+<img src="../../../_images/plantuml-df75ac0f810748554014efd85f0d3880be33e26c.png" alt="object Hans {
+name:Hans
+Status: Opa
+}
+
+object Emma {
+name:Emma
+Status: Oma
+}
+
+Hans --&gt; Peter
+Emma --&gt; Peter
+Peter --&gt; Max
+Anne --&gt; Max
+Hans ..&gt; Max
+Emma ..&gt; Max"/>
+</p>
 <p>Es gehen aber Sequenz-Diagramme:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>@startuml
 Hans -&gt; Peter: Hi!
@@ -138,6 +163,12 @@ Peter -&gt; Anne: Moin!
 @enduml
 </pre></div>
 </div>
+<p class="plantuml">
+<img src="../../../_images/plantuml-121f8e59f8fd1ecc14d70db25de3d2c6a164c399.png" alt="Hans -&gt; Peter: Hi!
+Peter -&gt; Hans: Hallo!
+Peter -&gt; Emma: Moin!
+Peter -&gt; Anne: Moin!"/>
+</p>
 <p>Was alles geht und wie man es verwendet erfährt man am besten auf der <a class="reference external" href="http://plantuml.com">PlantUML</a> Webseite.</p>
 </div>
 </div>

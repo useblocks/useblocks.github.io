@@ -225,6 +225,7 @@ die Blog-SW einbinden. Dazu habe ich folgenden Artikel verfasst:
 <a class="reference internal" href="../diagramme_mit_plantuml/#diagramme_mit_plantuml"><span class="std std-ref">Effektive Diagrammerstellung mit PlantUML</span></a></p>
 <p>Um Lust auf mehr zu machen: Mit <a class="reference external" href="http://plantuml.com">PlantUML</a> wird aus Folgendem:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">uml</span><span class="p">::</span>
+
     <span class="nb">object</span> <span class="n">hans</span>
     <span class="nb">object</span> <span class="n">peter</span>
     <span class="nb">object</span> <span class="n">emma</span>
@@ -236,6 +237,15 @@ die Blog-SW einbinden. Dazu habe ich folgenden Artikel verfasst:
 </pre></div>
 </div>
 <p>…im Post schnell und einfach dieses Bild:</p>
+<p class="plantuml">
+<img src="../../../_images/plantuml-49551db42a44eab45cc8a273392b086d5aa3ac4d.png" alt="object hans
+object peter
+object emma
+hans --&gt; peter
+peter --&gt; emma
+emma ..&gt; peter
+emma ..&gt; hans"/>
+</p>
 </div>
 <div class="section" id="travisci">
 <h2>TravisCI<a class="headerlink" href="#travisci" title="Link zu dieser Überschrift">¶</a></h2>
