@@ -3,12 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-ub Blog!
-========
+ub Blog
+=======
 
 Willkommen auf unserem Team Blog.
 
-Hier dreht sich alles um Themen rund um SW-Entwicklung, Service-Architekturen und Unternehmensprozessen.
+Hier dreht sich alles um Themen rund um SW-Entwicklung, Hardware/Embedded, Architekturen und Unternehmensprozesse.
 
 Wir als Team sind:
 

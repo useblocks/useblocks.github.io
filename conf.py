@@ -20,7 +20,7 @@ import alabaster
 #blog_path = 'blog'
 
 # The “title” for the blog, used in acthive pages.  Default is ``'Blog'``.
-blog_title = u'useblocks blog Blog'
+blog_title = u'useblocks Blog'
 
 # Base URL for the website, required for generating feeds.
 # e.g. blog_baseurl = "http://example.com/"
@@ -42,7 +42,6 @@ blog_authors = {
     'useblocks team': ('useblocks team', None),
     'Daniel': ('Daniel', 'https://twitter.com/danwos'),
     'Marco': ('Marco', 'https://www.xing.com/profile/Marco_Banse'),
-    'Carlos': ('Carlos', 'https://www.xing.com/profile/Carlos_Garcia129')
 }
 
 
@@ -270,7 +269,7 @@ html_theme_options = {
     'github_repo': 'useblocks.github.io',
     'github_button': True,
     'travis_button': False,
-    'logo': 'logo_kreise.png',
+    'logo': 'ub_logo.png',
     'font_family': 'verdana, arial, non-serif',
     'head_font_family': 'verdana, arial, non-serif',
     'analytics_id': 'UA-24943544-3',
