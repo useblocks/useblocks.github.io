@@ -16,7 +16,7 @@ script:
   - ablog build
 
 after_success:
-  - git config --global user.name "Daniel Woste"
-  - git config --global user.email "daniel.woste@useblocks.com"
+  - git config --global user.name "Marco Heinemann"
+  - git config --global user.email "marco.heinemann@useblocks.com"
   - git config --global push.default simple
   - ablog deploy --push-quietly --github-token=DEPLOY_KEY -m="`git log -1 --pretty=%B`"
