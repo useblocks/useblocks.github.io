@@ -37,5 +37,3 @@ Unsere letzten Beiträge
    ub Blog <http://useblocks.github.io>
    ub Präsentationen <http://useblocks.github.io/presentations>
    ub Website <http://www.useblocks.com>
-   datablocks Website <http://www.datablocks.de>
-
