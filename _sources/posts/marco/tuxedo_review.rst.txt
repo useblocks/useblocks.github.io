@@ -1,5 +1,5 @@
 .. post:: 16 Aug, 2018
-   :tags: tuxedo, hardware
+   :tags: tuxedo, hardware, draft
    :category: Hardware
    :author: Marco
    :excerpt: 3
