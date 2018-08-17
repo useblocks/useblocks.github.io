@@ -2,29 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">useblocks Blog</title>
   <id>http://useblocks.github.io/blog/atom.xml</id>
-  <updated>2018-08-16T00:00:00Z</updated>
+  <updated>2015-07-19T00:00:00Z</updated>
   <link href="http://useblocks.github.io" />
   <link href="http://useblocks.github.io/blog/atom.xml" rel="self" />
   <generator uri="http://ablog.readthedocs.org" version="0.9.2">ABlog</generator>
-  <entry xml:base="http://useblocks.github.io/blog/atom.xml">
-    <title type="text">Review TUXEDO InfinityBook Pro 14 v3 (2018)</title>
-    <id>http://useblocks.github.io/posts/marco/tuxedo_review/</id>
-    <updated>2018-08-16T00:00:00Z</updated>
-    <published>2018-08-16T00:00:00Z</published>
-    <link href="http://useblocks.github.io/posts/marco/tuxedo_review/" />
-    <author>
-      <name>Marco</name>
-    </author>
-    <content type="html">&lt;p&gt;This blog post is in English despite all previous posts being in German. I just assume a lot international folks might
-be interested in this review too. I myself am located in Munich, Germany.&lt;/p&gt;
-&lt;p&gt;As the title states, I’m going to review the
-&lt;a class=&quot;reference external&quot; href=&quot;https://www.tuxedocomputers.com/de/Linux-Hardware/Linux-Notebooks/10-14-Zoll/TUXEDO-InfinityBook-Pro-14-14-matt-Full-HD-IPS-Aluminiumgehaeuse-bis-Intel-Core-i7-Quad-Core-bis-32GB-RAM-bis-zwei-HDD/SSD-bis-12h-Akku-USB-C-Thunderbolt-3.tuxedo&quot;&gt;Tuxedo InfinityBook Pro 14 v3&lt;/a&gt;
-which from my perspective plays in the league of a Dell XPS 13/15 or Lenovo T480 when it comes to Linux laptops in the
-year 2018.&lt;/p&gt;
-&lt;p&gt;Tuxedo is a German company, based in Königsbrunn near Augsburg. The company mainly offers Linux compatible PCs and
-laptops.&lt;/p&gt;
-</content>
-  </entry>
   <entry xml:base="http://useblocks.github.io/blog/atom.xml">
     <title type="text">Graphviz in Sphinx</title>
     <id>http://useblocks.github.io/posts/daniel/sphinx_graphviz/</id>
