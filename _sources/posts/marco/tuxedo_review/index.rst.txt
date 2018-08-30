@@ -107,7 +107,7 @@ Some notes on above items with the numbers referring to above list:
     Having the option to run Coreboot and remove/deactivate the Intel ME and AMD PSP would really be a huge benefit
     for me.
 
-    There are companies like `Purism <https://puri.sm>` or `system76 <https://system76.com>` that intend to deactivate
+    There are companies like `Purism <https://puri.sm>`_ or `system76 <https://system76.com>`_ that intend to deactivate
     the Intel ME on current CPUs. They do a good job but reverse engineering takes times, so there's no option for
     the latest hardware.
     I'd love to live in a world of open hardware, open firmware and companies that will fail when bringing non-open
@@ -283,7 +283,8 @@ Speed
 ^^^^^
 
 There is nothing to write about the performance. It's outstanding.
-I did not specifically run any benchmarks. When running ``dmesg`` I see throttling events caused by high temperatures:
+However I did not specifically run any benchmarks.
+When running ``dmesg`` I see throttling events caused by high temperatures from time to time:
 
 .. code-block:: text
 
