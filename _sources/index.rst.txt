@@ -14,10 +14,12 @@ Wir als Team sind:
 
 .. image:: /_static/autoren.png
 
-Unsere letzten Beiträge
------------------------
+|
 
-.. postlist:: 5
+Unsere letzten Beiträge
+=======================
+
+.. postlist:: 20
    :format: {title} von {author} am {date}
    :date: %d.%m.%Y
    :excerpts:
@@ -33,6 +35,5 @@ Unsere letzten Beiträge
    :maxdepth: 1
    :hidden:
 
-   ub Blog <http://useblocks.github.io>
    ub Präsentationen <http://useblocks.github.io/presentations>
    ub Website <http://www.useblocks.com>

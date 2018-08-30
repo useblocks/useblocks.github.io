@@ -1,0 +1,560 @@
+.. post::
+    :tags: review, tuxedo, hardware, laptop, linux, arch, ubuntu
+    :category: Hardware
+    :author: Marco
+    :excerpt: 2
+    :language: en
+
+Review TUXEDO InfinityBook Pro 14 v3 (2018)
+===========================================
+
+.. _Tuxedo InfinityBook Pro 14 v3: https://www.tuxedocomputers.com/de/Linux-Hardware/Linux-Notebooks/10-14-Zoll/TUXEDO-InfinityBook-Pro-14-14-matt-Full-HD-IPS-Aluminiumgehaeuse-bis-Intel-Core-i7-Quad-Core-bis-32GB-RAM-bis-zwei-HDD/SSD-bis-12h-Akku-USB-C-Thunderbolt-3.tuxedo
+
+This blog post is in English despite all previous posts being in German. I just assume some international folks might
+be interested in this review too. I myself am located in Munich, Germany.
+
+As the title states, I'm going to review the `Tuxedo InfinityBook Pro 14 v3`_ which from my perspective plays in
+the league of a Dell XPS 13/15 or Lenovo T480 when it comes to Linux laptops in the year 2018.
+Tuxedo is a German company, based in Königsbrunn near Augsburg. The company mainly offers Linux compatible PCs and
+laptops.
+
+The laptop has already gotten some media attention:
+
+| https://www.golem.de/news/tuxedo-infinitybook-14-konfigurierbares-linux-notebook-startet-bei-unter-900-euro-1807-135251.html
+| https://www.pro-linux.de/news/1/26057/tuxedo-infinitybook-pro-14-bereit-zur-auslieferung.html
+| https://www.notebookcheck.com/Tuxedo-bringt-neues-InfinityBook-Pro-mit-14-Zoll.313502.0.html
+| http://www.linux-magazin.de/news/tuxedo-stellt-neues-infinitybook-pro-14-vor/
+| https://www.linux-user.de/Downloads/LUCE/2018/lu-ce_2018-09.pdf
+
+Background
+----------
+
+I'm a SW developer on Linux platforms since years. My former Laptop was a Lenovo E420s which came into the years
+in terms of battery life, CPU performance, RAM size and performance and portability (weight, size).
+
+So I was looking for a new Linux compatible laptop with state-of-the-art hardware.
+My wish list items in order of priority were:
+
+1.  **CPU** 8th generation Intel CPU (Core i5 8xxx, Core i7 8xxx)
+#.  **RAM** at least 16GB
+#.  **Linux** tested compatibility of most relevant components
+#.  **Display** ~14 inches
+#.  **Weight** <1.8kg
+#.  **Build quality** should be reasonable
+#.  **Ethernet** RJ45 gigabit without adapter
+#.  **Web cam** with a reasonable positioning
+#.  **Keyboard** German layout
+#.  **Keyboard** backlight available
+#.  **Keyboard** typing must be fun (I like hard and short key strokes)
+#.  **Quiet** CPU fan / silent without load
+#.  **Intel ME** option to disable the Intel ME and generally speaking, I like open hardware
+
+Some notes on above items with the numbers referring to above list:
+
+1.  The 8th generation Intel CPUs (model name Kaby Lake Refresh) for mobile devices feature 4 physical cores.
+    With hyperthreading the system has 8 logical cores available. This is a huge benefit when running virtual machines
+    and doing CPU intensive stuff in the background.
+#.  A laptop with less than 16GB of RAM does not make sense these days.
+    Any laptop gets a bonus if RAM can be expanded up to 32GB. I don't buy laptops often
+    (the Lenovo E420s is from 2011), so upgradeability is master.
+#.  The Linux compatibility is a major problem. It's not easy to find information concerning new laptops if they are not
+    offered with a Linux distribution preinstalled by the vendor (like the Dell XPS Developer Edition).
+    Thinkpads are also known to work well in Linux environments.
+
+    Another point of interest is the definition of 'Linux compatible'. A laptop contains a lot hardware which may be
+    fully compatible, partly compatible or not-at-all compatible. At a minimum, I expect:
+
+    *   Display works with brightness control
+    *   Battery life is higher than 5 hours on a recent Linux kernel (4.15 to 4.17) under 'normal' circumstances
+        (development, presentation). Problems may arise with CPUs not going into deep idle states or wake-up events
+        being continuously fired. This may also involve peripheral.
+    *   Touchpad works with multi touch gestures (2-finger scrolling and emulated right/middle mouse buttons clicks).
+    *   No restriction to a specific distribution as I will install any distribution I like. Currently I'm on
+        Xubuntu (Ubuntu + Xfce) but I want to test Arch + Xfce. The videos of `this <http://unicks.eu>`_ German guy
+        convinced me that Arch is the next logical step after running Ubuntu or other Debian based distributions.
+        Thanks Nick for your great videos.
+
+        A great source for Linux laptop compatibility is the Arch wiki (in which this Tuxedo laptop is still missing).
+
+    Nice to have are:
+
+    *   Special keys work out of the box
+    *   SD card reader
+    *   LED indicators
+
+#.  13.3 inch displays are too small for mobile development from my POV and larger displays lack portability.
+#.  The weight is relevant although almost all current ultrabooks of 14 inch display size fulfill my constraint.
+#.  I like Aluminium not plastic and warp resistant laptop bodies and displays.
+#.  Having an real ethernet port without bringing an adapter is just nice.
+#.  Many vendors build the web cam below the display or even into the keyboard. This is not a user friendly design
+    decision. I use video chat throughout my day and colleagues don't want to look at me through the eyes of a fish...
+#.  I like a Germany keyboard layout because I live in Germany. It's not an absolute must because I can use a German
+    keymap without having the right symbols printed on the keys but it's a plus if I can get it.
+#.  Having a background light for the keyboard is a benefit when working in dark environments like during the night or
+    also on low-light environments during the day. My current Lenovo E420s has a small light above the display which
+    shines on the keyboard; in dark environment you can barely see anything, so I'd rather go with a background
+    illumination.
+#.  This is low on my priority list because most of the time I have an external keyboard attached. But SW development
+    is a keyboard centric task so a good keyboard is a plus.
+#.  When not running CPU intensive tasks, I don't want the CPU fan to run. If the fan runs, I want the noise to be
+    'acceptable'.
+#.  I use a lot of open source software, I participate in open source development, I like the Free Software Foundation
+    and the Linux project in general. Open source has a high relevance for companies too (think of Linux,
+    OpenStack or Kubernetes). Unfortunately, there are no vendors on the market that feature open hardware. The whole
+    industry of current desktop computing is build around Intel, AMD or SoCs that have no open specification. That's a
+    pity. If I'm going for current hardware, I cannot follow the hardware proposals of the FSF and choose 5 years old
+    hardware. Then I could also stick with my old Lenovo.
+    Having the option to run Coreboot and remove/deactivate the Intel ME and AMD PSP would really be a huge benefit
+    for me.
+
+    There are companies like `Purism <https://puri.sm>` or `system76 <https://system76.com>` that intend to deactivate
+    the Intel ME on current CPUs. They do a good job but reverse engineering takes times, so there's no option for
+    the latest hardware.
+    I'd love to live in a world of open hardware, open firmware and companies that will fail when bringing non-open
+    hardware to the market. But the truth is, I need an affordable and current product to run the applications I like.
+
+    At the end, there is no product on the market that fulfills the priority items on my wish list, so I had to move
+    this point to the end :(
+
+I am not particularly interested in USB-C, Thunderbolt or docking stations. However, if these work with the model of my
+choice I'm happy too. Also USB-C charging is nice to have. As I don't have any USB-C hardware or chargers already, I
+need a new charger anyway.
+
+Candidates
+----------
+
+I chose between the following models
+
+*   `Dell XPS 13 Developer Edition <https://www.dell.com/en-us/work/shop/dell-laptops-and-notebooks/xps-13-developer-edition/spd/xps-13-linux>`_
+
+    **Pros**
+
+    *   good Linux support
+    *   latest hardware
+    *   Germany keyboard layout
+    *   build quality
+
+    **Cons**
+
+    *   13.3 inch display is too small
+    *   price tag
+
+*   `Thinkpad T480 <https://www.lenovo.com/us/en/laptops/thinkpad/thinkpad-t-series/ThinkPad-T480/p/22TP2TT4800>`_
+
+    **Pros**
+
+    *   basically good Linux support
+    *   latest hardware
+    *   build quality
+    *   Germany keyboard layout
+
+    **Cons**
+
+    *   the finger print sensor won't work currently but I think the reverse engineered driver might be available soon
+        for T480: https://github.com/nmikhailov/Validity90
+    *   price tag (in my configuration above 1.800€ brutto)
+    *   I don't like the switched Strg/Ctrl and Fn keys on my E420S and the T480 has the same layout. When switching
+        between external keyboards and the laptop keyboard I always got confused.
+
+*   `Huawei X Pro <https://consumer.huawei.com/us/tablets/matebook-x-pro/>`_
+
+    **Pros**
+
+    *   latest hardware
+
+    **Cons**
+
+    *   at the time of my decision not yet available in Germany
+    *   bad web cam positioning (built into keyboard)
+    *   price tag
+
+*   `Tuxedo InfinityBook Pro 14 v3`_
+
+    Tuxedo commonly buys its parts from the Taiwan company `Clevo <http://www.clevo.com.tw>`_.
+    The base of this laptop seems to be the Clevo N141WU.
+
+    **Pros**
+
+    *   latest hardware (RAM up to 32GB)
+    *   Germany keyboard layout
+    *   build quality, weight
+    *   ethernet port
+    *   display size
+    *   web cam positioning
+    *   price (in my configuration 1.256€ brutto)
+    *   available in Germany
+
+    **Cons**
+
+    *   unknown support for Linux distributions other than Ubuntu / openSuse (I'm interested in Arch)
+
+*   `Purism Librem 13 <https://puri.sm/products/librem-13/>`_
+
+    **Pros**
+
+    *   Good Linux support
+    *   deactivated Intel ME
+    *   hardware kill switches
+    *   support a small company with outstanding ethical goals
+
+    **Cons**
+
+    *   13.3 inch display a bit too small
+    *   only 7th generation Intel processors
+    *   can't get it to Germany without paying customs duty
+    *   price tag
+
+*   `System76 Galago Pro <https://system76.com/laptops/galago>`_
+
+    This laptop seems to be the same Clevo N141WU base model as the `Tuxedo InfinityBook Pro 14 v3`_.
+    I won't buy from abroad (here: US) if I get the same model from a local company.
+
+*   `Manjaro Special Edition Spitfire (Station X) <https://stationx.rocks/products/manjaro-special-edition-spitfire>`_
+
+    This laptop seems to be built on top the same Clevo N141WU base model as the `Tuxedo InfinityBook Pro 14 v3`_.
+    I won't buy from abroad (here: GB) if I get the same model from a local company.
+    However I noticed that Arch should basically be working with the Clevo models as Manjaro is also Arch based.
+
+Decision
+--------
+
+The most relevant candidates were the Lenovo T480 and the `Tuxedo InfinityBook Pro 14 v3`_.
+I chose Tuxedo mainly because I did not want to pay 600€ more for the Lenovo brand.
+After all, I don't regret my decision.
+
+Prior buying I contacted the Tuxedo support because I had some open questions that I could not find anything about
+online:
+
+*   Is RAM dual channel mode possible?
+
+    -> yes, if two RAM modules are chosen in the configuration (2x8GB or 2x16GB)
+
+*   Are there any working USB-C / Thunderbolt docking stations on the market?
+
+    -> `this <https://www.amazon.de/Notebooks-2048x1152-Audioausgang-Mikrophoneingang-Ultrabook/dp/B00KMNY2Z4>`_
+    model should work with DisplayLink drivers (I don't own the docking station yet)
+
+*   Is charging through USB-C possible?
+
+    -> no
+
+*   Are the Tuxedo scripts adaptable to other distributions (especially Arch based)?
+
+    -> no information, they don't test whether other distros work but they claim to be interested in any tests
+
+*   Which web cam model is used?
+
+    -> 1.0M HD video camera USB2.0 – Hersteller Chicony – Treiber-Version 10.0.17134.1
+
+Tuxedo answered within one day in all cases. The support was always friendly and tried hard to convince me.
+They even offered the option to send back the device if I'm not satisfied (although I'm a business customer).
+
+Review
+------
+
+The review was done running Arch Linux with the Xfce desktop. Only for the battery tests I installed other distros.
+
+Package
+^^^^^^^
+
+The laptop arrived in my office only 4 working day after the order.
+The package contained
+
+*   the laptop
+*   2 chargers (I ordered one extra)
+*   a driver CD
+*   a rescue USB stick
+*   some merchandising articles
+
+    *   pens
+    *   two big Linux penguin posters with some basic bash commands - they were squeezed into the box and got a bit
+        crumpled
+    *   an Ubuntu neckstrap
+
+Build quality
+^^^^^^^^^^^^^
+
+My general impression is quite positive. The aluminium body looks and feels great. I have no problems with fingerprints
+on the panel top like with the Lenovo.
+
+The display outer surface is made of aluminium, the inner surface (borders around the display) are made of plastic.
+
+Display
+^^^^^^^
+
+*   It's very clear and sharp.
+*   The maximum brightness is more than enough for my use cases.
+*   There are only minor brightness differences in the corners.
+*   The display is nonreflecting which I like.
+*   The viewing angle is really good.
+*   The display can be opened to 135° (which could be more).
+
+A negative point is that the display cannot be opened with one hand because then the whole laptop moves.
+
+Output of ls* commands
+^^^^^^^^^^^^^^^^^^^^^^
+
+lscpu
+"""""
+
+.. literalinclude:: lscpu.txt
+    :language: text
+
+lshw short
+""""""""""
+
+.. literalinclude:: lshw_short.txt
+    :language: text
+
+lshw
+""""
+
+.. literalinclude:: lshw.txt
+    :language: text
+
+lsusb
+"""""
+
+.. literalinclude:: lsusb.txt
+    :language: text
+
+lspci
+"""""
+
+.. literalinclude:: lspci.txt
+    :language: text
+
+Keyboard
+^^^^^^^^
+
+The keyboard is a dream. Short and hard key strokes, all keys are easily reachable and the key size is well chosen.
+The big arrow keys are very welcome compared to my old Lenovo device. As a Vim user, I don't need the arrow keys
+all the time (hjkl style) but a lot of applications don't feature Vim keymaps.
+The super key has a nifty little penguin symbol.
+The keyboard backlight can be changed in 6 steps (off + 5 steps) using Fn+F4.
+That works out of the box in all tested distributions.
+
+Webcam
+^^^^^^
+
+I tested the webcam in `Cheese <https://wiki.gnome.org/Apps/Cheese>`_ and `Riot <https://about.riot.im/>`_ (the Matrix
+chat client). I had no problems, my video stream looks good on my side on also for my colleagues.
+
+Here's a screenshot of the test results at https://webcamtests.com:
+
+.. image:: webcamtests_com.png
+
+Arch Linux
+^^^^^^^^^^
+
+Tuxedo encourages users to install other Linux distributions too. For Debian based distributions (like all the Ubuntu
+derivatives) they provide a `bash install script <http://tuxedo.sh>`_ to make
+every aspect of the Laptop work. For Arch there is no such script so I really hoped that most functions work
+out-of-the-box. And actually that's the case.
+
+I installed Arch+Xfce with an LVM on LUKS setup and use systemd-boot as bootloader.
+
+Function keys
+"""""""""""""
+
+These are the keys that - pressed with ``Fn`` - provide special functions:
+
+=== ================================    ======
+key function                            status
+=== ================================    ======
+°/^ play/pause                          works
+F1  touchpad on/off                     does not work
+F2  LCD off                             works
+F3  mute                                works
+F4  keyboard background illumination    works
+F5  lower audio volume                  works
+F6  increase audio volume               works
+F7  open display configuration          works
+F8  screen brightness down              works
+F9  screen brightness up                works
+F10 start camera?                       ?
+F11 flight mode                         does not work
+F12 sleep mode                          works
+Num activate number block               works
+=== ================================    ======
+
+Fn+F1 does not work and is not recognized when running
+`xev <https://www.archlinux.org/packages/extra/x86_64/xorg-xev/>`_.
+
+Fn+F11 does not work but the key combo is recognized as ``XF86RFKill`` by ``xev``.
+Assigning a small script that switches the hardware modules should be possible.
+
+Brightness control
+""""""""""""""""""
+
+With the preinstalled Tuxedo versions of Ubuntu I had no problems changing the screen brightness.
+The brightness steps are reasonable and on the lowest level, the screen does not switch completely off.
+
+On Arch+Xfce the brightness steps were too big and on the lowest level the screen switches completely off which I find
+undesirable. The brightness is controlled by the Xfce Power Manager. I actually like Power Manager handling it
+because it features a nice pop-up notification showing the current brightness (in contrast to e.g.
+`xbacklight <https://wiki.archlinux.org/index.php/Backlight>`_ which I also tried successfully).
+To get smaller brightness steps I compiled power manager `on my own <https://superuser.com/a/1346106/930490>`_.
+
+This brings 2 new configuration options:
+
+*   Brightness step count
+*   Exponential flag
+
+The exponential flag brings the advantage of having many small steps at low brightness levels.
+
+I set it like this:
+
+.. image:: power_manager.png
+
+The display still switches completely off after the lowest level is reached but I can live with that.
+
+Hibernate
+"""""""""
+
+Read the `arch wiki article <https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate>`_ for an
+overview to suspend/hibernate on Arch.
+
+Hibernate did not work in the first place because of my partitioning and encryption setup.
+The hibernate started and the laptop switched off. After waking up, it was like it was completely restarted.
+
+I encrypted my Arch system using
+`LVM on LUKS <https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS>`_.
+
+I also switched the bootloader from Grub to `systemd-boot <https://wiki.archlinux.org/index.php/Systemd-boot>`_.
+What I missed was the ``resume`` hook in /etc/mkinitcpio.conf. It now looks like this:
+
+.. code-block:: text
+
+    HOOKS=(base udev autodetect modconf block keyboard keymap encrypt lvm2 resume filesystems fsck)
+
+My systemd-boot configuration looks like this:
+
+.. code-block:: text
+
+    $ cat /boot/loader/entries/arch.conf
+    title Arch Linux
+    linux /vmlinuz-linux
+    initrd /initramfs-linux.img
+    options cryptdevice=UUID=381c18d1-f2ab-411c-906b-5fd354546853:lvm:allow-discards resume=/dev/mapper/vg-swap root=/dev/mapper/vg-root rw pci=nomsi
+
+That means I have a dedicated swap partition which systemd-boot needs as a resume target.
+I have 16GB RAM installed and my swap partition has a size of 8GB which is enough to get hibernate working.
+
+Suspend
+"""""""
+
+Suspend to ram works perfectly out-of-the-box. The startup time with 2 external displays connected is 4 seconds until
+the login screen is visible and all screens are active.
+
+External displays
+"""""""""""""""""
+
+I want to connect 2 external displays which works perfectly.
+Both displays only feature HDMI input (no display port).
+
+HDMI worked out of the box, but it took me a while to get the second display working using
+`this USB-C to HDMI <https://www.amazon.de/Thunderbolt-MacBook-Samsung-Surface-Pixelbook-Raum-grau/dp/B075V5JK36/ref=sr_1_8?ie=UTF8&qid=1535613009&sr=8-8&keywords=usb+c+hdmi>`_
+adapter. I chose an USB-C to HDMI solution because they feature resolutions up to 4K@60Hz which Mini DisplayPort to
+HDMI adapters don't.
+
+When first connecting, the display did not show anything. I asked the Tuxedo support and after one day they told me
+I had to switch the Display Port interface in BIOS from the display port connector to the USB-C/Thunderbolt port.
+It works perfectly now.
+
+Even with 2 external displays connected, the laptop screen is still switched on so that I have 3 displays now.
+My former Lenovo E420s could only address a maximum of 2 displays at a time (which might stem from its age).
+
+Fan
+^^^
+
+Without load, the fan does not start.
+During the day the fan starts from time to time on low speed. Personally I don't find it disturbing.
+This is what I do during my work day:
+
+*   some terminal windows open
+*   Jetbrains PyCharm IDE running
+*   running youtube videos on Firefox
+*   VLC for web radio streaming
+*   Evolution mail client running in the background
+*   Riot chat application running
+
+Currently it's about 23°C room temperature here.
+When the room temperature rose above 30° the fan started more often with higher speeds.
+
+If I run the ``stress -c 8`` command to produce load on all 8 logical cores, the fan increases its speed after 40
+seconds. After 80 seconds it's on max speed.
+After removing the load it takes 60 seconds until the fan starts going slower and after 240 seconds it's amost
+unhearable again. 4 minutes are quite a long time and I wonder if that can be tweaked somehow.
+
+I must say I experienced problems with the fan going from off to running state.
+2 or 3 times it could not start and just produced an annoyingly high-pitched sound. In these situations I started
+``stress`` until the fan started and the problem disappeared. Apparently the fan control has start-up problems when
+requesting small fan speeds.
+
+Battery
+^^^^^^^
+
+I tested the battery time for various Linux distributions.
+The test conditions:
+
+*   Max screen brightness
+*   Keyboard illuminated on max level
+*   No programs open except 2 small terminal windows to write the battery level to a file and show the file contents
+    in the other window.
+*   No load
+*   Wifi on, but not connected
+*   No other peripherals connected
+
+I used this script to write the battery level:
+
+.. code-block:: bash
+
+    #!/bin/sh
+    DATE=$(date +%Y-%m-%d:%H:%M:%S)
+    STATE=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/state/ {print $2}')
+    PERCENTAGE=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/percentage/ {print $2}')
+    TTE=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/time to empty/ {print $4}')
+    TTE_UNIT=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/time to empty/ {print $5}')
+    TTF=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/time to full/ {print $4}')
+    TTF_UNIT=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/time to full/ {print $5}')
+    echo "$DATE $STATE $PERCENTAGE $TTE $TTE_UNIT $TTF $TTF_UNIT" >> battery_status.log
+
+These are the battery discharge/charge times:
+
+.. image:: discharge_charge.png
+
+The data source can be downloaded :download:`here <discharge_charge.ods>`.
+
+The laptops runs for 5 hours on max brightness without load and wifi on.
+The battery runtime is equal for the preinstalled Tuxedo Budgie on kernel 4.15 as well as for the Arch based
+distributions on kernel 4.17. Antergos and Arch did have the  `TLP <https://wiki.archlinux.org/index.php/TLP>`_ package
+installed without any further configuration.
+Tuxedo preinstalls the Ubuntu `laptop-mode-tools <https://wiki.ubuntuusers.de/laptop-mode-tools/>`_ package for energy
+management. Apparently this not differ from TLP in terms of battery runtime - at least in my test.
+
+The charge time from 8% to 98% with the 40W charger is almost 3 hours.
+The charge and discharge curves are almost linear.
+
+From my point of view the battery life is good. I assume the display on max brightness eats most of the battery life.
+When taking the laptop with me I commonly reduce the screen brightness so 7 hours should also be possible.
+
+These are the values that Tuxedo got from Notebookcheck:
+
+.. code-block:: text
+
+    Idle (ohne WLAN, min Helligkeit): 13h 19min
+    Surfen über WLAN v1.3: 7h 28min
+    Last (volle Helligkeit): 3h 00min
+
+Summary
+-------
+
+I really like my new laptop as everything works like a charm now.
+The fan management can still be improved in terms regarding speed reduction after removing loads and the start-up
+problem. This however does not make me spend 600€ more for a 'brand' model which may also have other problems.
+
+Tuxedo as a company was helpful in all topics and deliverey quickly.
+This is what I want when buying from companies that are not widely known.
+
+If you've got any questions, please tell me in the comments section below.
