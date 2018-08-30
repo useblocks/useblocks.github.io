@@ -279,6 +279,38 @@ on the panel top like with the Lenovo.
 
 The display outer surface is made of aluminium, the inner surface (borders around the display) are made of plastic.
 
+Speed
+^^^^^
+
+There is nothing to write about the performance. It's outstanding.
+I did not specifically run any benchmarks. When running ``dmesg`` I see throttling events caused by high temperatures:
+
+.. code-block:: text
+
+    CPU6: Core temperature above threshold, cpu clock throttled (total events = 1293)
+    CPU2: Core temperature above threshold, cpu clock throttled (total events = 1293)
+    CPU2: Package temperature above threshold, cpu clock throttled (total events = 5027)
+    CPU6: Package temperature above threshold, cpu clock throttled (total events = 5027)
+    CPU0: Package temperature above threshold, cpu clock throttled (total events = 5027)
+    CPU1: Package temperature above threshold, cpu clock throttled (total events = 5027)
+    CPU5: Package temperature above threshold, cpu clock throttled (total events = 5027)
+    CPU4: Package temperature above threshold, cpu clock throttled (total events = 5027)
+    CPU7: Package temperature above threshold, cpu clock throttled (total events = 5027)
+    CPU3: Package temperature above threshold, cpu clock throttled (total events = 5027)
+    CPU6: Core temperature/speed normal
+    CPU2: Core temperature/speed normal
+    CPU6: Package temperature/speed normal
+    CPU2: Package temperature/speed normal
+    CPU0: Package temperature/speed normal
+    CPU3: Package temperature/speed normal
+    CPU4: Package temperature/speed normal
+    CPU7: Package temperature/speed normal
+    CPU1: Package temperature/speed normal
+    CPU5: Package temperature/speed normal
+
+I can't state what the influence on speed is. The fan does not run faster in these scenarios.
+Currently it's high summer so the environment temperature is between 25°C and 30°C.
+
 Display
 ^^^^^^^
 
