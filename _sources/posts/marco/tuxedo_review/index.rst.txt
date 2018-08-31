@@ -277,7 +277,8 @@ Build quality
 My general impression is quite positive. The aluminium body looks and feels great. I have no problems with fingerprints
 on the panel top like with the Lenovo.
 
-The display outer surface is made of aluminium, the inner surface (borders around the display) are made of plastic.
+The display outer surface is made of aluminium, the inner surface (borders around the display) is made of plastic.
+According to Tuxedo this improves WLAN / BT reception.
 
 Speed
 ^^^^^
