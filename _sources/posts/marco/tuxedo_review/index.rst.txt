@@ -1,4 +1,4 @@
-.. post::
+.. post:: 07.09.2018
     :tags: review, tuxedo, hardware, laptop, linux, arch, ubuntu
     :category: Hardware
     :author: Marco
@@ -113,12 +113,11 @@ Some notes on above items with the numbers referring to above list:
     I'd love to live in a world of open hardware, open firmware and companies that will fail when bringing non-open
     hardware to the market. But the truth is, I need an affordable and current product to run the applications I like.
 
-    At the end, there is no product on the market that fulfills the priority items on my wish list, so I had to move
-    this point to the end :(
+    At the end, there is no product on the market that fulfills the priority items on my wish list and features
+    open hardware or at least the option to make it more secure by deactivating the black box chips like Intel ME.
 
 I am not particularly interested in USB-C, Thunderbolt or docking stations. However, if these work with the model of my
-choice I'm happy too. Also USB-C charging is nice to have. As I don't have any USB-C hardware or chargers already, I
-need a new charger anyway.
+choice I'm happy. Also USB-C charging is nice to have.
 
 Candidates
 ----------
