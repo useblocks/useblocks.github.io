@@ -1,0 +1,79 @@
+{% include "head.html" %}
+
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img class="img-logo" src="/ub/static/img/ub_logo.png">useblocks
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#conviction">Conviction</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#about">About</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#expertise">Expertise</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#team">Team</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#portfolio">Portfolio</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header class="style_yellow">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-text">
+                    <span class="name">Unknown job<br>{{ job_url }}</span>
+                    <hr class="star">
+                    <span class="skills">Ohh, we are sorry. <br>But we haven't heart about that open job position.</span>
+                    <br><br>
+                    <span class="skills">But maybe we have some other jobs for you...</span><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+ <section class="style_dark" id="description">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Job description</h2>
+                <hr class="star">
+                <p>
+                    Ohh, we are sorry. But we haven't heart about that open job position.
+                </p>
+            </div>
+            <div class="col-lg-12">
+                {% include "jobs_table.html" %}
+
+            </div>
+        </div>
+    </div>
+     </section>
+
+{% include "footer.html" %}

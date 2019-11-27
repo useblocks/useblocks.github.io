@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Sphinx-Needs",
+    "active": true,
+    "description": "Sphinx-Extension to manage requirements, bugs, test cases and more.",
+    "image": "needs_logo.png",
+    "website_url": "http://sphinxcontrib-needs.readthedocs.io/en/latest/",
+    "code_url": "https://github.com/useblocks/sphinxcontrib-needs",
+    "contact": "woste"
+  },
+  {
+    "name": "WebApp for SW Coordination and Organisation",
+    "active": false,
+    "description": "Used by engineers to keep control of development related artifacts.",
+    "image": "",
+    "website_url": "",
+    "code_url": "",
+    "contact": ""
+  },
+  {
+    "name": "HeyQL Metrics for JIRA",
+    "active": false,
+    "description": "Manage metrics and their data inside JIRA issues.",
+    "image": "logo_marketplace_blue.png",
+    "website_url": "https://heyql.com",
+    "code_url": "",
+    "contact": ""
+  },
+  {
+    "name": "JIRA Webhook Server",
+    "active": false,
+    "description": "Enables companies to implement complex business processes into JIRA workflows.",
+    "image": "",
+    "website_url": "",
+    "code_url": "",
+    "contact": ""
+  },
+  {
+    "name": "Groundwork",
+    "active": true,
+    "description": "Python Application Framework for rapid prototyping of company internal tools.",
+    "image": "gw_logo.png",
+    "website_url": "https://groundwork.readthedocs.io/",
+    "code_url": "https://github.com/useblocks/groundwork",
+    "contact": "woste"
+  },
+  {
+    "name": "Groundwork-Web",
+    "active": false,
+    "description": "Web-Package for groundwork to enable the development of web applications.",
+    "image": "gw_web.png",
+    "website_url": "https://groundwork-web.readthedocs.io/",
+    "code_url": "https://github.com/useblocks/groundwork-web",
+    "contact": ""
+  },
+  {
+    "name": "Groundwork-Database",
+    "active": false,
+    "description": "Adds database managment functions to groundwork applications.",
+    "image": "gw_database.png",
+    "website_url": "https://groundwork-database.readthedocs.io/",
+    "code_url": "https://github.com/useblocks/groundwork-database",
+    "contact": ""
+  },
+  {
+    "name": "Sphinx-TestReports",
+    "active": true,
+    "description": "Sphinx-Extension to include test results and more into sphinx.",
+    "image": "sphinx-test-reports-logo.png",
+    "website_url": "http://sphinx-test-reports.readthedocs.io/en/latest/",
+    "code_url": "https://github.com/useblocks/sphinx-test-reports",
+    "contact": "woste"
+  },
+  {
+    "name": "Tox-Envreport",
+    "active": true,
+    "description": "Tox plugin to store environment information of the system, which runs the tests.",
+    "image": "tox_envreport_logo.png",
+    "website_url": "https://tox-envreport.readthedocs.org",
+    "code_url": "https://github.com/useblocks/tox-envreport",
+    "contact": "woste"
+  }
+
+
+
+]

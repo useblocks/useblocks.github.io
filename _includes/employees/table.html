@@ -1,0 +1,64 @@
+<div class="employees_search">
+    <form>
+        <select multiple name="location" id="employee_location">
+            <option>NRW</option>
+            <option>Bavaria</option>
+            <option>Nowhere</option>
+            <option>germany</option>
+        </select>
+
+        <select multiple name="skills">
+            <option>Python</option>
+            <option>C</option>
+        </select>
+
+        <select multiple name="expert skills">
+            <option>Python</option>
+            <option>C</option>
+        </select>
+    </form>
+
+</div>
+<div class="employees">
+{%  for key, employee in employees.items() %}
+    <div class="employee" id="{{ employee.name }}">
+        <div class="employee_image">
+            <img src="/ub/static/img/{{ employee.image }}"/>
+        </div>
+
+        <div class="employee_name">
+            {{ employee.first_name }} {{ employee.name }}
+        </div>
+
+
+        <div class="employee_key_skills">
+            {% for skill in employee.key_skills  %}
+                <span class="label label-transparent">{{ skill }}</span>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+<script>
+
+    var employees = {{ employees|tojson }};
+
+    $("#employee_location").on("click", function() {
+        var locations = [$("#employee_location").find(":selected").text()];
+
+        for (var key in employees) {
+            var equal_locations =locations.filter(value => -1 !== employees[key]["locations"].indexOf(value));
+            console.log(equal_locations)
+
+            if (equal_locations.length > 0) {
+               $('#' + employees[key]["name"]).fadeIn();
+            }else {
+                $('#' + employees[key]["name"]).fadeOut();
+            }
+        }
+
+    });
+
+</script>
+

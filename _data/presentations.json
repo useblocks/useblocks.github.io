@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Documentation without frustration",
+    "active": true,
+    "description": "How to write documentation as developer without loosing your motivation.",
+    "image": "http://dwf.readthedocs.io/en/latest/_images/books.png",
+    "website_url": "http://dwf.readthedocs.io",
+    "code_url": "https://github.com/useblocks/dwf",
+    "contact": "woste"
+  },
+  {
+    "name": "groundwork tutorial",
+    "active": true,
+    "description": "Coding focused tutorial for developing up complex groundwork applications.",
+    "image": "gw_logo.png",
+    "website_url": "https://useblocks.github.io/groundwork-tutorial/",
+    "code_url": "https://github.com/useblocks/groundwork-tutorial",
+    "contact": "woste"
+  }
+
+]

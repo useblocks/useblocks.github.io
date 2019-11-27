@@ -1,0 +1,42 @@
+{
+  "name": "Heinemann",
+  "first_name": "Marco",
+  "active": true,
+  "e_mail": "marco.heinemann@useblocks.com",
+  "phone": "+49 89 / 66 66 17 48",
+  "company": "useblocks GmbH",
+  "street": "Schopenhauerstr. 71",
+  "city": "Munich",
+  "postal_code": "80807",
+  "locations": ["germany", "south", "Bavaria", "münchen", "munich"],
+  "image": "marco_kreis_transparent.png",
+  "title": "Dipl.-Ing. Environmental Engineering",
+  "xing": "https://www.xing.com/profile/Marco_Heinemann16",
+  "tags": [
+    "Automotive",
+    "Scripts",
+    "Tools",
+    "Python",
+    "C/C++/C#",
+    "RegEx",
+    "ISO26262 Tool Dev",
+    "Autosar"
+  ],
+  "key_skills": ["c_c++", "autosar_stack", "iso26262"],
+  "skills": {
+    "python": 1,
+    "linux_embedded": 5,
+    "linux_server": 1,
+    "linux_desktop": 1,
+    "Windows Desktop": 5,
+    "Windows Server": 5,
+    "C": 5,
+    "C++": 4,
+    "Javascript": 1,
+    "HTML": 1,
+    "CSS": 5,
+    "RegEx": 1,
+    "XML": 2,
+    "JSON": 2
+  }
+}

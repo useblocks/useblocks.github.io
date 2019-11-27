@@ -1,0 +1,102 @@
+{% include "head.html" %}
+
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img class="img-logo" src="/ub/static/img/ub_logo.png">useblocks
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#team">Team</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#skills">Skills</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#statistics">Statistics</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header class="style_yellow">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive img-slogan" src="/ub/static/img/heart_binary_black.png" alt="">
+                <div class="intro-text">
+                    <span class="name">Individual experts<br>for unique problems</span>
+{#                    <hr class="star">#}
+{#                    <span class="skills">To solve unique problems</span><br>#}
+{#                    <span class="skills">To provide individual solutions</span><br>#}
+{#                    <span class="skills">Design solutions, not only software</span>#}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="style_dark" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Team</h2>
+                <hr class="star">
+            </div>
+        </div>
+        <div class="row">
+            {% include "/employees/table.html" %}
+        </div>
+    </div>
+</section>
+
+<section class="style_yellow" id="skills">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Skills</h2>
+                <hr class="star">
+            </div>
+            <p>Skill summary.</p>
+        </div>
+        <div class="row">
+            {% include "skills/table.html" %}
+        </div>
+    </div>
+</section>
+
+<!-- Conviction Grid Section -->
+<section class="style_dark" id="statistics">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Statistics</h2>
+                <hr class="star">
+                <p>
+                    Statistics
+                </p>
+            </div>
+        </div>
+        <div class="row">
+        </div>
+    </div>
+</section>
+
+{% include "footer.html" %}

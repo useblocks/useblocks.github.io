@@ -1,0 +1,61 @@
+{
+    "id": "ci_dev",
+    "name": "CI Manager",
+    "active": false,
+    "style": "blue",
+    "author": "woste",
+    "url": "continuous_integration_developer",
+    "logo": "heart_binary_black.png",
+    "long_name": "Manage continuous integration systems for projects in international automotive companies",
+    "description": "Create and manage continuous integration slaves and jobs for automation of team internal and customer related projects. Develop own scripts and tools to automate daily work and complex process needs.",
+    "salary": "50-70k €",
+    "start": "15.10.2018",
+    "type": "Full time",
+    "job_years": "0",
+    "location": "Soest or Munich + home office",
+    "coding_part": "> 50%",
+    "skills": {
+        "technical": [
+            ["Jenkins (CI]", 5],
+            ["Linux", 4],
+            ["Windows", 4],
+            ["Python", 4],
+  	        ["Bash scripting",2],
+            ["Python packaging", 4],
+            ["Javascript", 3],
+            ["HTML/CSS", 4],
+            ["Sphinx/RST", 3],
+            ["PyCharm IDE", 2],
+            ["svn", 3],
+  	        ["git", 4],
+            ["gerrit", 3]
+        ],
+        "project": [
+            ["Communication skills", 4],
+            ["Problem analysis",4],
+  	        ["Solution design", 4],
+            ["Task prioritizing", 4],
+            ["JIRA ticket system", 3],
+            ["OpenSource project organization", 3],
+            ["OpenSource project infrastructure", 3],
+            ["English language", 4],
+            ["German language", 3],
+            ["Team lead", 2]
+        ]
+    },
+    "tasks": [
+        "Collect and understand team or customer related problems",
+        "Design and present solution conecpts",
+        "Configure Jenkins jobs and slave",
+        "Set up linux/window sserver",
+        "Writing and testing scripts and tools",
+        "Document software",
+        "Define and document processes",
+        "Analyse prototypes"
+    ],
+    "benefits_extra" : [
+        "Participation on open source conferences",
+        "Maintainer of open source packages",
+        "Support to setup your own reputation on Github et al."
+        ]
+}

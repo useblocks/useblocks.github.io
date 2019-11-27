@@ -1,0 +1,24 @@
+table.dataTable tbody tr {
+    background-color: transparent;
+}
+
+#jobs_table {
+    font-size: 20px;
+}
+
+#jobs_table thead {
+    font-size: 18px;
+}
+
+table.dataTable tbody tr:hover {
+    color: #FFCC00;
+}
+
+td.job_name {
+	font-size: 1.2em;
+}
+
+th.job_name {
+    min-width: 200px;
+    width: 30%;
+}

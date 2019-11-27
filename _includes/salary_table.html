@@ -1,0 +1,275 @@
+<div class="container salary_container">
+    <div id="salary_head" class="row salary_row">
+        <div class="col-md-5">
+            Factor
+        </div>
+        <div class="col-md-5">
+          Classification
+        </div>
+        <div class="col-md-2">
+            Result
+        </div>
+    </div>
+
+    <div id="salary_base" class="row salary_row">
+        <div class="col-md-5  salary_factor">
+            <span class="factor_name">Base salary per year</span>
+            <p class="factor_text">
+                Each employee at useblocks starts with the same base salary
+                and there is no way that a contract at useblocks provides less salary.
+
+                This base salary is fix and it is taken as basis for the calculation of ownership, influence and
+                loyalty bonus.
+            </p>
+        </div>
+        <div class="col-md-5  salary_class">
+        </div>
+        <div class="col-md-2  salary_result">
+            <p class="factor_result" id="base_salary_result">50.000,00€</p>
+        </div>
+    </div>
+
+    <div id="salary_ownership" class="row salary_row">
+        <div class="col-md-5  salary_factor">
+            <span class="factor_name">Ownership</span>
+            <p class="factor_text">
+                Ownerships describes what kind of responsibility you own and can manage by yourself.
+
+                Your are responsible for the complete outcome of the responsible area and therefore must
+                care about task creation, prioritization, customer feedback and much more.
+            </p>
+        </div>
+        <div class="col-md-5  salary_class">
+            <div class="input-group">
+                <select id="input_ownership" name="input_ownership" class="selectpicker">
+                    <option>None</option>
+                    <option>Own work</option>
+                    <option>Complete Project</option>
+                    <option>Complete Team</option>
+                    <option>Whole Organization</option>
+                </select>
+            </div>
+            <p class="factor_current_text" id="ownership_current_text">
+
+            </p>
+        </div>
+        <div class="col-md-2  salary_result">
+            <p class="factor_result" id="ownership_result">
+        </div>
+    </div>
+
+    <div id="salary_influence" class="row salary_row">
+        <div class="col-md-5  salary_factor">
+            <span class="factor_name">Influence</span>
+            <p class="factor_text">
+                You may only care about your own stuff or you may have ideas how to enhance the daily work
+                of your project team or how to improve a process for the complete developer team.
+
+                So you may influence the way of working and thinking here at useblocks.
+                And therefore make us "harder, faster, stronger".
+            </p>
+        </div>
+        <div class="col-md-5  salary_class">
+            <div class="input-group">
+                <select id="input_influence" name="input_influence"  class="selectpicker">
+                    <option>Own work</option>
+                    <option>Complete Project</option>
+                    <option>Complete Team</option>
+                    <option>Whole Organization</option>
+                    <option>Industry</option>
+                </select>
+            </div>
+            <p class="factor_current_text" id="influence_current_text">
+        </div>
+        <div class="col-md-2  salary_result">
+            <p class="factor_result" id="influence_result">
+        </div>
+    </div>
+
+    <div id="salary_years" class="row salary_row">
+        <div class="col-md-5  salary_factor">
+            <span class="factor_name">Years in company</span>
+            <p class="factor_text">
+                useblocks honors your loyalty by providing a bonus of <b>0.02</b> (2%) on the
+                base salary per year
+                your are already part of our team.
+            </p>
+        </div>
+        <div class="col-md-5  salary_class">
+            <input id="input_salary_years" type="range" min="0" max="30" step="1.0">
+            <p class="factor_current_text" id="salary_years_current_text">
+        </div>
+        <div class="col-md-2  salary_result">
+            <p class="factor_result" id="salary_years_result">
+        </div>
+    </div>
+
+    <div id="salary_working_model" class="row salary_row">
+        <div class="col-md-5  salary_factor">
+            <span class="factor_name">Working model</span>
+            <p class="factor_text">
+                useblocks provides the right working model for you. Decide by yourself, how much time you want
+                to spend for the job. Full-time or a free selectable part-time.
+            </p>
+        </div>
+        <div class="col-md-5  salary_class">
+            <input id="input_salary_working_model" type="range" min="0.5" max="1" step="0.10">
+            <p class="factor_current_text" id="salary_working_model_current_text">
+        </div>
+        <div class="col-md-2  salary_result">
+            <p class="factor_result" id="salary_working_model_result">
+        </div>
+    </div>
+
+    <div id="salary_final" class="row salary_row">
+        <div class="col-md-5  salary_factor">
+            <span class="factor_name">Final salary per year</span>
+            <p class="factor_text">
+                The final salary is the sum of the base salary plus the result of
+                the different classifications.
+
+                Once a year we take a look at your work and may higher your classification, which
+                then results in a higher final salary.
+            </p>
+        </div>
+        <div class="col-md-5  salary_class">
+        </div>
+        <div class="col-md-2  salary_result">
+            <p class="factor_result" id="final_salary_result">
+        </div>
+    </div>
+
+</div>
+
+<script lang="javascript">
+
+
+    var base_salary = 50000.00;
+    var hours_per_week = 40.0;
+    var ownership_factor = 0.0;
+    var influence_factor = 0.0;
+    var company_years = 0;
+    var company_years_factor = 0.02;
+    var working_model = 1.0;
+
+    var ownership_bonus = 0.0;
+    var influence_bonus = 0.0;
+    var loyalty_bonus = 0.0;
+    var working_model_bonus = 0.0;
+    var salary_final = 0.0;
+
+    var ownership_text = {
+        0.0: "You are quite new to the team and therefore currently not responsible for your own outcome." +
+        " Your tasks are created and prioritized by your project lead.",
+        0.1: "You manage completely your own work. You ask the customer for feedback, create and follow own tasks and" +
+        " finally present the outcome of our work.",
+        0.3: "You manage the outcome of all team members in your project. You create their tasks, follow their progress" +
+        " and are responsible for the overall project outcome.",
+        0.4: "You manage a complete team/department and therefore be responsible for the outcome of several projects.",
+        0.5: "The whole organization is yours. You are responsible for creating KPIs, HR, Marketing and much more.",
+    };
+
+    var influence_text = {
+        0.0: "You work on your own and have good ideas how to improve your daily work and outcome.",
+        0.1: "You see and solve problems for your project team and influence the way your project is organized.",
+        0.2: "You have great ideas for all developers and your ideas get established on multiple projects.",
+        0.3: "Your ideas are awesome and affect the whole organization e.g by improving the hiring process.",
+        0.4: "Your ideas blow up company borders and are discussed and used by multiple companies all over the world.",
+    };
+
+
+    var final_salary = function() {
+        ownership_bonus = ownership_factor*base_salary;
+        influence_bonus = influence_factor*base_salary;
+        loyalty_bonus = company_years*company_years_factor*base_salary
+        salary_pre_final = base_salary + ownership_bonus + influence_bonus + loyalty_bonus;
+        working_model_bonus = (working_model * salary_pre_final) - salary_pre_final
+        salary_final = salary_pre_final + working_model_bonus
+        $("#final_salary_result").text("= " + formatCurrency(salary_final));
+    }
+
+    var update_factors = function() {
+
+        // Recalculate final salary
+        final_salary();
+
+        // BASE SALARY
+        $("#base_salary_result").html(formatCurrency(base_salary));
+
+        // OWNERSHIP
+        $("#ownership_current_text").html("Factor: <b>" + ownership_factor + "</b> <br>" + ownership_text[ownership_factor]);
+        $("#ownership_result").text("+ " + formatCurrency(ownership_bonus));
+
+        // INFLUENCE
+        $("#influence_current_text").html("Factor: <b>" + influence_factor + "</b> <br>" + influence_text[influence_factor]);
+        $("#influence_result").text("+ " + formatCurrency(influence_bonus));
+
+        // LOYALTY
+        $('#salary_years_current_text').html("Years: <b>" + company_years + "</b><br>Factor: <b>"
+            + company_years_factor*company_years+ "</b>");
+        $("#salary_years_result").text("+ " + formatCurrency(loyalty_bonus));
+
+        // WORKING MODEL
+        $('#salary_working_model_current_text').html("Percentage of work: <b>" + working_model*100
+            + " %</b><br>Hours per week: <b>" + working_model*hours_per_week
+            + "</b><br>Factor: <b>" + working_model + "</b> on complete salary");
+        $("#salary_working_model_result").text(formatCurrency(working_model_bonus));
+    }
+
+    $('#input_ownership').change(function() {
+        factor_list= {0: 0.0, 1: 0.1, 2: 0.3, 3: 0.4, 4: 0.5}
+
+        ownership  = $('#input_ownership option:selected').index();
+        ownership_factor = factor_list[ownership]
+        update_factors();
+    });
+
+    $('#input_influence').change(function() {
+        factor_list= {0: 0.0, 1: 0.1, 2: 0.2, 3: 0.3, 4: 0.4}
+        influence  = $('#input_influence option:selected').index();
+        influence_factor = factor_list[influence]
+        update_factors();
+    });
+
+    $('#input_salary_years').on('input', function() {
+        company_years  = $('#input_salary_years').val();
+        update_factors();
+    })
+
+    $('#input_salary_working_model').on('input', function() {
+        working_model  = $('#input_salary_working_model').val();
+        update_factors();
+    })
+
+    function formatCurrency(total) {
+        var neg = false;
+        if(total < 0) {
+            neg = true;
+            total = Math.abs(total);
+        }
+        step_1 = (neg ? "- " : '') + parseFloat(total, 10).toFixed(2).replace('.', ',')
+        step_2 = step_1.replace(/(\d)(?=(\d{3})+\,)/g, "$1.").toString() + ' €';
+        return step_2
+    }
+
+    $( document ).ready(function() {
+        // Set all select fields on the first element.
+
+        $('#input_ownership option')
+            .removeAttr('selected')
+            .filter('[index=0]')
+                .attr('selected', true);
+        $('#input_influence option')
+            .removeAttr('selected')
+            .filter('[index=0]')
+                .attr('selected', true);
+
+        $('#input_salary_years').val("0");
+        $('#input_salary_working_model').val("1.0");
+
+
+        update_factors();
+    });
+
+
+</script>

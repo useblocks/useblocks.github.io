@@ -1,0 +1,14 @@
+{
+  "git": [
+    "git",
+    "source_code_management",
+    "https://git-scm.com",
+    "Modern source code management system, founded by Linux Torvalds."
+  ],
+  "python": [
+    "Python",
+    "coding_language",
+    "https://python.org",
+    "Beloved language for engineers."
+  ]
+}

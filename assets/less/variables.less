@@ -1,0 +1,93 @@
+// Variables
+
+// Gray and Brand Colors for use across theme
+
+//@theme-primary:    #2C3E50;
+//@theme-success:    #18BC9C;
+
+@background_color: #000000;
+@text_color: #FFFFFF;
+@link_color: #FFCC00;
+
+// YELLOW
+@style_yellow_background_color: #ffcc00;
+@style_yellow_text_color: #000000;
+@style_yellow_link_color: #333333;
+@style_yellow_button_background_color: @style_yellow_background_color;
+@style_yellow_button_text_color: @style_yellow_text_color;
+@style_yellow_button_border_color: @style_yellow_text_color;
+
+// DARK
+@style_dark_background_color: #333333;
+@style_dark_text_color: #FFFFFF;
+@style_dark_link_color: #FFCC00;
+@style_dark_button_background_color: @style_dark_background_color;
+@style_dark_button_text_color: @style_dark_text_color;
+@style_dark_button_border_color: @style_dark_text_color;
+
+// LIGHT
+@style_light_background_color: #444444;
+@style_light_text_color: #FFFFFF;
+@style_light_link_color: #FFCC00;
+@style_light_button_background_color: @style_light_background_color;
+@style_light_button_text_color: @style_light_text_color;
+@style_light_button_border_color: @style_light_text_color;
+
+// BLUE
+@style_blue_background_color: #a0dbfb; //#0dbcff;
+@style_blue_text_color: #000000;
+@style_blue_link_color: #185b94;
+@style_blue_button_background_color: @style_blue_background_color;
+@style_blue_button_text_color: @style_blue_text_color;
+@style_blue_button_border_color: @style_blue_text_color;
+
+// GREEN
+@style_green_background_color: #94ec9b;
+@style_green_text_color: #000000;
+@style_green_link_color: #0c220c;
+@style_green_button_background_color: @style_green_background_color;
+@style_green_button_text_color: @style_green_text_color;
+@style_green_button_border_color: @style_green_text_color;
+
+// FOOTER
+@footer_background_color: #000000;
+@footer_text_color: #ffffff;
+@footer_link_color: #FFFFFF;
+
+@button_text_color: #333333;
+@button_background_color: #FFFFFF;
+
+//NAVBAR
+@navbar_background_color: #000000;
+@navbar_text_color:  #ffffff;
+@navbar_background_active: #FFCC00;
+@navbar_text_active: #000000;
+//@navbar_background_color: #FFCC00;
+//@navbar_text_color:  #333333;
+//@navbar_background_active: #000000;
+//@navbar_text_active: #ffffff;
+
+
+@gray-base:        #000;
+@gray-darker:      lighten(@gray-base, 13.5%); // #222
+@gray-dark:        lighten(@gray-base, 20%);   // #333
+@gray:             lighten(@gray-base, 33.5%); // #555
+@gray-light:       lighten(@gray-base, 46.7%); // #777
+@gray-lighter:     lighten(@gray-base, 93.5%); // #eee
+
+//Shortcut/mixin for painting radial backgrounds
+.radial(@innerColor: #555, @outerColor: #333, @pos: center, @colorStop: 100%) {
+  background-image: -moz-radial-gradient(@pos, ellipse farthest-side, @innerColor, @outerColor @colorStop); // FF 3.6+
+  background-image: -ms-radial-gradient(@pos, ellipse farthest-side, @innerColor, @outerColor @colorStop); // IE10
+  background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@innerColor), to(@outerColor)); // Android 2.3, Safari 4+, Chrome 2+
+  background-image: -webkit-radial-gradient(@pos, ellipse farthest-side, @innerColor, @outerColor @colorStop); // Safari 5.1+, Chrome 10+
+  background-image: -o-radial-gradient(@pos, ellipse farthest-side, @innerColor, @outerColor @colorStop); // Opera 11.10
+}
+
+.linear(@innerColor: #555, @outerColor: #333, @pos: center, @colorStop: 100%)  {
+  background-image: -moz-linear-gradient(@pos, @innerColor, @outerColor @colorStop); // FF 3.6+
+  background-image: -ms-linear-gradient(@pos, @innerColor, @outerColor @colorStop); // IE10
+  background-image: -webkit-gradient(radial, 0, center center, 460, from(@innerColor), to(@outerColor)); // Android 2.3, Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(@pos, @innerColor, @outerColor @colorStop); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(@pos, @innerColor, @outerColor @colorStop); // Opera 11.10
+}

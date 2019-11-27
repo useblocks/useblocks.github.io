@@ -1,0 +1,322 @@
+{% include "head.html" %}
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img class="img-logo" src="/ub/static/img/ub_logo.png">useblocks
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#description">Description</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#benefits">Benefits</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#skills">Skills</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#tasks">Tasks</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#salary">Salary</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#apply">Apply</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#jobs">Other Jobs</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header class="style_{{ job.style }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive img-slogan" src="/ub/static/img/{{ job.logo }}" alt="">
+                    <div class="intro-text">
+                        <span class="name">{{ job.name }}</span>
+                        <hr class="star">
+                        <span class="skills">{{ job.long_name }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="job_details">
+                <div class="row">
+                    <div class="col-xs-6 job_meta right">
+                        <span class="job_param">Type:</span>
+                        <span class="job_value">{{ job.type }}</span>
+                    </div>
+                    <div class="col-xs-6 job_meta left">
+                        <span class="job_param">Start date: </span>
+                        <span class="job_value">{{ job.start }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 job_meta right">
+                        <span class="job_param">Salary:</span>
+                        <span class="job_value">{{ job.salary }}</span>
+                    </div>
+                    <div class="col-xs-6 job_meta left">
+                        <span class="job_param">Needed experiences on job:</span>
+                        <span class="job_value">{{ job.job_years }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 job_meta right">
+                        <span class="job_param">Location:</span>
+                        <span class="job_value">{{ job.location }}</span>
+                    </div>
+                    <div class="col-xs-6 job_meta left">
+                        <span class="job_param">Average coding part:</span>
+                        <span class="job_value">{{ job.coding_part }}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+     <section class="style_dark" id="description">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Job description</h2>
+                    <hr class="star">
+                    <p>
+                        {{ job.description|safe }}
+                    </p>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <section class="style_{{ job.style }}" id="benefits">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Benefits</h2>
+                    <hr class="star">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 ">
+                    <p>
+                        useblocks is a software consulting company with a strong focus on
+                        international automotive companies.
+                    </p>
+                </div>
+                <div class="col-md-6 ">
+                    <ul class="job_tasks">
+                        <li><span>30 holidays per year</span></li>
+                        <li><span>100 € monthly education budget</span></li>
+                        <li><span>Transparent salary</span></li>
+                        <li><span>Huge home office part</span></li>
+                        <li><span>Adjustable mix of coding and project management</span></li>
+                        <li><span>Easy project switch to learn new technologies and teams</span></li>
+                    {% for benefit in job.benefits_extra %}
+                        <li><span>{{ benefit }}</span></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <p>
+                        Take a look on <a href="/ub/hires">useblocks.com/ub/hires</a> to get detailed information of
+                        an average work day at useblocks or to see more details about our benefits.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Grid Section -->
+    <section class="style_dark" id="skills">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Needed skills</h2>
+                    <hr class="star">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1 text-center"></div>
+                <div class="col-lg-10 text-center">
+                    <div class="row">
+                        <div class="col-lg-6 text-center">
+                            <h4>Technical skills</h4>
+                            <ul class="job_skills">
+                                {% for skill in job.skills.technical %}
+                                    <li>
+                                        <span>
+                                            <img src="/ub/static/img/stars_{{ skill[1] }}.svg" class="rating">
+                                            {{ skill[0] }}
+                                        </span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 text-center">
+                            <h4>Project management and soft skills</h4>
+                            <ul class="job_skills">
+                                {% for skill in job.skills.project %}
+                                    <li>
+                                        <span>
+                                            <img src="/ub/static/img/stars_{{ skill[1] }}.svg" class="rating">
+                                            {{ skill[0] }}
+                                        </span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 text-center"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="style_{{ job.style }}" id="tasks">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Tasks</h2>
+                    <hr class="star">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 text-center"></div>
+                <div class="col-lg-6 text-center">
+                    <ul class="job_tasks">
+                    {% for task in job.tasks %}
+                        <li><span>{{ task }}</span></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-lg-3 text-center"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="style_dark" id="salary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Salary</h2>
+                    <hr class="star">
+                </div>
+            </div>
+            <div class="row">
+                {% include "salary_table.html" %}
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="style_{{ job.style }}" id="apply">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Apply</h2>
+                    <hr class="star">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>
+                        For application just send us some words about you and your passions as e-mail to
+                        <b><a href="mailto:hr@useblocks.com">hr@useblocks.com</a></b>.
+                    </p>
+                    <p>
+                        If you have any questions, do not hesitate to call <b>{{ contact.first_name }}</b> or send an e-mail.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-xs-3 text-right">
+                            <img class="job_contact" src="/ub/static/img/{{ contact.image }}">
+                        </div>
+                        <div class="col-xs-9 contact_name">
+                            {{ contact.first_name|upper }} {{ contact.name|upper }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3 text-right contact_param">
+                            E-Mail:
+                        </div>
+                        <div class="col-xs-9">
+                            <a href="mailto:{{ contact.e_mail}}">
+                                {{ contact.e_mail}}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3 text-right contact_param">
+                            Phone:
+                        </div>
+                        <div class="col-xs-9">
+                            {{ contact.phone }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3 text-right contact_param">
+                            Address:
+                        </div>
+                        <div class="col-xs-9">
+                            {{ contact.company }} <br>
+                            {{ contact.street }} <br>
+                            {{ contact.postal_code }} {{ contact.city }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="style_dark" id="jobs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Not the right job? Try another...</h2>
+                    <hr class="star">
+                </div>
+            </div>
+            <div class="row">
+                {% include "jobs_table.html" %}
+            </div>
+            <div class="row">
+                <p class="text-center">
+                    <a href="/ub/hires" class="btn btn-lg btn-outline text-center">
+                        <i class="fa fa-info"> See your benefits and how an average day at useblocks looks like.</i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+{% include "footer.html" %}

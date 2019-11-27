@@ -1,0 +1,67 @@
+{
+    "id": "dev_py",
+    "name": "Tool Developer Python",
+    "active": true,
+    "style": "blue",
+    "author": "woste",
+    "url": "tool_developer_python",
+    "logo": "heart_binary_black.png",
+    "long_name": "Tool Developer for Python projects in international automotive companies",
+    "salary": ">= 50k €",
+    "salary": ">= 50k €",
+    "start": "15.10.2018",
+    "type": "Full time",
+    "job_years": "0",
+    "location": "Soest or Munich + home office",
+    "coding_part": "> 70%",
+    "skills": {
+        "technical": [
+            ["Python", 5],
+            ["Or any other language", 5],
+            ["Python packaging (setuptools, pip, pipenv)", 4],
+            ["Continuous integration (e.g. Jenkins)", 4],
+            ["Package deployment (e.g. Artifactory)", 4],
+            ["Linux", 3],
+            ["Javascript", 3],
+            ["HTML/CSS", 4],
+            ["Bootstrap", 4],
+            ["Sphinx/RST", 3],
+            ["Relational databases, SQLAlchemy", 3],
+            ["Django/Flask", 4],
+            ["Django/Jinja Templates", 3],
+            ["PyCharm IDE", 2],
+            ["Git", 4],
+            ["Gerrit", 3]
+        ],
+        "project": [
+            ["OpenSource project organization", 3],
+            ["OpenSource project infrastructure", 3],
+            ["Task prioritization", 4],
+            ["JIRA ticket system", 3],
+            ["English language", 4],
+            ["German language", 3],
+  	        ["ISO 26262 knowledge", 1],
+            ["Team lead", 2],
+            ["Communication skills", 4],
+            ["Riot chats", 2]
+        ]
+    },
+    "tasks": [
+        "Find and understand problems",
+        "Collect and manage requirements",
+        "Design prototypes",
+        "Develop software and tools",
+        "Document software",
+        "Define and enhance processes",
+        "Rapid prototyping for different solution",
+        "Analyse prototypes",
+        "Create and manage continuous integration jobs",
+        "Participate on international vehicle test days"
+    ],
+    "benefits_extra" : [
+        "Participation on open source conferences",
+        "Maintainer of open source packages",
+        "Support to setup your own reputation on Github et al."
+        ]
+}
+
