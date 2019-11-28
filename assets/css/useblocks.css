@@ -163,7 +163,8 @@ a.btn-outline {
   border: 2px solid;
   background: transparent;
   transition: all 0.3s ease-in-out;
-  margin-top: 15px;
+  margin-top: 0;
+  padding: 2px 10px;
 }
 a.btn-outline:hover,
 a.btn-outline:focus,
@@ -287,7 +288,8 @@ a.btn-outline.active {
 }
 .style_yellow a.btn-outline {
   color: #000000;
-  border-color: #000000;
+  /*border-color: #000000;*/
+  border: none;
 }
 .style_yellow a.btn-outline:hover,
 .style_yellow a.btn-outline:focus,
@@ -672,6 +674,35 @@ div.portfolio div.ub_item {
   height: 300px;
   margin-bottom: 30px;
 }
+
+div.portfolio div.ub_item.blog {
+  height: 320px;
+  margin-bottom: 30px;
+}
+div.portfolio div.ub_item.blog img.blog_logo {
+  z-index: 1;
+}
+
+div.portfolio div.ub_item.blog img.author {
+  z-index: 3;
+  height: 50px;
+  right: 130px;
+  top: 75px;
+  position: absolute;
+}
+
+img.blog_author {
+  width: 50px;
+  height: 50px;
+}
+
+div.ub_inner_item {
+  background-color: rgba(0,0,0,0.1);
+  margin: 3px;
+  border-radius: 5px;
+  padding: 15px 10px 1px 10px;
+  height: 100%;
+}
 div.portfolio img {
   max-height: 100px;
   max-width: 200px;
@@ -680,7 +711,6 @@ div.portfolio div.image {
   min-height: 100px;
 }
 div.portfolio p.links {
-  position: absolute;
   bottom: 0px;
   margin-left: auto;
   margin-right: auto;
@@ -895,3 +925,13 @@ div.employee_image img{
   height: auto;
 }
 
+
+
+p.github_link {
+  text-align: center;
+}
+
+a.ub_item_link {
+  text-decoration: none;
+  color: #000;
+}

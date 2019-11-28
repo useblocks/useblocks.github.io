@@ -1,6 +1,10 @@
 ---
-layout: post
 title:  "Welcome to Jekyll!"
+image: "ub_logo.png"
+description: "This is a little test post. Read it!"
+author: "woste"
+style: blue
+
 date:   2019-11-27 10:54:00 +0100
 categories: jekyll update
 ---

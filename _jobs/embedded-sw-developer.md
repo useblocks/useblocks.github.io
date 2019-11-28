@@ -1,6 +1,43 @@
 ---
 name: Embedded Developer
-data: 01_emb_sw_dev
+long_name: Software Developer for embedded projects in international automotive companies
+style: yellow
+author: heinemann
+logo: heart_binary_black.png
+salary: ">= 50k €"
+start: 01.07.2018
+type: Full time
+job_years: 3 years
+location: Munich + home office
+coding_part: Mostly editing existing OS code, some new sources
+skills:
+  technical:
+    "Embedded processors (e.g. Aurix)": 5
+    "Embedded tools (e.g. Trace32, Vector)": 5
+    "CAN/Flexray": 4
+    "C/C++": 5
+    "AUTOSAR standard": 4
+    "Matlab/Simulink/Stateflow": 4
+    "E/E car architecture": 3
+    "Python": 3
+    "Build tools (make, CMake, Bazel,  ...)": 4
+    "Mechanical systems": 3
+  project:
+    "High self-motivation": 5
+    "Mindset: problems exist to solve them": 5
+    "Know when to ask for help": 5
+    "Team and communication skills": 5
+    "English": 4
+tasks:
+  - Autosar basic software configuration
+  - Hardware IO configuration for Aurix processors
+  - Development of complex device drivers
+  - Integration of system functions
+  - Test software on HiLs and in vehicles
+benefits_extra:
+  - Potential for vehicle tests
+  - Strong hardware focus
+
 layout: job
 ---
 

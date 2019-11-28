@@ -1,0 +1,148 @@
+---
+title: Post
+url: me
+author: me
+---
+{% include head.html %}
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img class="img-logo" src="/assets/img/ub_logo.png">useblocks
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#description">Post</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#author">Author</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#posts">Other posts</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    {% assign post = page %}
+    <!-- Header -->
+    <header class="style_{{ post.style }}" id="description">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive img-slogan" src="/assets/img/{{ post.image }}" alt="">
+                    <div class="intro-text">
+                        <span class="name">{{ post.title }}</span>
+                        <hr class="star">
+                        <span class="skills">{{ post.description }}</span>
+                    </div>
+                    <div class="intro-author">
+                        {% assign author = site.data.employees[post.author] %}
+                        Written by {{author.first_name}} {{author.name}}
+                        <img class="blog_author" src="/assets/img/{{author.image}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+     <section class="style_dark" id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-justify">
+                    <p>
+                        {{ page.content }}
+                    </p>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <section class="style_light" id="author">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About the author</h2>
+                    <hr class="star">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-justify">
+                    <div class="row">
+                        <div class="col-xs-6 text-right">
+                            <img class="job_contact" src="/assets/img/{{ author.image }}">
+                        </div>
+                        <div class="col-xs-6 contact_name">
+                            {{ author.first_name|upper }} {{ author.name|upper }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 text-right contact_param">
+                            E-Mail:
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="mailto:{{ contact.e_mail}}">
+                                {{ author.e_mail}}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 text-right contact_param">
+                            Phone:
+                        </div>
+                        <div class="col-xs-6">
+                            {{ author.phone }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 text-right contact_param">
+                            Address:
+                        </div>
+                        <div class="col-xs-6">
+                            {{ author.company }} <br>
+                            {{ author.street }} <br>
+                            {{ author.postal_code }} {{ author.city }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <section class="style_dark" id="posts">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Other blog posts</h2>
+                    <hr class="star">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-justify">
+                    <p>
+                        {% include posts_table.html %}
+                    </p>
+                </div>
+            </div>
+        </div>
+     </section>
+
+{% include footer.html %}
+</body>
+</html>

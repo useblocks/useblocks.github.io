@@ -1,4 +1,4 @@
-{% assign final_jobs = site.data.jobs | where: "active", true %}
+{% assign final_jobs = site.jobs %}
 {% if final_jobs.size == 0 %}
     <p class="no_jobs">
         Sorry, we currently have no open job positions.
@@ -14,8 +14,8 @@
         <tbody>
             {%  for job in final_jobs %}
             <tr>
-                <td class="job_name"> <a href="/ub/hires/{{ job.url }}" >{{ job.name }}</a></td>
-                <td class="job_description"> <a href="/ub/hires/{{ job.url }}" >{{ job.long_name }}</a></td>
+                <td class="job_name"> <a href="{{ job.url }}" >{{ job.name }}</a></td>
+                <td class="job_description"> <a href="{{ job.url }}" >{{ job.long_name }}</a></td>
             </tr>
             {% endfor %}
         </tbody>

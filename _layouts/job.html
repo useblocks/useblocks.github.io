@@ -50,7 +50,7 @@ title: Jobs
         <!-- /.container-fluid -->
     </nav>
 
-    {% assign job = site.data.jobs[page.data] %}
+    {% assign job = page %}
     <!-- Header -->
     <header class="style_{{ job.style }}">
         <div class="container">
@@ -147,7 +147,7 @@ title: Jobs
             <div class="row">
                 <div class="col-md-12 ">
                     <p>
-                        Take a look on <a href="/ub/hires">useblocks.com/ub/hires</a> to get detailed information of
+                        Take a look on <a href="/hires">useblocks.com/hires</a> to get detailed information of
                         an average work day at useblocks or to see more details about our benefits.
                     </p>
                 </div>
@@ -240,7 +240,7 @@ title: Jobs
         </div>
     </section>
 
-
+    {% assign contact = site.data.employees[job.author] %}
     <section class="style_{{ job.style }}" id="apply">
         <div class="container">
             <div class="row">
@@ -314,7 +314,7 @@ title: Jobs
             </div>
             <div class="row">
                 <p class="text-center">
-                    <a href="/ub/hires" class="btn btn-lg btn-outline text-center">
+                    <a href="/hires" class="btn btn-lg btn-outline text-center">
                         <i class="fa fa-info"> See your benefits and how an average day at useblocks looks like.</i>
                     </a>
                 </p>

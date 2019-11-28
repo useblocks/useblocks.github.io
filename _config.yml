@@ -44,7 +44,19 @@ defaults:
       path: ""
       type: "jobs"
     values:
-      laout: "job"
+      layout: "job"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: "posts/:title"
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

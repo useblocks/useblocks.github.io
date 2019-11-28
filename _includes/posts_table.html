@@ -1,0 +1,27 @@
+{% assign final_posts = site.posts %}
+{% if final_posts.size == 0 %}
+    <p class="no_jobs">
+        Sorry, we currently have no blog posts.
+    </p>
+{% else %}
+    <table id="posts_table" class="dataTable">
+        <thead>
+            <tr>
+                <th class="post_name">Title</th>
+                <th class="post_description">Description</th>
+                <th class="post_author">Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%  for post in final_posts %}
+            <tr>
+                <td class="post_name"> <a href="{{ post.url }}" >{{ post.title }}</a></td>
+                <td class="post_description"> <a href="{{ post.url }}" >{{ post.description }}</a></td>
+                {% assign author = {{site.data.employees[post.author] %}
+                <td class="post_author"> <img class="blog_author" src="/assets/img/{{author.image}}"/></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endif %}

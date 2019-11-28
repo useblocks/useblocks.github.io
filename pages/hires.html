@@ -366,22 +366,17 @@ permalink: /hires/
         </div>
         <div class="row">
             <div class="col-sm-2 ub_item "></div>
+            {% for employee_hash in site.data.employees %}
+            {% assign member = employee_hash[1] %}
             <div class="col-sm-4 ub_item text-center">
-                <div class="circle_team" id="marco"></div>
+                <div class="circle_team" id="{{member.first_name | downcase }}"></div>
 
-                <h4 class="text-center">Marco Heinemann</h4>
+                <h4 class="text-center">{{member.first_name}} {{member.name}}</h4>
                 <p class="text-center">
-                    Dipl.-Ing. Environmental Engineering<br>
+                    {{member.title}}<br>
                 </p>
             </div>
-
-            <div class="col-sm-4 ub_item text-center">
-                <div class="circle_team" id="daniel"></div>
-                <h4 class="text-center">Daniel Woste</h4>
-                <p class="text-center">
-                    Dipl.-Ing. Electrical Engineering <br>
-                </p>
-            </div>
+            {% endfor %}
             <div class="col-sm-2 ub_item "></div>
         </div>
     </div>
