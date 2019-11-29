@@ -3,8 +3,8 @@
     "name": "Documentation without frustration",
     "active": true,
     "description": "How to write documentation as developer without loosing your motivation.",
-    "image": "http://dwf.readthedocs.io/en/latest/_images/books.png",
-    "website_url": "http://dwf.readthedocs.io",
+    "image": "https://dwf.readthedocs.io/en/latest/_images/books.png",
+    "website_url": "https://dwf.readthedocs.io",
     "code_url": "https://github.com/useblocks/dwf",
     "contact": "woste"
   },

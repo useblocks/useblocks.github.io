@@ -4,7 +4,7 @@
     "active": true,
     "description": "Sphinx-Extension to manage requirements, bugs, test cases and more.",
     "image": "needs_logo.png",
-    "website_url": "http://sphinxcontrib-needs.readthedocs.io/en/latest/",
+    "website_url": "https://sphinxcontrib-needs.readthedocs.io/en/latest/",
     "code_url": "https://github.com/useblocks/sphinxcontrib-needs",
     "contact": "woste"
   },
@@ -67,7 +67,7 @@
     "active": true,
     "description": "Sphinx-Extension to include test results and more into sphinx.",
     "image": "sphinx-test-reports-logo.png",
-    "website_url": "http://sphinx-test-reports.readthedocs.io/en/latest/",
+    "website_url": "https://sphinx-test-reports.readthedocs.io/en/latest/",
     "code_url": "https://github.com/useblocks/sphinx-test-reports",
     "contact": "woste"
   },
