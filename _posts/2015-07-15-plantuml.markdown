@@ -1,7 +1,7 @@
 ---
 title:  "PlantUML"
 image: "posts/plantuml_logo.png"
-description: "Effektive Diagrammerstellung mit PlantUML"
+description: "Effektive Diagrammerstellung mit PlantUML in PyCharm für Sphinx und Co."
 author: "woste"
 style: yellow
 

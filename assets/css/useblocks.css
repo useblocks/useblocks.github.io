@@ -686,7 +686,7 @@ div.portfolio div.ub_item.blog img.blog_logo {
 div.portfolio div.ub_item.blog img.author {
   z-index: 3;
   height: 50px;
-  right: 130px;
+  right: 35%;
   top: 75px;
   position: absolute;
 }
