@@ -72,7 +72,7 @@ header .intro-text .skills {
     font-size: 1.5em;
   }
   .img-slogan {
-    max-width: 80%;
+    max-width: 50%;
   }
 }
 .navbar-custom {
@@ -671,7 +671,7 @@ table.workday td:first-of-type span {
   color: black;
 }
 div.portfolio div.ub_item {
-  height: 300px;
+  min-height: 330px;
   margin-bottom: 30px;
 }
 
@@ -692,8 +692,8 @@ div.portfolio div.ub_item.blog img.author {
 }
 
 img.blog_author {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 div.ub_inner_item {
@@ -702,6 +702,7 @@ div.ub_inner_item {
   border-radius: 5px;
   padding: 15px 10px 1px 10px;
   height: 100%;
+  min-height: 330px;
 }
 div.portfolio img {
   max-height: 100px;
@@ -709,6 +710,7 @@ div.portfolio img {
 }
 div.portfolio div.image {
   min-height: 100px;
+  margin-bottom: 20px;
 }
 div.portfolio p.links {
   bottom: 0px;

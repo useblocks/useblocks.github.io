@@ -243,7 +243,6 @@ permalink: /
                     <a href="{{ item.url }}" class="ub_item_link">
                         <div class="ub_inner_item">
                             <div class="image">
-
                                     {% if item.image != "" %}
                                         {%  if item.image contains "http" %}
                                             <img class="blog_logo" src="{{ item.image }}">
@@ -255,11 +254,6 @@ permalink: /
                             </div>
 
                             <h4 class="text-center">{{ item.title }}</h4>
-                             <p>
-                                <a href="{{ item.url }}" class="btn btn-lg btn-outline">
-                                    <i class="fa fa-globe"></i>
-                                </a>
-                            </p>
                             <p class="text-center portfolio_description">
                                 {{ item.description }}
                             </p>
