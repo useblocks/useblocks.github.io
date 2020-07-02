@@ -1,0 +1,20 @@
+{% assign final_offers = site.offers %}
+{% if final_offers.size == 0 %}
+    <p class="no_jobs">
+        Sorry, we currently have no offers for you.
+    </p>
+{% else %}
+
+    {%  for offer in final_offers %}
+    <div class="offer row">
+        <div class="img col-lg-4">
+            <img class="offer img-responsive" src="/assets/img/{{ offer.logo }}" alt="">
+        </div>
+        <div class="col-lg-8 text-left">
+            <h3><a href="{{ offer.url }}" >{{ offer.name }}</a></h3>
+            <p>{{ offer.long_name }}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endif %}

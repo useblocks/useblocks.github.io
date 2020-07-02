@@ -1,0 +1,383 @@
+---
+title: Offers
+layout: default
+permalink: /offers/
+---
+
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img class="img-logo" src="/assets/img/ub_logo.png">useblocks
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#jobs">Jobs</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#salary">Salary</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#benefits">Benefits</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#workday">workday</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#team">Team</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header class="style_yellow">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive img-slogan" src="/assets/img/heart_binary_black.png" alt="">
+                <div class="intro-text">
+                    <span class="name">Pimp your career</span>
+                    <hr class="star">
+                    <span class="skills">Evolve from your passions</span><br>
+                    <span class="skills">Learn from international, cross company teams</span><br>
+                    <span class="skills">Design solutions, not only software</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="style_dark" id="jobs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Jobs</h2>
+                <hr class="star">
+            </div>
+        </div>
+        <div class="row">
+            {% include jobs_table.html %}
+
+        </div>
+    </div>
+</section>
+
+<section class="style_yellow" id="salary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Salary</h2>
+                <hr class="star">
+            </div>
+            <p>At useblocks all salaries are calculated by a common formula, which is based on a base salary and
+            different factors. The factors honors the impact of an employee to our team and company.</p>
+        </div>
+        <div class="row">
+            {% include salary_table.html %}
+
+        </div>
+    </div>
+</section>
+
+<!-- Conviction Grid Section -->
+<section class="style_dark" id="benefits">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Benefits</h2>
+                <hr class="star">
+                <p>
+                    We believe that developer needs special benefits to feel comfortable on their current job.
+                    This is how useblocks supports you:
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4  ub_item text-center">
+                <h4 class="text-center">100 € Education budget</h4>
+                <p>
+                    Each team member gets a monthly 100 € budget for books, trainings, conferences or whatever.<br>
+                    Spend it monthly  or save it for bigger invests.
+                    No questions, no bureaucracy.
+                </p>
+            </div>
+
+            <div class="col-sm-4  ub_item text-center">
+                <h4 class="text-center">30 holidays</h4>
+                <p>
+                    Your brain needs a brake?
+                    Use your holidays for awesome trips and great family time.
+                    You need more days? No problem, if your current project team agrees on this.
+                </p>
+            </div>
+
+            <div class="col-sm-4  ub_item text-center">
+                <h4 class="text-center">Transparent, growing salary</h4>
+                <p>
+                    All team members get a salary based on a transparent, public formula.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4  ub_item text-center">
+                <h4 class="text-center">Reputation</h4>
+                <p>
+                    useblocks supports you to evolve your own, widespread reputation.
+                    Maintain open source solutions or hold talks on conferences.
+                    Your reputation belongs to you, not to a company.
+                </p>
+            </div>
+
+            <div class="col-sm-4  ub_item text-center">
+                <h4 class="text-center">Hardware</h4>
+                <p>
+                    Tired of getting always the slowest computers and tiniest monitors.
+                    Tell useblocks your wishes and start being productive and satisfied.
+                </p>
+            </div>
+
+            <div class="col-sm-4  ub_item text-center">
+                <h4 class="text-center">Conferences</h4>
+                <p>
+                    useblocks travels 2-3 a year to the most interesting conferences in Europe.
+                    Just join and enjoy for instance PyCon.DE, embedded world, HANNOVER MESSE and more.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4 ub_item text-center">
+                <h4 class="text-center">Mix it</h4>
+                <p>
+                    Wether you enjoy to code all day long or to hang out in chats and manage your teams.
+                    useblocks adjusts for you the right mix of coding and project management.
+                    You decide, what ist the most fun for you.
+
+                </p>
+            </div>
+            <div class="col-sm-4 ub_item text-center">
+                <h4 class="text-center">Switch it</h4>
+                <p>
+                    Working all day with the same tools and people can become boring after some months.
+                    useblocks has a wide range of projects: from embedded to web development.
+                    Just switch a project and enjoy the smell of new challenges.
+                </p>
+            </div>
+            <div class="col-sm-4 ub_item text-center">
+                <h4 class="text-center">Freedom</h4>
+                <p>
+                    Most useblocks projects don't force you to be available on a specific location or time.
+                    Working from home? Need time to collect the kids from kindergarten? Wearing fun shirts?
+                    Nobody cares! The final solution matters.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- workplace section-->
+<section class="style_yellow" id="workday">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Workday</h2>
+                <hr class="star">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p>
+                    Want to know how an average workday at useblocks may look like? Here is an example of a
+                    typical workday of us:
+                </p>
+            </div>
+            <div class="col-lg-12 text-center">
+                <table class="workday">
+                    <tbody>
+                        <tr>
+                            <td><span>8:00</span></td>
+                            <td>
+                                Arrive at your current workplace (useblocks bureau, customer or your PC at home).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>8:10</span></td>
+                            <td>
+                                Say hello to all local co-worker and get your first free coffee/tea.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>8:20</span></td>
+                            <td>
+                                Start the engines and log in to our
+                                <a href="https://about.riot.im/" target="_blank">Riot chat system</a>.<br>
+                                Welcome all off-site colleagues from Germany, Hungary or India.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>8:30</span></td>
+                            <td>
+                                Stand-up meeting with local and off-side colleagues.<br>
+                                Get the news, plan your day.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>8:50</span></td>
+                            <td>
+                                Check your open issues on
+                                <a href="https://de.wikipedia.org/wiki/Jira_(Software)" target="_blank">JIRA</a>.<br>
+                                Hold a video call with issue reporter to clarify the correct needs.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>9:10</span></td>
+                            <td>
+                                Start developing and write code e.g. with <a href="https://www.jetbrains.com/pycharm/" target="_blank">PyCharm</a>.<br>
+                                Check team chat for some news or answer questions, on which you may help.
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td><span>10:30</span></td>
+                            <td>
+                                Code works as expected. Write needed test cases using
+                                <a href="https://www.python.org/" target="_blank">Python</a>,
+                                <a href="https://docs.pytest.org/en/latest/" target="_blank">Pytest</a> and
+                                <a href="https://tox.readthedocs.io/en/latest/" target="_blank">tox</a>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>11:30</span></td>
+                            <td>
+                                Tests passed locally. Time for updating the documentation using
+                                <a href="https://www.sphinx-doc.org/en/master/" target="_blank">Sphinx</a>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>12:00</span></td>
+                            <td>
+                                Code, tests and docs are finished.<br>
+                                Time for creating a
+                                <a href="https://www.gerritcodereview.com/" target="_blank">Gerrit</a> change and ask a colleague for review.<br>
+                                <a href="https://jenkins.io/" target="_blank">Jenkins</a> already started to perform tests, create reports and build documentation.<br>
+                                This may need some minutes. Time for lunch.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>12:15</span></td>
+                            <td>
+                                It's pizza day. Colleagues and you are going to a local Italian restaurant.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>13:15</span></td>
+                            <td>
+                                Back from lunch and everything passed in Jenkins.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>13:30</span></td>
+                            <td>
+                                Reviewer found some smaller issues in code and docs.<br>
+                                Fixing them takes 10 minutes only.<br>
+                                Patch is sent to Gerrit and Jenkins starts again to test it.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>13:50</span></td>
+                            <td>
+                                Jenkins and reviewer are happy with the patch.<br>
+                                Your colleague already accepted the change, so that the merge has already been done
+                                by Gerrit.<br>
+                                Jenkins starts to create packages and deploy them to test systems.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>14:00</span></td>
+                            <td>
+                                Your team got automatically informed about a new release on the team's Riot chat group.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>14:30</span></td>
+                            <td>
+                                Time to get the children from kindergarten. You take a break and have some
+                                family time.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>16:00</span></td>
+                            <td>
+                                Back to work, but from home.<br>
+                                Luckily all useblocks systems are running in the cloud.<br>
+                                So getting the current team
+                                status and working on the next issue is quite easy.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>17:00</span></td>
+                            <td>
+                                Enough for today.<br>
+                                Pushing the current status to a feature branch on Git.<br>
+                                Stopping the engines and start your after work time.
+                            </td>
+                        </tr>
+
+                   </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM section-->
+<section class="style_dark" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Team</h2>
+                <hr class="star">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 ub_item "></div>
+            {% for employee_hash in site.data.employees %}
+            {% assign member = employee_hash[1] %}
+            <div class="col-sm-4 ub_item text-center">
+                <div class="circle_team" id="{{member.first_name | downcase }}"></div>
+
+                <h4 class="text-center">{{member.first_name}} {{member.name}}</h4>
+                <p class="text-center">
+                    {{member.title}}<br>
+                </p>
+            </div>
+            {% endfor %}
+            <div class="col-sm-2 ub_item "></div>
+        </div>
+    </div>
+</section>
