@@ -2,6 +2,7 @@
 name: Open Source Developer Python (Student)
 long_name: Open Source Tool Developer for Python projects in international automotive companies
 style: blue
+is_student: true
 author: woste
 url: tool_developer_python
 logo: heart_binary_black.png
@@ -22,8 +23,7 @@ skills:
     "Package deployment (e.g. Artifactory)": 2
     "Javascript": 1
     "HTML/CSS": 2
-    
-    "PyCharm IDE": 2
+    "PyCharm/VSCode IDE": 2
   project:
     "English language": 4
     "Communication skills": 4

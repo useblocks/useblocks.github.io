@@ -240,7 +240,20 @@ title: Jobs
                 </div>
             </div>
             <div class="row">
+                {% if job.is_student==false %}
                 {% include salary_table.html %}
+                {% else %}
+                <div class="col-lg-12 text-center">
+                    <p>
+                        As student your salary is based on your skill set and the time you may need to learn new
+                        stuff.
+
+                        If you already met 100% of the job's requirement, you can get an idea of your salary under
+                        <a href="/hires/#salary">useblocks.com/hires</a>.
+                    </p>
+                </div>
+
+                {% endif %}
 
             </div>
         </div>
