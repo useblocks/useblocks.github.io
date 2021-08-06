@@ -3,7 +3,7 @@ table.dataTable tbody tr {
 }
 
 #jobs_table, #posts_table {
-    font-size: 20px;
+    font-size: 18px;
     border-spacing: 40px 0;
     border-collapse: separate;
 }
@@ -17,10 +17,16 @@ table.dataTable tbody tr:hover {
 }
 
 td.job_name, td.post_name {
-	font-size: 1.2em;
+	font-size: 1.1em;
+    font-weight: bold;
 }
 
 th.job_name, th.post_name {
     min-width: 100px;
     width: 30%;
+}
+
+th.job_location {
+    min-width: 50px;
+    width: 20%;
 }

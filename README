@@ -1,0 +1,23 @@
+Install
+-------
+::
+
+    gem install bundler jekyll webrick
+    export PATH=$PATH:/home/daniel/.gem/ruby/3.0.0/bin
+
+Run
+---
+::
+
+    bundle exec jekyll serve
+
+
+
+Jobs
+----
+
+Jobs can be find under ``_jobs``.
+
+Do not use ``_data``, this approach is not followed anymore.
+
+To deactivate a job, add ``_`` as prefix to the file name.

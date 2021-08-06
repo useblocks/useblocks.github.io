@@ -9,6 +9,7 @@
             <tr>
                 <th class="job_name">Job</th>
                 <th class="job_description">Description</th>
+                <th class="job_location">Location</th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +17,7 @@
             <tr>
                 <td class="job_name"> <a href="{{ job.url }}" >{{ job.name }}</a></td>
                 <td class="job_description"> <a href="{{ job.url }}" >{{ job.long_name }}</a></td>
+                <td class="job_location"> <a href="{{ job.url }}" >{{ job.location }}</a></td>
             </tr>
             {% endfor %}
         </tbody>
