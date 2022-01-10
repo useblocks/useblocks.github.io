@@ -4,6 +4,7 @@ Install
 
     gem install bundler jekyll webrick
     export PATH=$PATH:/home/daniel/.gem/ruby/3.0.0/bin
+    bundle update
 
 Run
 ---

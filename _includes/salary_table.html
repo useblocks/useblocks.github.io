@@ -44,6 +44,7 @@
                 <select id="input_ownership" name="input_ownership" class="selectpicker">
                     <option>None</option>
                     <option>Own work</option>
+                    <option>Sub-project</option>
                     <option>Complete Project</option>
                     <option>Complete Team</option>
                     <option>Whole Organization</option>
@@ -163,6 +164,8 @@
         " Your tasks are created and prioritized by your project lead.",
         0.1: "You manage completely your own work. You ask the customer for feedback, create and follow own tasks and" +
         " finally present the outcome of our work.",
+        0.2: "You manage the work of a small team for a sub-project. Your create tasks, talk to the customer and integrate " +
+             "the results into a bigger project-context.",
         0.3: "You manage the outcome of all team members in your project. You create their tasks, follow their progress" +
         " and are responsible for the overall project outcome.",
         0.4: "You manage a complete team/department and therefore be responsible for the outcome of several projects.",
@@ -217,7 +220,7 @@
     }
 
     $('#input_ownership').change(function() {
-        factor_list= {0: 0.0, 1: 0.1, 2: 0.3, 3: 0.4, 4: 0.5}
+        factor_list= {0: 0.0, 1: 0.1, 2:0.2, 3: 0.3, 4: 0.4, 5: 0.5}
 
         ownership  = $('#input_ownership option:selected').index();
         ownership_factor = factor_list[ownership]
