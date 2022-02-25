@@ -23,7 +23,6 @@ skills:
     "Javascript": 3
     "HTML/CSS": 4
     "Bootstrap": 4
-    "Sphinx/RST": 3
     "Relational databases, SQLAlchemy": 3
     "Django/Flask": 4
     "Django/Jinja Templates": 3
@@ -55,14 +54,14 @@ tasks:
 layout: job
 ---
 
-In the last years useblocks has created a bunch of Open-Source tools for docs-as-code toolchains.
-These tools are getting more and more attraction and the docs-as-code approach is starting to be used 
+In the last years, useblocks has created a bunch of Open-Source tools for docs-as-code toolchains.
+These tools are getting more and more attention and the docs-as-code approach is starting to be used 
 in engineering departments of Automotive companies all over the world.
 
-Your job is it to support this change inside the engineering departments of our customers.
-In most cases this means to collect feature requests for our or someone else Open-Source tools and implement these.
+Your job is to support this change inside the engineering departments of our customers.
+In most cases, this means collecting feature requests for our or someone else Open-Source tools and implementing these.
 
 We support you to create your own reputation in these Open-Source projects and become an important member of the 
 related community. 
 
-You will get deep insights of processes, tool chains and networks of Automotive companies and Open-Source projects. 
+You will get deep insights into processes, toolchains, and networks of Automotive companies and Open-Source projects. 
