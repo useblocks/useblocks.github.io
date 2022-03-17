@@ -76,16 +76,17 @@ header .intro-text .skills {
   }
 }
 .navbar-custom {
-  background-image: -moz-linear-gradient(top, #444444, #333333 100%);
-  background-image: -ms-linear-gradient(top, #444444, #333333 100%);
-  background-image: -webkit-gradient(radial, 0, center center, 460, from(#444444), to(#333333));
-  background-image: -webkit-linear-gradient(top, #444444, #333333 100%);
-  background-image: -o-linear-gradient(top, #444444, #333333 100%);
+  /*background-image: -moz-linear-gradient(top, #444444, #333333 100%);*/
+  /*background-image: -ms-linear-gradient(top, #444444, #333333 100%);*/
+  /*background-image: -webkit-gradient(radial, 0, center center, 460, from(#444444), to(#333333));*/
+  /*background-image: -webkit-linear-gradient(top, #444444, #333333 100%);*/
+  /*background-image: -o-linear-gradient(top, #444444, #333333 100%);*/
+  background: #333;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   border: none;
-  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.75);
 }
 .navbar-custom a:focus {
   outline: none;
@@ -261,6 +262,11 @@ a.btn-outline.active {
   background-color: transparent;
   border: 1px solid white;
 }
+.style_yellow, .style_blue, .style_green {
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+  position: relative;
+}
+
 .style_yellow {
   color: #000000;
   background-image: -moz-radial-gradient(center top, ellipse farthest-side, #ffcc00, #d25c00 100%);
@@ -268,8 +274,6 @@ a.btn-outline.active {
   background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(#ffcc00), to(#d25c00));
   background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #ffcc00, #d25c00 100%);
   background-image: -o-radial-gradient(center top, ellipse farthest-side, #ffcc00, #d25c00 100%);
-  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
-  position: relative;
 }
 .style_yellow a,
 .style_yellow a:hover,
@@ -365,7 +369,6 @@ a.btn-outline.active {
   background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(#a0dbfb), to(#0884c7));
   background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #a0dbfb, #0884c7 100%);
   background-image: -o-radial-gradient(center top, ellipse farthest-side, #a0dbfb, #0884c7 100%);
-  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   position: relative;
 }
 .style_blue a,
@@ -401,7 +404,6 @@ a.btn-outline.active {
   background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(#94ec9b), to(#1b9925));
   background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #94ec9b, #1b9925 100%);
   background-image: -o-radial-gradient(center top, ellipse farthest-side, #94ec9b, #1b9925 100%);
-  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
   position: relative;
 }
 .style_green a,
