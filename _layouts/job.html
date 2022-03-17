@@ -26,16 +26,19 @@ title: Jobs
                         <a href="#description">Description</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#benefits">Benefits</a>
+                        <a href="#tasks">Tasks</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#skills">Skills</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#tasks">Tasks</a>
+                        <a href="#company">Company</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#salary">Salary</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#benefits">Benefits</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#apply">Apply</a>
@@ -100,7 +103,7 @@ title: Jobs
         </div>
     </header>
 
-     <section class="style_dark" id="description">
+    <section class="style_dark" id="description">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -109,64 +112,43 @@ title: Jobs
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-1 text-justify"></div>
-                <div class="col-xs-11 text-justify">
+                <div class="col-xs-12 text-justify">
                     <p>
                         {{ page.content }}
                     </p>
                 </div>
-                <div class="col-xs-1 text-justify"></div>
             </div>
         </div>
      </section>
 
-    <section class="style_{{ job.style }}" id="benefits">
+    <section class="style_{{ job.style }}" id="tasks">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Benefits</h2>
+                    <h2>Tasks</h2>
                     <hr class="star">
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-6 ">
-                    <p>
-                        useblocks is a software consulting company with a strong focus on
-                        international automotive companies.
-                    </p>
-                </div>
-                <div class="col-md-6 ">
-                    <ul class="job_tasks">
-                        <li><span>30 holidays per year</span></li>
-                        <li><span>100 € monthly education budget</span></li>
-                        <li><span>Transparent salary</span></li>
-                        <li><span>Huge home office part</span></li>
-                        <li><span>Adjustable mix of coding and project management</span></li>
-                        <li><span>Easy project switch to learn new technologies and teams</span></li>
-                    {% for benefit in job.benefits_extra %}
-                        <li><span>{{ benefit }}</span></li>
+                <div class="col-lg-3 text-center"></div>
+                <div class="col-lg-12 text-center">
+                    <ul class="list-group list-group-flush job_tasks">
+                    {% for task in job.tasks %}
+                        <li class="list-group-item">☑ {{ task }}</li>
                     {% endfor %}
                     </ul>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 ">
-                    <p>
-                        Take a look on <a href="/hires">useblocks.com/hires</a> to get detailed information of
-                        an average work day at useblocks or to see more details about our benefits.
-                    </p>
-                </div>
+                <div class="col-lg-3 text-center"></div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Grid Section -->
     <section class="style_dark" id="skills">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Needed skills</h2>
+                    <h2>Desired skills</h2>
                     <hr class="star">
                 </div>
             </div>
@@ -208,28 +190,22 @@ title: Jobs
         </div>
     </section>
 
-    <section class="style_{{ job.style }}" id="tasks">
+    <section class="style_{{ job.style }}" id="company">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Tasks</h2>
+                    <h2>Company</h2>
                     <hr class="star">
                 </div>
             </div>
-
             <div class="row">
-                <div class="col-lg-3 text-center"></div>
-                <div class="col-lg-6 text-center">
-                    <ul class="job_tasks">
-                    {% for task in job.tasks %}
-                        <li><span>{{ task }}</span></li>
-                    {% endfor %}
-                    </ul>
+                <div class="col-xs-12 text-justify">
+                    {% include company_profile.html %}
+
                 </div>
-                <div class="col-lg-3 text-center"></div>
             </div>
         </div>
-    </section>
+     </section>
 
     <section class="style_dark" id="salary">
         <div class="container">
@@ -259,8 +235,43 @@ title: Jobs
         </div>
     </section>
 
+    <section class="style_{{ job.style }}" id="benefits">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Benefits</h2>
+                    <hr class="star">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list-group list-group-flush job_tasks">
+                        <li class="list-group-item">30 holidays per year</li>
+                        <li class="list-group-item">100 € monthly education budget</li>
+                        <li class="list-group-item">Transparent salary</li>
+                        <li class="list-group-item">Huge home office part</li>
+                        <li class="list-group-item">Adjustable mix of coding and project management</li>
+                        <li class="list-group-item">Easy project switch to learn new technologies and teams</li>
+                    {% for benefit in job.benefits_extra %}
+                        <li class="list-group-item">{{ benefit }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <p>
+                        Take a look on <a href="/hires">useblocks.com/hires</a> to get detailed information of
+                        an average work day at useblocks or to see more details about our benefits.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {% assign contact = site.data.employees[job.author] %}
-    <section class="style_{{ job.style }}" id="apply">
+    <section class="style_dark" id="apply">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -297,6 +308,7 @@ title: Jobs
                             </a>
                         </div>
                     </div>
+                    {% if contact.phone != "" %}
                     <div class="row">
                         <div class="col-xs-3 text-right contact_param">
                             Phone:
@@ -305,6 +317,7 @@ title: Jobs
                             {{ contact.phone }}
                         </div>
                     </div>
+                    {% endif %}
                     <div class="row">
                         <div class="col-xs-3 text-right contact_param">
                             Address:
@@ -320,7 +333,7 @@ title: Jobs
         </div>
     </section>
 
-    <section class="style_dark" id="jobs">
+    <section class="style_{{ job.style }}" id="jobs">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

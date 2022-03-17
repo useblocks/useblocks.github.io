@@ -275,13 +275,7 @@ a.btn-outline.active {
   background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #ffcc00, #d25c00 100%);
   background-image: -o-radial-gradient(center top, ellipse farthest-side, #ffcc00, #d25c00 100%);
 }
-.style_yellow a,
-.style_yellow a:hover,
-.style_yellow a:focus,
-.style_yellow a.active {
-  color: #333333;
-  outline: none;
-}
+.
 .style_yellow hr.star {
   border-color: #000000;
   color: #000000;
@@ -371,13 +365,33 @@ a.btn-outline.active {
   background-image: -o-radial-gradient(center top, ellipse farthest-side, #a0dbfb, #0884c7 100%);
   position: relative;
 }
+.style_yellow a,
+.style_yellow a:hover,
+.style_yellow a:focus,
+.style_yellow a.active,
 .style_blue a,
 .style_blue a:hover,
 .style_blue a:focus,
-.style_blue a.active {
-  color: #185b94;
+.style_blue a.active,
+.style_green a,
+.style_green a:hover,
+.style_green a:focus,
+.style_green a.active
+{
+  color: #000;
   outline: none;
+  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
 }
+
+.style_yellow a:hover,
+.style_blue a:hover,
+.style_green a:hover {
+  text-decoration-style: solid;
+}
+
 .style_blue hr.star {
   border-color: #000000;
   color: #000000;
@@ -406,13 +420,7 @@ a.btn-outline.active {
   background-image: -o-radial-gradient(center top, ellipse farthest-side, #94ec9b, #1b9925 100%);
   position: relative;
 }
-.style_green a,
-.style_green a:hover,
-.style_green a:focus,
-.style_green a.active {
-  color: #0c220c;
-  outline: none;
-}
+
 .style_green hr.star {
   border-color: #000000;
   color: #000000;
