@@ -7,7 +7,7 @@ is_student: false
 author: woste 
 url: python-developer-dac
 logo: heart_binary_black.png 
-salary: ">= 50k €"
+salary: "50k-90k €"
 start: 01.04.2022 
 type: Full time 
 job_years: '0' 
@@ -35,10 +35,10 @@ tasks:
 - Work on <a href="https://sphinx-needs.com" target="_blank">Sphinx-Needs</a> and related Open-Source projects. 
 - Create and maintain own <a href="https://www.sphinx-doc.org" target="_blank">Sphinx extensions</a>.
 - Enhance <a href="https://open-needs.org" target="_blank">Open-Needs</a>.
-- Scale Sphinx based customer projects with up to 2.000 users.
-- Prepare Sphinx-Needs based concepts for SW development related processes.
+- Scale Sphinx-based customer projects with up to 2.000 users.
+- Prepare Sphinx-Needs based concepts for SW development-related processes.
 - Maintain selected Open-Source projects and care about bug reports.
-- Understand the work and needs of SW architects, engineers, testers, integrators and much more. 
+- Understand the work and needs of SW architects, engineers, testers, integrators, and much more. 
 
 benefits_extra:
 - Visit or speak at open source conferences
@@ -55,7 +55,7 @@ Automotive companies all over the world.
 Your job is to support this change inside the engineering departments of our customers. In most cases, this means
 collecting feature requests for our or someone else Open-Source tools and implementing these.
 
-We support you to create your own reputation in these Open-Source projects and become an important member of the related
+We support you to create your reputation in these Open-Source projects and become an important member of the related
 community.
 
 You will get deep insights into processes, toolchains, and networks of Automotive companies and Open-Source projects.
