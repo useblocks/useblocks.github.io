@@ -103,7 +103,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2>Portfolio</h2>
+                <h2>Portfolio dfdf</h2>
                 <hr class="star">
             </div>
         </div>
@@ -116,6 +116,8 @@
 
             {%  if tools|length % 4 == 0  %}
                 {%  set WIDTH=3 %}
+            {%  elif tools|length % 3 == 0 %}
+                {%  set WIDTH=4 %}
             {%  elif tools|length % 2 == 0 %}
                 {%  set WIDTH=6 %}
             {%  else  %}

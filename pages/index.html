@@ -123,6 +123,8 @@ permalink: /
             {% assign col_type = tools.size | modulo: 4 %}
             {%  if col_type == 0  %}
                 {%  assign WIDTH=3 %}
+            {%  elsif tools.size == 3 or tools.size == 6 or tools.size == 9 %}
+                {%  assign WIDTH=4 %}
             {%  elsif col_type == 2 %}
                 {%  assign WIDTH=6 %}
             {%  else  %}

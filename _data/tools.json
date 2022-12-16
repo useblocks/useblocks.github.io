@@ -3,9 +3,45 @@
     "name": "Sphinx-Needs",
     "active": true,
     "description": "Sphinx-Extension to manage requirements, bugs, test cases and more.",
-    "image": "needs_logo.png",
+    "image": "sphinx-needs-logo-favicon.png",
     "website_url": "https://sphinxcontrib-needs.readthedocs.io/en/latest/",
     "code_url": "https://github.com/useblocks/sphinxcontrib-needs",
+    "contact": "woste"
+  },
+  {
+    "name": "Sphinx-Simplepdf",
+    "active": true,
+    "description": "Sphinx-Extension to create beautiful PDFs easily based on HTML and CSS.",
+    "image": "sphinx_simplepdf.png",
+    "website_url": "https://sphinx-simplepdf.readthedocs.io/",
+    "code_url": "https://github.com/useblocks/sphinx-simplepdf",
+    "contact": "woste"
+  },
+  {
+    "name": "Sphinx-Modeling",
+    "active": true,
+    "description":  "Sphinx extension to allow the definition of models and constraints for objects defined with Sphinx-Needs.",
+    "image": "sphinx-modeling.png",
+    "website_url": "https://sphinx-modeling.useblocks.com/",
+    "code_url": "https://github.com/useblocks/sphinx-modeling",
+    "contact": "heinemann"
+  },
+  {
+    "name": "Awesome Sphinx",
+    "active": true,
+    "description": "A list of nearly all available Sphinx extensions and themes.",
+    "image": "awesome_sphinx.png",
+    "website_url": "https://awesomesphinx.useblocks.com/",
+    "code_url": "https://github.com/useblocks/awesomesphinx",
+    "contact": "woste"
+  },
+  {
+    "name": "Sphinx-Performance",
+    "active": true,
+    "description": "Quality focused tool to automatically create Sphinx projects for runtime and memory measurements.",
+    "image": "sphinx_performance_logo.png",
+    "website_url": "https://sphinx-performance.readthedocs.io",
+    "code_url": "https://github.com/useblocks/sphinx-performance",
     "contact": "woste"
   },
   {
@@ -37,7 +73,7 @@
   },
   {
     "name": "Groundwork",
-    "active": true,
+    "active": false,
     "description": "Python Application Framework for rapid prototyping of company internal tools.",
     "image": "gw_logo.png",
     "website_url": "https://groundwork.readthedocs.io/",
@@ -73,7 +109,7 @@
   },
   {
     "name": "Tox-Envreport",
-    "active": true,
+    "active": false,
     "description": "Tox plugin to store environment information of the system, which runs the tests.",
     "image": "tox_envreport_logo.png",
     "website_url": "https://tox-envreport.readthedocs.org",

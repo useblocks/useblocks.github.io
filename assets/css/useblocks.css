@@ -710,9 +710,10 @@ div.ub_inner_item {
   background-color: rgba(0,0,0,0.1);
   margin: 3px;
   border-radius: 5px;
-  padding: 15px 10px 1px 10px;
+  /* padding: 15px 10px 1px 10px; */
   height: 100%;
   min-height: 330px;
+  border: 2px solid rgba(0,0,0,0.2);
 }
 div.portfolio img {
   max-height: 100px;
@@ -720,15 +721,27 @@ div.portfolio img {
 }
 div.portfolio div.image {
   min-height: 100px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px;*/
+  background-color: rgba(0,0,0,0.2);
+  padding: 20px 0px;
+  width: 100%;
+  margin: 0 0 20px 0;
+  height: 150px;
 }
+
 div.portfolio p.links {
   bottom: 0px;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
+  background-color: rgba(0,0,0,0.2);
 }
+div.portfolio p.portfolio_description {
+  padding: 0px 20px;
+}
+
+
 p.no_jobs {
   text-align: center;
 }
