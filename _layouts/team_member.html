@@ -1,5 +1,5 @@
 ---
-title: Jobs
+title: Team Member
 ---
 {% include head.html %}
 
@@ -270,9 +270,7 @@ title: Jobs
         </div>
     </section>
 
-    {% assign contact = site.team
-        | where_exp:"contact", "contact.short == job.author"
-        | first %}
+    {% assign contact = site.data.employees[job.author] %}
     <section class="style_dark" id="apply">
         <div class="container">
             <div class="row">

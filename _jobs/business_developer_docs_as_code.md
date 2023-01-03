@@ -4,7 +4,7 @@ long_name: Business Developer for DaC-related products on an international, engi
 
 style: blue 
 is_student: false 
-author: woste
+author: daniel_woste
 url: business_developer_open_source/
 logo: globe_network.svg
 salary: "72k-99k €"

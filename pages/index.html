@@ -366,13 +366,21 @@ permalink: /
         </div>
         <div class="row">
             <div class="col-sm-2 ub_item "></div>
-            {% for contact_list in site.data.employees%}
-            {% assign contact = contact_list[1] %}
+            {% for contact in site.team %}
+<!--            {% assign contact = contact_list[1] %}-->
 
             <div class="col-sm-4 ub_item text-center">
-                <div class="circle_team" id="{{ contact.first_name | downcase }}"></div>
 
-                <h4 class="text-center">{{ contact.first_name }} {{ contact.name }}</h4>
+                <a href="{{contact.url}}">
+                    <div class="circle_team" id="{{ contact.first_name | downcase }}"></div>
+                    <h4 class="text-center">
+                        {{ contact.first_name }} {{ contact.name }}
+                    </h4>
+                </a>
+                    <h4 class="text-center">
+                        <small>{{ contact.job_title }}<br></small>
+                    </h4>
+
                 <p class="text-center">
                     {{ contact.title }}<br>
                     {% for tag in contact.tags %}

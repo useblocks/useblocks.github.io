@@ -31,6 +31,16 @@ h6 {
   text-transform: uppercase;
   font-weight: 700;
 }
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small{
+  color: #ffffff;
+}
+
 hr.star {
   padding: 0;
   border: none;
