@@ -35,11 +35,13 @@ HTML changes need to be done in `_layouts/team_members` for the member page
 Member image is set via css currently.
 In `useblocks.css` there must be an entry for the `first_name` attribute:
 
-```
-#daniel {
-  background: url(/assets/img/daniel_kreis_transparent.png) no-repeat center;
-  border: 5px solid #333333;
-}
-```
+::
+  
+  #daniel {
+    background: url(/assets/img/daniel_kreis_transparent.png) no-repeat center;
+    border: 5px solid #333333;
+  }
 
-(!) So the `image` option has no effect, yet. But this will be changed in future
+.. note::
+  
+   So the `image` option has no effect, yet. But this will be changed in future
