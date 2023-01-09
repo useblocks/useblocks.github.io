@@ -12,14 +12,14 @@ Install
 
 Run
 ---
-
+::
 
     bundle exec jekyll serve
 
 Jobs
 ----
 
-Jobs can be find under ``_jobs``.
+Jobs can be found under ``_jobs``.
 
 Do not use ``_data``, this approach is not followed anymore.
 
