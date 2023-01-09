@@ -23,28 +23,13 @@ title: Team Member
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#description">Description</a>
+                        <a href="#projects">Projects</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#tasks">Tasks</a>
+                        <a href="#vita">Vita</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#skills">Skills</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#company">Company</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#salary">Salary</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#benefits">Benefits</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#apply">Apply</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#jobs">Other Jobs</a>
                     </li>
                 </ul>
             </div>
@@ -53,61 +38,73 @@ title: Team Member
         <!-- /.container-fluid -->
     </nav>
 
-    {% assign job = page %}
+    {% assign team = page %}
     <!-- Header -->
-    <header class="style_{{ job.style }}">
+    <header class="style_{{ team.style }}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive img-slogan" src="/assets/img/{{ job.logo }}" alt="">
+                    <div class="circle_team" id="{{ team.first_name | downcase }}"></div>
                     <div class="intro-text">
-                        <span class="name">{{ job.name }}</span>
-                        <hr class="star">
-                        <span class="skills">{{ job.long_name }}</span>
+                        <span class="name">{{ team.first_name }} {{ team.name }}</span>
+                        <span class="skills">{{ team.job_title }}</span>
+                    </div>
+                    <div class="row team_contact">
+                        <div class="col-xs-12">
+                            <a href="mailto:{{ team.e_mail }}" target="_blank" class="btn btn-lg btn-outline btn-team"
+                            target="_blank">
+                            <i class="fa fa-envelope" ></i>
+                            E-Mail
+                            </a>
+                            <a href="{{ team.xing }}" target="_blank" class="btn btn-lg btn-outline btn-team"
+                            target="_blank">
+                                <i class="fa fa-xing" ></i>
+                                Xing
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="job_details">
+            <div class="team_details">
                 <div class="row">
                     <div class="col-xs-6 job_meta right">
-                        <span class="job_param">Type:</span>
-                        <span class="job_value">{{ job.type }}</span>
+                        <span class="job_param">Company:</span>
+                        <span class="job_value">{{ team.company }}</span>
                     </div>
                     <div class="col-xs-6 job_meta left">
-                        <span class="job_param">Start date: </span>
-                        <span class="job_value">{{ job.start }}</span>
+                        <span class="job_param">Position:</span>
+                        <span class="job_value">{{ team.position }}</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-6 job_meta right">
-                        <span class="job_param">Salary:</span>
-                        <span class="job_value">{{ job.salary }}</span>
+                        <span class="job_param">Location: </span>
+                        <span class="job_value">{{ team.city }}, {{ team.country }}</span>
                     </div>
                     <div class="col-xs-6 job_meta left">
-                        <span class="job_param">Needed experiences on job:</span>
-                        <span class="job_value">{{ job.job_years }}</span>
+                        <span class="job_param">Years on job: </span>
+                        <span class="job_value">{{ team.job_years }}</span>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-6 job_meta right">
-                        <span class="job_param">Location:</span>
-                        <span class="job_value">{{ job.location }}</span>
-                    </div>
-                    <div class="col-xs-6 job_meta left">
-                        <span class="job_param">Average coding part:</span>
-                        <span class="job_value">{{ job.coding_part }}</span>
-                    </div>
+
+                <div class="row team_tags">
+                    <p class="text-center">
+                        {% for tag in team.tags %}
+                        <span class="label label-transparent">{{ tag }}</span>
+                        {% endfor %}
+                    </p>  
+
                 </div>
             </div>
 
         </div>
     </header>
 
-    <section class="style_dark" id="description">
+    <section class="style_dark" id="vita">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Job description</h2>
+                    <h2>vita</h2>
                     <hr class="star">
                 </div>
             </div>
@@ -121,34 +118,11 @@ title: Team Member
         </div>
      </section>
 
-    <section class="style_{{ job.style }}" id="tasks">
+     <section class="style_{{team.style}}" id="skills">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Tasks</h2>
-                    <hr class="star">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3 text-center"></div>
-                <div class="col-lg-12 text-center">
-                    <ul class="list-group list-group-flush job_tasks">
-                    {% for task in job.tasks %}
-                        <li class="list-group-item">☑ {{ task }}</li>
-                    {% endfor %}
-                    </ul>
-                </div>
-                <div class="col-lg-3 text-center"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="style_dark" id="skills">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Desired skills</h2>
+                    <h2>Skills</h2>
                     <hr class="star">
                 </div>
             </div>
@@ -160,7 +134,7 @@ title: Team Member
                         <div class="col-lg-6 text-center">
                             <h4>Technical skills</h4>
                             <ul class="job_skills">
-                                {% for skill in job.skills.technical %}
+                                {% for skill in team.skills.technical %}
                                     <li>
                                         <span>
                                             <img src="/assets/img/stars_{{ skill[1] }}.svg" class="rating">
@@ -173,7 +147,7 @@ title: Team Member
                         <div class="col-lg-6 text-center">
                             <h4>Project management and soft skills</h4>
                             <ul class="job_skills">
-                                {% for skill in job.skills.project %}
+                                {% for skill in team.skills.project %}
                                     <li>
                                         <span>
                                             <img src="/assets/img/stars_{{ skill[1] }}.svg" class="rating">
@@ -188,171 +162,44 @@ title: Team Member
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
 
-    <section class="style_{{ job.style }}" id="company">
+    <section class="style_dark" id="projects">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Company</h2>
-                    <hr class="star">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 text-justify">
-                    {% include company_profile.html %}
-
-                </div>
-            </div>
-        </div>
-     </section>
-
-    <section class="style_dark" id="salary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Salary</h2>
-                    <hr class="star">
-                </div>
-            </div>
-            <div class="row">
-                {% if job.is_student==false %}
-                {% include salary_table.html %}
-                {% else %}
-                <div class="col-lg-12 text-center">
-                    <p>
-                        As student your salary is based on your skill set and the time you may need to learn new
-                        stuff.
-
-                        If you already fulfill 100% of the job's requirements, you can get an idea of your salary under
-                        <a href="/hires/#salary">useblocks.com/hires</a>.
-                    </p>
-                </div>
-
-                {% endif %}
-
-            </div>
-        </div>
-    </section>
-
-    <section class="style_{{ job.style }}" id="benefits">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Benefits</h2>
+                    <h2>Projects</h2>
                     <hr class="star">
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-12">
-                    <ul class="list-group list-group-flush job_tasks">
-                        <li class="list-group-item">30 holidays per year</li>
-                        <li class="list-group-item">100 € monthly education budget</li>
-                        <li class="list-group-item">Transparent salary</li>
-                        <li class="list-group-item">Huge home office part</li>
-                        <li class="list-group-item">Adjustable mix of coding and project management</li>
-                        <li class="list-group-item">Easy project switch to learn new technologies and teams</li>
-                    {% for benefit in job.benefits_extra %}
-                        <li class="list-group-item">{{ benefit }}</li>
+                <div class="col-lg-3 text-center"></div>
+                <div class="col-lg-12 text-center">
+                    <ul class="list-group list-group-flush team_projects">
+                    {% for project in team.projects %}
+                        <li class="list-group-item team_l1">☑ {{ project.title }} <br>
+                            <span class="project_details">
+                                {{ project.start_year }} - {{ project.end_year }}
+                                // {{project.customer}}
+                                // {{project.impact}}
+                            </span>
+                            <ul class="list-group list-group-flush team_projects_tasks">
+                                {% for task in project.tasks %}
+                                <li class="list-group-item team_l2">{{ task }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
                     {% endfor %}
                     </ul>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 ">
-                    <p>
-                        Take a look on <a href="/hires">useblocks.com/hires</a> to get detailed information of
-                        an average work day at useblocks or to see more details about our benefits.
-                    </p>
-                </div>
+                <div class="col-lg-3 text-center"></div>
             </div>
         </div>
     </section>
 
-    {% assign contact = site.data.employees[job.author] %}
-    <section class="style_dark" id="apply">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Apply</h2>
-                    <hr class="star">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <p>
-                        For application just send us some words about you and your passions as e-mail to
-                        <b><a href="mailto:hr@useblocks.com">hr@useblocks.com</a></b>.
-                    </p>
-                    <p>
-                        If you have any questions, do not hesitate to call <b>{{ contact.first_name }}</b> or send an e-mail.
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-xs-3 text-right">
-                            <img class="job_contact" src="/assets/img/{{ contact.image }}">
-                        </div>
-                        <div class="col-xs-9 contact_name">
-                            {{ contact.first_name|upper }} {{ contact.name|upper }}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-3 text-right contact_param">
-                            E-Mail:
-                        </div>
-                        <div class="col-xs-9">
-                            <a href="mailto:{{ contact.e_mail}}">
-                                {{ contact.e_mail}}
-                            </a>
-                        </div>
-                    </div>
-                    {% if contact.phone != "" %}
-                    <div class="row">
-                        <div class="col-xs-3 text-right contact_param">
-                            Phone:
-                        </div>
-                        <div class="col-xs-9">
-                            {{ contact.phone }}
-                        </div>
-                    </div>
-                    {% endif %}
-                    <div class="row">
-                        <div class="col-xs-3 text-right contact_param">
-                            Address:
-                        </div>
-                        <div class="col-xs-9">
-                            {{ contact.company }} <br>
-                            {{ contact.street }} <br>
-                            {{ contact.postal_code }} {{ contact.city }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
-    <section class="style_{{ job.style }}" id="jobs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Not the right job? Try another...</h2>
-                    <hr class="star">
-                </div>
-            </div>
-            <div class="row">
-                {% include jobs_table.html %}
-            </div>
-            <div class="row">
-                <p class="text-center">
-                    <a href="/hires" class="btn btn-lg btn-outline text-center">
-                        <i class="fa fa-info"> See your benefits and how an average day at useblocks looks like.</i>
-                    </a>
-                </p>
-            </div>
-        </div>
-    </section>
 {% include footer.html %}
 </body>
 </html>

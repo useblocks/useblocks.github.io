@@ -53,7 +53,7 @@ projects:
     - Sphinx-Test-Report
   - JIRA Admin and Process integrator
     - Process definition and implementation into JIRA for Automotive teams (~400 team members) 
-layout: job
+layout: team_member
 ---
 
 Maroc Heinemann is a Sw developer

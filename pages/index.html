@@ -365,11 +365,10 @@ permalink: /
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-2 ub_item "></div>
             {% for contact in site.team %}
 <!--            {% assign contact = contact_list[1] %}-->
 
-            <div class="col-sm-4 ub_item text-center">
+            <div class="col-sm-6 ub_item text-center team_card">
 
                 <a href="{{contact.url}}">
                     <div class="circle_team" id="{{ contact.first_name | downcase }}"></div>
@@ -380,21 +379,6 @@ permalink: /
                     <h4 class="text-center">
                         <small>{{ contact.job_title }}<br></small>
                     </h4>
-
-                <p class="text-center">
-                    {{ contact.title }}<br>
-                    {% for tag in contact.tags %}
-                    <span class="label label-transparent">{{ tag }}</span>
-                    {% endfor %}
-                </p>
-                <a href="mailto:{{ contact.e_mail }}" target="_blank" class="btn btn-lg btn-outline"
-                   target="_blank">
-                    <i class="fa fa-file"> E-Mail</i>
-                </a>
-                <a href="{{ contact.xing }}" target="_blank" class="btn btn-lg btn-outline"
-                   target="_blank">
-                    <i class="fa fa-xing"> Xing</i>
-                </a>
             </div>
             {% endfor %}
 
