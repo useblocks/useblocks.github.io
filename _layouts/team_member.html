@@ -1,0 +1,205 @@
+---
+title: Team Member
+---
+{% include head.html %}
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img class="img-logo" src="/assets/img/ub_logo.png">useblocks
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#projects">Projects</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#vita">Vita</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#skills">Skills</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    {% assign team = page %}
+    <!-- Header -->
+    <header class="style_{{ team.style }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="circle_team" id="{{ team.first_name | downcase }}"></div>
+                    <div class="intro-text">
+                        <span class="name">{{ team.first_name }} {{ team.name }}</span>
+                        <span class="skills">{{ team.job_title }}</span>
+                    </div>
+                    <div class="row team_contact">
+                        <div class="col-xs-12">
+                            <a href="mailto:{{ team.e_mail }}" target="_blank" class="btn btn-lg btn-outline btn-team"
+                            target="_blank">
+                            <i class="fa fa-envelope" ></i>
+                            E-Mail
+                            </a>
+                            <a href="{{ team.xing }}" target="_blank" class="btn btn-lg btn-outline btn-team"
+                            target="_blank">
+                                <i class="fa fa-xing" ></i>
+                                Xing
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="team_details">
+                <div class="row">
+                    <div class="col-xs-6 job_meta right">
+                        <span class="job_param">Company:</span>
+                        <span class="job_value">{{ team.company }}</span>
+                    </div>
+                    <div class="col-xs-6 job_meta left">
+                        <span class="job_param">Position:</span>
+                        <span class="job_value">{{ team.position }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 job_meta right">
+                        <span class="job_param">Location: </span>
+                        <span class="job_value">{{ team.city }}, {{ team.country }}</span>
+                    </div>
+                    <div class="col-xs-6 job_meta left">
+                        <span class="job_param">Years on job: </span>
+                        <span class="job_value">{{ team.job_years }}</span>
+                    </div>
+                </div>
+
+                <div class="row team_tags">
+                    <p class="text-center">
+                        {% for tag in team.tags %}
+                        <span class="label label-transparent">{{ tag }}</span>
+                        {% endfor %}
+                    </p>  
+
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <section class="style_dark" id="vita">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>vita</h2>
+                    <hr class="star">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-justify">
+                    <p>
+                        {{ page.content }}
+                    </p>
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <section class="style_{{team.style}}" id="skills">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Skills</h2>
+                    <hr class="star">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1 text-center"></div>
+                <div class="col-lg-10 text-center">
+                    <div class="row">
+                        <div class="col-lg-6 text-center">
+                            <h4>Technical skills</h4>
+                            <ul class="job_skills">
+                                {% for skill in team.skills.technical %}
+                                    <li>
+                                        <span>
+                                            <img src="/assets/img/stars_{{ skill[1] }}.svg" class="rating">
+                                            {{ skill[0] }}
+                                        </span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 text-center">
+                            <h4>Project management and soft skills</h4>
+                            <ul class="job_skills">
+                                {% for skill in team.skills.project %}
+                                    <li>
+                                        <span>
+                                            <img src="/assets/img/stars_{{ skill[1] }}.svg" class="rating">
+                                            {{ skill[0] }}
+                                        </span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 text-center"></div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <section class="style_dark" id="projects">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Projects</h2>
+                    <hr class="star">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 text-center"></div>
+                <div class="col-lg-12 text-center">
+                    <ul class="list-group list-group-flush team_projects">
+                    {% for project in team.projects %}
+                        <li class="list-group-item team_l1">☑ {{ project.title }} <br>
+                            <span class="project_details">
+                                {{ project.start_year }} - {{ project.end_year }}
+                                // {{project.customer}}
+                                // {{project.impact}}
+                            </span>
+                            <ul class="list-group list-group-flush team_projects_tasks">
+                                {% for task in project.tasks %}
+                                <li class="list-group-item team_l2">{{ task }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-lg-3 text-center"></div>
+            </div>
+        </div>
+    </section>
+
+    
+
+{% include footer.html %}
+</body>
+</html>

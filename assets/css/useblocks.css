@@ -31,13 +31,23 @@ h6 {
   text-transform: uppercase;
   font-weight: 700;
 }
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small{
+  color: #ffffff;
+}
+
 hr.star {
   padding: 0;
   border: none;
-  border-top: solid 3px;
+  border-top: solid 2px;
   text-align: center;
-  max-width: 250px;
-  margin: 15px auto 30px;
+  max-width: 200px;
+  margin: 5px auto 20px;
 }
 .img-centered {
   margin: 0 auto;
@@ -157,7 +167,7 @@ section {
 }
 section h2 {
   margin: 0;
-  font-size: 3em;
+  font-size: 2.7em;
 }
 a.btn-outline {
   font-size: 20px;
@@ -176,9 +186,10 @@ a.btn-outline.active {
 .circle_team {
   position: relative;
   margin: 20px auto;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
+  background-size: 200px !important;
 }
 .circle_team span,
 .circle_team h1,
@@ -292,8 +303,8 @@ a.btn-outline.active {
   border-color: #000000;
   color: #000000;
 }
+
 .style_yellow hr.star:after {
-  background-color: none;
   color: #000000;
 }
 .style_yellow a.btn-outline {
@@ -353,6 +364,7 @@ a.btn-outline.active {
 .style_light hr.star {
   border-color: #ffffff;
   color: #ffffff;
+  border-color: #000000;
 }
 .style_light hr.star:after {
   background-color: #444444;
@@ -407,6 +419,7 @@ a.btn-outline.active {
 .style_blue hr.star {
   border-color: #000000;
   color: #000000;
+  border-color: #000000;
 }
 .style_blue hr.star:after {
   background-color: none;
@@ -436,6 +449,7 @@ a.btn-outline.active {
 .style_green hr.star {
   border-color: #000000;
   color: #000000;
+  border-color: #000000;
 }
 .style_green hr.star:after {
   background-color: none;
@@ -646,6 +660,43 @@ ul.job_tasks li {
   background: url(/ub/static/img/bullet.png) left no-repeat;
   padding-left: 40px;
 }
+
+ul.team_projects {
+  background: none;
+  border: none;
+}
+
+ul.team_projects li.team_l1 {
+  display: list-item;
+  text-align: left;
+  font-size: 1.5em;
+  font-weight: bold;
+  list-style-type: none;
+  background: none;
+  padding-left: 40px;
+  border: none;
+}
+
+ul.team_projects li.team_l2 {
+  display: list-item;
+  text-align: left;
+  font-size: 0.9em;
+  font-weight: normal;
+  list-style-type: none;
+  background: none;
+  padding: 5px 0 0 30px;
+  border: none;
+
+}
+
+span.project_details {
+  text-align: left;
+  font-size: 0.8em;
+  font-weight: bold;
+  background: none;
+  padding: 0px 0 0 30px;
+}
+
 div.job_meta {
   font-size: 1.2em;
   padding: 0px 40px;
@@ -660,7 +711,7 @@ div.job_details {
   padding-top: 30px;
 }
 span.job_param {
-  color: #333;
+  color: #000;
 }
 span.job_value {
   font-weight: bold;
@@ -971,4 +1022,29 @@ p.github_link {
 a.ub_item_link {
   text-decoration: none;
   color: #000;
+}
+
+
+a.btn-team,
+a.btn-team:hover {
+  text-decoration: none;
+  font-size: 1.2em;
+
+}
+
+span.label {
+  padding: .4em .6em .3em;
+}
+
+div.team_details {
+  margin-top: 20px;
+}
+
+div.team_tags {
+  margin-top: 20px;
+}
+
+div.team_card:hover {
+  background-color: rgba(0,0,0,0.2);
+  transition: all 0.6s linear;
 }

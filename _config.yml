@@ -38,6 +38,9 @@ collections:
   jobs:
     output: "true"
     permalink: /hires/:path/
+  team:
+    output: "true"
+    permalink: /team/:path/
 
 defaults:
   - scope:
@@ -45,6 +48,11 @@ defaults:
       type: "jobs"
     values:
       layout: "job"
+#  - scope:
+#      path: ""
+#      type: "team"
+#    values:
+#      layout: "team"
   - scope:
       path: ""
       type: "pages"

@@ -10,6 +10,7 @@ street: Schopenhauerstr. 71
 country: Germany
 city: Muncih
 postal_code: 80807
+
 image: daniel_kreis_transparent.png
 
 xing: https://www.xing.com/profile/Daniel_Woste

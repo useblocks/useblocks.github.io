@@ -270,7 +270,9 @@ title: Jobs
         </div>
     </section>
 
-    {% assign contact = site.data.employees[job.author] %}
+    {% assign contact = site.team
+        | where_exp:"contact", "contact.short == job.author"
+        | first %}
     <section class="style_dark" id="apply">
         <div class="container">
             <div class="row">
