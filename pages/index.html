@@ -372,6 +372,7 @@ permalink: /
             <div class="col-sm-4 ub_item text-center">
                 <div class="circle_team" id="{{ contact.first_name | downcase }}"></div>
 
+
                 <h4 class="text-center">{{ contact.first_name }} {{ contact.name }}</h4>
                 <p class="text-center">
                     {{ contact.title }}<br>
@@ -387,6 +388,14 @@ permalink: /
                    target="_blank">
                     <i class="fa fa-xing"> Xing</i>
                 </a>
+                    <h4 class="text-center">
+                        <small>{{ contact.job_title }}<br>
+                        {% if contact.job_title2 %}
+                        {{ contact.job_title2 }} <br>
+                        {% endif %}
+                        
+                        </small>
+                    </h4>
             </div>
             {% endfor %}
 

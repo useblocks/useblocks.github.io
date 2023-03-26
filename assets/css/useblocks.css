@@ -201,6 +201,18 @@ a.btn-outline.active {
   background: url(/assets/img/daniel_kreis_transparent.png) no-repeat center;
   border: 5px solid #333333;
 }
+
+#dominika {
+  background: url(/assets/img/dominika.jpg) no-repeat center;
+  border: 5px solid #333333;
+}
+
+#test_1,
+#test_2 {
+  background: url(/assets/img/daniel_kreis_transparent.png) no-repeat center;
+  border: 5px solid #333333;
+}
+
 .circle {
   position: relative;
   margin: 20px auto;
@@ -275,7 +287,7 @@ a.btn-outline.active {
   background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #ffcc00, #d25c00 100%);
   background-image: -o-radial-gradient(center top, ellipse farthest-side, #ffcc00, #d25c00 100%);
 }
-.
+
 .style_yellow hr.star {
   border-color: #000000;
   color: #000000;

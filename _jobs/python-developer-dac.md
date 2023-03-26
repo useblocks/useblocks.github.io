@@ -4,11 +4,11 @@ long_name: Establish and support docs-as-code in international automotive compan
 
 style: blue 
 is_student: false 
-author: woste 
+author: dominika_lothary 
 url: python-developer-dac
 logo: heart_binary_black.png 
-salary: "50k-90k €"
-start: 01.04.2022 
+salary: "55k-90k €"
+start: 01.06.2023 
 type: Full time 
 job_years: '0' 
 location: Remote or Munich 
