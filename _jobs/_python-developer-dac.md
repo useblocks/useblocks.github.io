@@ -4,7 +4,7 @@ long_name: Establish and support docs-as-code in international automotive compan
 
 style: blue 
 is_student: false 
-author: dominika_lothary 
+author: daniel_woste 
 url: python-developer-dac
 logo: heart_binary_black.png 
 salary: "55k-90k €"
